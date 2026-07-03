@@ -71,9 +71,33 @@ by their observed successor macrostate. Dynamic programming over
 discrimination tree with the minimum worst-case number of actions, or certifies
 that no finite declared intervention policy separates the remaining types.
 
+## Result VII — Canonical mechanism-ambiguity frontier
+
+For every \(m\ge1\), let \(R_m=\{0,1\}^m\), \(Q=\{0,1\}\), and define
+\(G^{r}_{\mathrm{probe}_i}(q)=r_i\). Each fixed response type has a two-state
+macro-law. Yet every pair of response types is uniformly separable, so the minimal
+candidate-safe quotient has exactly
+
+\[
+|Q||R_m|=2^{m+1}
+\]
+
+states and \(m+1\) memory bits. Relative to the fixed-candidate law, retained
+mechanism ambiguity costs exactly \(m\) bits. Thus state cardinality grows
+exponentially in the number of unresolved binary response dimensions, whereas the
+memory surcharge grows linearly.
+
+## Result VIII — Canonical active-identification frontier
+
+Applying `probe_0, ..., probe_(m-1)` reads the complete response signature and
+identifies the retained response type in \(m\) interventions. Any adaptive policy
+of depth \(d\) has at most \(2^d\) observed leaves, so distinguishing \(2^m\)
+types requires \(d\ge m\). The canonical schedule is therefore worst-case optimal.
+After \(k\) distinct probes, exactly \(2^{m-k}\) response types remain.
+
 ## Non-claims
 
 MRM does not infer candidate mechanisms, response types, state alignment, or
-intervention grammar from field observations. Its quotient and discrimination
-results are finite, exact, and noiseless; they do not yet optimize cost or risk,
-or handle stochastic transitions or observation error.
+intervention grammar from field observations. Its quotient, discrimination, and
+frontier results are finite, exact, and noiseless; they do not yet optimize cost or
+risk, or handle stochastic transitions or observation error.
