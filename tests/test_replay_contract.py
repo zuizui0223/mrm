@@ -18,7 +18,7 @@ def test_replay_report_matches_declared_witnesses():
         text=True,
     )
     report = json.loads(completed.stdout)
-    assert report["schema_version"] == 2
+    assert report["schema_version"] == 3
     assert report["universal_law"] == {
         "response_type_count": 1,
         "report": "universal",
@@ -40,6 +40,48 @@ def test_replay_report_matches_declared_witnesses():
         "root_action": "probe",
         "worst_case_steps": 2,
     }
+    assert report["mechanism_ambiguity_frontier"] == [
+        {
+            "signature_width": 1,
+            "response_type_count": 2,
+            "fixed_candidate_state_count": 2,
+            "candidate_safe_state_count": 4,
+            "fixed_candidate_memory_bits": 1.0,
+            "candidate_safe_memory_bits": 2.0,
+            "ambiguity_memory_surcharge_bits": 1.0,
+            "optimal_identification_steps": 1,
+        },
+        {
+            "signature_width": 2,
+            "response_type_count": 4,
+            "fixed_candidate_state_count": 2,
+            "candidate_safe_state_count": 8,
+            "fixed_candidate_memory_bits": 1.0,
+            "candidate_safe_memory_bits": 3.0,
+            "ambiguity_memory_surcharge_bits": 2.0,
+            "optimal_identification_steps": 2,
+        },
+        {
+            "signature_width": 3,
+            "response_type_count": 8,
+            "fixed_candidate_state_count": 2,
+            "candidate_safe_state_count": 16,
+            "fixed_candidate_memory_bits": 1.0,
+            "candidate_safe_memory_bits": 4.0,
+            "ambiguity_memory_surcharge_bits": 3.0,
+            "optimal_identification_steps": 3,
+        },
+        {
+            "signature_width": 4,
+            "response_type_count": 16,
+            "fixed_candidate_state_count": 2,
+            "candidate_safe_state_count": 32,
+            "fixed_candidate_memory_bits": 1.0,
+            "candidate_safe_memory_bits": 5.0,
+            "ambiguity_memory_surcharge_bits": 4.0,
+            "optimal_identification_steps": 4,
+        },
+    ]
     assert report["joint_uncertainty"] == {
         "joint_state_count": 128,
         "fixed_candidate_memory_bits": 5.0,
