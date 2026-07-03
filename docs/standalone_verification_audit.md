@@ -12,6 +12,7 @@ analytic statements and finite replay.
 |---|---|---|
 | candidate-safe universal laws | `mrm.laws.CandidateLawFamily` | migrated as response-type quotient and report trichotomy |
 | joint exterior–candidate laws | `mrm.joint.JointUncertaintyFamily` | migrated as a declared joint-separation cardinality witness |
+| no legacy implementation | `mrm.quotient` | new finite quotient construction and active discrimination planner on the declared response-type core |
 
 The CCOC open-composition manuscript theorem and MLTR replacement transport
 results are not MRM dependencies.
@@ -27,22 +28,33 @@ The standalone tests and replay verify that:
 3. retaining a response type gives a deterministic typed successor;
 4. response-type cardinality is invariant to candidate ordering and duplication;
 5. the candidate-safe product quantity is used only after the declared uniform
-   response-separation condition has been checked; and
+   response-separation condition has been checked;
 6. the joint cardinality identity is numerically stable for both binary and
-   nonbinary finite cardinalities.
+   nonbinary finite cardinalities;
+7. the minimal candidate-safe quotient preserves observed macrostates and has
+   deterministic successors while merging locally irrelevant response types; and
+8. a finite adaptive intervention tree has the claimed minimum worst-case depth
+   on the declared discrimination witness, while an inseparable current state
+   returns no plan.
+
+The quotient test also exhausts every pair of two-state, one-action deterministic
+candidate maps and compares quotient equality with future observed-trajectory
+equality.
 
 ## Analytic theorem versus replay
 
 The universal-law criterion follows from equality of the declared induced maps.
 The typed product lower bound and joint lower bound require their stated
-operational separation assumptions. A replay verifies selected finite witnesses;
-it does not prove those all-family statements or identify candidate mechanisms
-from data.
+operational separation assumptions. The minimal quotient follows from finite
+observation-preserving partition refinement, and the planner is exact over its
+finite state/subset search space. A replay verifies selected finite witnesses and
+small exhaustive cases; it does not prove all-family statements or identify
+candidate mechanisms from data.
 
 ## Explicit boundaries
 
 MRM currently assumes a common observable macrostate space, finite deterministic
-candidate maps, and a declared action grammar. It does not yet construct a
-minimal candidate-safe quotient below the full product, align nonidentical
-candidate state spaces, choose interventions adaptively, or treat noisy and
-risk-weighted candidate disagreement.
+candidate maps, exact macrostate observations, and a declared action grammar. It
+does not infer or align candidate state spaces, choose candidate sets from data,
+or treat noisy, stochastic, cost-weighted, or risk-weighted candidate
+disagreement.
