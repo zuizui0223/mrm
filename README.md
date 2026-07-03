@@ -43,7 +43,15 @@ at `zuizui0223/ccoc`, especially:
 - `docs/joint_open_candidate_laws.md`.
 
 The migration keeps mechanism uncertainty separate from CCOC's open-composition
-paper and from EXT's non-nested replacement theory.
+paper and from MLTR's non-nested replacement theory.
+
+## Verification
+
+- [Standalone verification audit](docs/standalone_verification_audit.md) —
+  source-to-successor mapping, replay boundary, and added invariants.
+- `pytest` checks candidate quotient behavior, finite witnesses, and
+  replay-report values.
+- `scripts/verify_mrm_core.py` writes a deterministic JSON artifact.
 
 ## Run
 
