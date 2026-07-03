@@ -4,7 +4,7 @@ MRM is a theorem-first mathematical-ecology repository for one uncertainty
 question:
 
 > When multiple retained mechanisms support compact exact instance laws but
-a> disagree about future macro transitions, what is the strongest law that can be
+> disagree about future macro transitions, what is the strongest law that can be
 > reported without pretending the mechanism uncertainty has vanished?
 
 MRM is the standalone successor of CCOC legacy `ID-2` and `ID-3`. CCOC remains
