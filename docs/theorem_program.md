@@ -44,14 +44,36 @@ family \(I\times E_1\times\cdots\times E_q\times R\),
 
 \[
 K_{\mathrm{joint}}\ge
-\log_2|I|+\sum_j\log_2|E_j|+\log_2|R|.
+\log_2|I|+\sum_j\log_2|E_j|+\log_2R.
 \]
 
 The condition is an injection premise over jointly realizable states, not an
 arithmetic inference from two unrelated lower bounds.
 
+## Result V — Minimal candidate-safe quotient
+
+For the typed product \((q,r)\), require an exact deterministic interface to
+preserve the currently observed macrostate \(q\). Starting from blocks with a
+common \(q\), repeatedly refine by the blocks reached under every declared
+action. The fixed point is the coarsest observation-preserving deterministic
+quotient of \(Q\times R\), hence has the minimum number of states among exact
+candidate-safe interfaces for the declared family.
+
+The product lower bound is recovered under uniform separation. Without that
+premise, response type may be locally irrelevant and the exact quotient can be
+strictly smaller than \(|Q|R\).
+
+## Result VI — Active discrimination under declared interventions
+
+At observed macrostate \(q\), an action partitions the remaining response types
+by their observed successor macrostate. Dynamic programming over
+\(Q\times\{S:\varnothing\ne S\subseteq R\}\) returns a finite adaptive
+discrimination tree with the minimum worst-case number of actions, or certifies
+that no finite declared intervention policy separates the remaining types.
+
 ## Non-claims
 
 MRM does not infer candidate mechanisms, response types, state alignment, or
-intervention grammar from field observations. It is a finite deterministic theory
-conditional on a declared retained candidate family.
+intervention grammar from field observations. Its quotient and discrimination
+results are finite, exact, and noiseless; they do not yet optimize cost or risk,
+or handle stochastic transitions or observation error.
