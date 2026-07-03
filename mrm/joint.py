@@ -9,7 +9,7 @@ explicit rather than inferring additivity from two cardinality counts.
 from __future__ import annotations
 
 from dataclasses import dataclass
-from math import log2
+from math import isclose, log2
 
 
 @dataclass(frozen=True)
@@ -60,7 +60,13 @@ class JointUncertaintyFamily:
         return self.fixed_candidate_memory_bits + log2(self.response_type_count)
 
     def verify(self) -> bool:
-        return (1 << round(self.joint_safe_memory_bits)) == self.joint_state_count if self.joint_state_count & (self.joint_state_count - 1) == 0 else self.joint_safe_memory_bits == log2(self.joint_state_count)
+        """Check the cardinality identity without relying on float bit equality."""
+        return isclose(
+            self.joint_safe_memory_bits,
+            log2(self.joint_state_count),
+            rel_tol=0.0,
+            abs_tol=1e-12,
+        )
 
 
 def joint_safe_memory_bits(inside_cardinality: int, exterior_cardinalities: tuple[int, ...], response_type_count: int) -> float:
