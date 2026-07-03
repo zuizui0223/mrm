@@ -1,5 +1,62 @@
 # MRM — Mechanism-Robust Macro-Laws
 
-Standalone successor repository for universal, typed, and set-valued macro-laws under retained mechanism uncertainty.
+MRM is a theorem-first mathematical-ecology repository for one uncertainty
+question:
 
-Migration from the frozen CCOC legacy archive is in progress.
+> When multiple retained mechanisms support compact exact instance laws but
+> disagree about future macro transitions, what is the strongest law that can be
+> reported without pretending the mechanism uncertainty has vanished?
+
+MRM is the standalone successor of CCOC legacy `ID-2` and `ID-3`. CCOC remains
+frozen provenance; this repository contains the active mechanism-uncertainty
+core.
+
+## Theorem core
+
+1. **Universal deterministic law.** A candidate-independent macro-law exists
+   exactly when all retained candidates induce the same transition maps.
+2. **Typed or set-valued law.** When candidates disagree, retaining response type
+   yields a deterministic law; omitting it yields the exact set-valued successor
+   relation rather than one unsupported deterministic law.
+3. **Candidate-safe memory.** Under uniform response separation, an exact typed
+   law needs at least the observable macrostate information plus the response-type
+   information.
+4. **Joint uncertainty.** Exterior completion and mechanism uncertainty add only
+   when the full joint product is operationally separable under the declared
+   grammar.
+
+## Ecological reading
+
+Different retained mechanisms can represent alternative pollination responses,
+disturbance effects, pathogen pathways, colonization dynamics, or management
+responses. They may agree on the current visible community but disagree about
+what a future intervention does. MRM formalizes when one deterministic ecological
+macro-law is justified, when a mechanism type must be retained, and when a
+set-valued forecast is the honest output.
+
+## Provenance
+
+The initial standalone core is reconstructed from the frozen CCOC legacy source
+at `zuizui0223/ccoc`, especially:
+
+- `docs/candidate_safe_universal_laws.md`; and
+- `docs/joint_open_candidate_laws.md`.
+
+The migration keeps mechanism uncertainty separate from CCOC's open-composition
+paper and from EXT's non-nested replacement theory.
+
+## Run
+
+```bash
+python -m pip install -e '.[dev]'
+pytest
+python scripts/verify_mrm_core.py
+```
+
+The replay writes `artifacts/mrm_core_report.json`.
+
+## Scope
+
+MRM concerns declared finite candidate families with a common observable
+macrostate space and declared action grammar. It does not infer candidate sets,
+mechanisms, response types, or ecological validation from data.
