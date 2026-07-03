@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from dataclasses import dataclass
-from math import log2
+from math import isclose, log2
 
 from .laws import CandidateLawFamily
 from .quotient import minimal_candidate_safe_quotient
@@ -107,7 +107,9 @@ class BinarySignatureFrontier:
             or isinstance(distinct_probe_count, bool)
             or not 0 <= distinct_probe_count <= self.signature_width
         ):
-            raise ValueError("distinct_probe_count must be between zero and signature_width")
+            raise ValueError(
+                "distinct_probe_count must be between zero and signature_width"
+            )
         return 1 << (self.signature_width - distinct_probe_count)
 
     def replay_record(self) -> dict[str, int | float]:
@@ -135,9 +137,13 @@ class BinarySignatureFrontier:
             and family.response_separated()
             and quotient.state_count == self.candidate_safe_state_count
             and len(set(observations)) == self.candidate_count
-            and self.fixed_candidate_memory_bits
-            + self.ambiguity_memory_surcharge_bits
-            == self.candidate_safe_memory_bits
+            and isclose(
+                self.fixed_candidate_memory_bits
+                + self.ambiguity_memory_surcharge_bits,
+                self.candidate_safe_memory_bits,
+                rel_tol=0.0,
+                abs_tol=1e-12,
+            )
         )
 
 
