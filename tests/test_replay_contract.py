@@ -1,4 +1,5 @@
 import json
+import math
 import subprocess
 import sys
 from pathlib import Path
@@ -17,7 +18,7 @@ def test_replay_report_matches_declared_witnesses():
         text=True,
     )
     report = json.loads(completed.stdout)
-    assert report["schema_version"] == 1
+    assert report["schema_version"] == 2
     assert report["universal_law"] == {
         "response_type_count": 1,
         "report": "universal",
@@ -27,6 +28,17 @@ def test_replay_report_matches_declared_witnesses():
         "report": "typed-or-set-valued",
         "set_valued_successor": [0, 1],
         "candidate_safe_memory_bits": 2.0,
+    }
+    assert report["minimal_candidate_safe_quotient"] == {
+        "full_typed_product_state_count": 4,
+        "quotient_state_count": 3,
+        "quotient_memory_bits": math.log2(3),
+    }
+    assert report["active_discrimination"] == {
+        "response_type_count": 3,
+        "start_state": 0,
+        "root_action": "probe",
+        "worst_case_steps": 2,
     }
     assert report["joint_uncertainty"] == {
         "joint_state_count": 128,
