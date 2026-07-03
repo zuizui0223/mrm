@@ -12,7 +12,8 @@ analytic statements and finite replay.
 |---|---|---|
 | candidate-safe universal laws | `mrm.laws.CandidateLawFamily` | migrated as response-type quotient and report trichotomy |
 | joint exterior–candidate laws | `mrm.joint.JointUncertaintyFamily` | migrated as a declared joint-separation cardinality witness |
-| no legacy implementation | `mrm.quotient` | new finite quotient construction and active discrimination planner on the declared response-type core |
+| no legacy implementation | `mrm.quotient` | finite quotient construction and active discrimination planner on the declared response-type core |
+| no legacy implementation | `mrm.frontier.BinarySignatureFrontier` | canonical exponential-cardinality / linear-memory-surcharge witness with exact probe-depth frontier |
 
 The CCOC open-composition manuscript theorem and MLTR replacement transport
 results are not MRM dependencies.
@@ -32,10 +33,14 @@ The standalone tests and replay verify that:
 6. the joint cardinality identity is numerically stable for both binary and
    nonbinary finite cardinalities;
 7. the minimal candidate-safe quotient preserves observed macrostates and has
-   deterministic successors while merging locally irrelevant response types; and
+   deterministic successors while merging locally irrelevant response types;
 8. a finite adaptive intervention tree has the claimed minimum worst-case depth
    on the declared discrimination witness, while an inseparable current state
-   returns no plan.
+   returns no plan; and
+9. canonical binary-signature families of widths one through five have the stated
+   response-type counts, full-product minimal quotients, exact memory surcharge,
+   unique probe trajectories, and residual-candidate path. The generic planner
+   attains the width-three information lower bound.
 
 The quotient test also exhausts every pair of two-state, one-action deterministic
 candidate maps and compares quotient equality with future observed-trajectory
@@ -47,9 +52,10 @@ The universal-law criterion follows from equality of the declared induced maps.
 The typed product lower bound and joint lower bound require their stated
 operational separation assumptions. The minimal quotient follows from finite
 observation-preserving partition refinement, and the planner is exact over its
-finite state/subset search space. A replay verifies selected finite witnesses and
-small exhaustive cases; it does not prove all-family statements or identify
-candidate mechanisms from data.
+finite state/subset search space. The binary-signature frontier combines these
+facts with a binary decision-tree leaf count. A replay verifies selected finite
+witnesses and small exhaustive cases; it does not prove all-family statements or
+identify candidate mechanisms from data.
 
 ## Explicit boundaries
 
@@ -57,4 +63,5 @@ MRM currently assumes a common observable macrostate space, finite deterministic
 candidate maps, exact macrostate observations, and a declared action grammar. It
 does not infer or align candidate state spaces, choose candidate sets from data,
 or treat noisy, stochastic, cost-weighted, or risk-weighted candidate
-disagreement.
+disagreement. The canonical frontier does not assert that ecological mechanisms
+are intrinsically binary or that all field interventions have equal feasibility.
