@@ -3,8 +3,10 @@
 from __future__ import annotations
 
 import json
+from math import isclose
 from pathlib import Path
 
+from mrm.costs import minimum_cost_active_discrimination_plan
 from mrm.frontier import binary_signature_frontier
 from mrm.joint import JointUncertaintyFamily
 from mrm.laws import CandidateLawFamily, candidate_safe_memory_bits
@@ -50,6 +52,24 @@ def build_report() -> dict[str, object]:
     )
     plan = shortest_active_discrimination_plan(discrimination, 0)
     frontier = binary_signature_frontier(4)
+    cost_tradeoff = CandidateLawFamily(
+        states=(0, 1, 2, 3),
+        actions=("direct", "cheap_high_bit", "cheap_low_bit"),
+        transitions=tuple(
+            (
+                (response_type,) * 4,
+                ((response_type >> 1) & 1,) * 4,
+                (2 + (response_type & 1),) * 4,
+            )
+            for response_type in range(4)
+        ),
+    )
+    shortest_cost_tradeoff = shortest_active_discrimination_plan(cost_tradeoff, 0)
+    cheapest_cost_tradeoff = minimum_cost_active_discrimination_plan(
+        cost_tradeoff,
+        0,
+        {"direct": 5.0, "cheap_high_bit": 1.0, "cheap_low_bit": 1.0},
+    )
     if (
         not universal.universal
         or disagreement.universal
@@ -59,18 +79,23 @@ def build_report() -> dict[str, object]:
         or plan is None
         or plan.worst_case_steps != 2
         or not all(point.verify() for point in frontier)
+        or shortest_cost_tradeoff is None
+        or shortest_cost_tradeoff.action != "direct"
+        or cheapest_cost_tradeoff is None
+        or cheapest_cost_tradeoff.action != "cheap_high_bit"
+        or not isclose(cheapest_cost_tradeoff.worst_case_cost, 2.0)
     ):
         raise AssertionError("MRM finite witness failed verification")
     return {
-        "schema_version": 3,
+        "schema_version": 4,
         "scope": (
             "declared finite candidate macro-transition tables, exact observed "
-            "macrostates, and declared intervention grammar"
+            "macrostates, declared intervention grammar, and positive action costs"
         ),
         "non_claim": (
             "the replay does not infer ecological mechanisms, candidate sets, "
-            "response types, action grammars, or noisy-risk-weighted experiment "
-            "policies from data"
+            "response types, action grammars, action costs, or noisy-risk-weighted "
+            "experiment policies from data"
         ),
         "universal_law": {
             "response_type_count": universal.response_type_count,
@@ -98,6 +123,15 @@ def build_report() -> dict[str, object]:
         "mechanism_ambiguity_frontier": [
             point.replay_record() for point in frontier
         ],
+        "cost_aware_discrimination": {
+            "response_type_count": cost_tradeoff.response_type_count,
+            "start_state": 0,
+            "shortest_root_action": shortest_cost_tradeoff.action,
+            "shortest_worst_case_steps": shortest_cost_tradeoff.worst_case_steps,
+            "minimum_cost_root_action": cheapest_cost_tradeoff.action,
+            "minimum_cost_worst_case_steps": cheapest_cost_tradeoff.worst_case_steps,
+            "minimum_worst_case_cost": cheapest_cost_tradeoff.worst_case_cost,
+        },
         "joint_uncertainty": {
             "joint_state_count": joint.joint_state_count,
             "fixed_candidate_memory_bits": joint.fixed_candidate_memory_bits,
