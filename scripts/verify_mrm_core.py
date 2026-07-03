@@ -5,6 +5,7 @@ from __future__ import annotations
 import json
 from pathlib import Path
 
+from mrm.frontier import binary_signature_frontier
 from mrm.joint import JointUncertaintyFamily
 from mrm.laws import CandidateLawFamily, candidate_safe_memory_bits
 from mrm.quotient import (
@@ -48,6 +49,7 @@ def build_report() -> dict[str, object]:
         ),
     )
     plan = shortest_active_discrimination_plan(discrimination, 0)
+    frontier = binary_signature_frontier(4)
     if (
         not universal.universal
         or disagreement.universal
@@ -56,10 +58,11 @@ def build_report() -> dict[str, object]:
         or quotient.state_count != 3
         or plan is None
         or plan.worst_case_steps != 2
+        or not all(point.verify() for point in frontier)
     ):
         raise AssertionError("MRM finite witness failed verification")
     return {
-        "schema_version": 2,
+        "schema_version": 3,
         "scope": (
             "declared finite candidate macro-transition tables, exact observed "
             "macrostates, and declared intervention grammar"
@@ -92,6 +95,9 @@ def build_report() -> dict[str, object]:
             "root_action": plan.action,
             "worst_case_steps": plan.worst_case_steps,
         },
+        "mechanism_ambiguity_frontier": [
+            point.replay_record() for point in frontier
+        ],
         "joint_uncertainty": {
             "joint_state_count": joint.joint_state_count,
             "fixed_candidate_memory_bits": joint.fixed_candidate_memory_bits,
