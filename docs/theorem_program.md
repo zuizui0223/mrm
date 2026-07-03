@@ -95,9 +95,28 @@ of depth \(d\) has at most \(2^d\) observed leaves, so distinguishing \(2^m\)
 types requires \(d\ge m\). The canonical schedule is therefore worst-case optimal.
 After \(k\) distinct probes, exactly \(2^{m-k}\) response types remain.
 
+## Result IX — Cost-aware exact active discrimination
+
+Let every declared action have finite strictly positive cost \(c(a)\). For a
+current macrostate \(q\) and compatible type subset \(S\), define
+\(S_{a,q,x}=\{r\in S:G_a^r(q)=x\}\). The minimum worst-case total cost obeys
+
+\[
+V(q,\{r\})=0,\qquad
+V(q,S)=\min_a\left[c(a)+\max_{x:S_{a,q,x}\ne\varnothing}
+V(x,S_{a,q,x})\right].
+\]
+
+Finite dynamic programming over \(Q\times\{S:\varnothing\ne S\subseteq R\}
+returns an exact minimum-cost adaptive plan, or no plan when the action grammar
+cannot separate the remaining types. Strictly positive costs exclude beneficial
+configuration cycles. When all costs are one, the objective agrees with the
+minimum worst-case action count in Result VI.
+
 ## Non-claims
 
-MRM does not infer candidate mechanisms, response types, state alignment, or
-intervention grammar from field observations. Its quotient, discrimination, and
-frontier results are finite, exact, and noiseless; they do not yet optimize cost or
-risk, or handle stochastic transitions or observation error.
+MRM does not infer candidate mechanisms, response types, state alignment,
+intervention grammar, or action costs from field observations. Its quotient,
+discrimination, frontier, and cost-aware results are finite, exact, and noiseless;
+they do not yet optimize risk, handle stochastic transitions or observation error,
+or incorporate Bayesian priors or hard budgets.
