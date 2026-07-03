@@ -120,20 +120,15 @@ def _strictly_better(
         return True
     candidate_cost = candidate.worst_case_cost
     incumbent_cost = incumbent.worst_case_cost
-    return candidate_cost < incumbent_cost and not isclose(
+    same_cost = isclose(
         candidate_cost,
         incumbent_cost,
         rel_tol=0.0,
         abs_tol=_COST_TOLERANCE,
-    ) or (
-        isclose(
-            candidate_cost,
-            incumbent_cost,
-            rel_tol=0.0,
-            abs_tol=_COST_TOLERANCE,
-        )
-        and candidate.worst_case_steps < incumbent.worst_case_steps
     )
+    if candidate_cost < incumbent_cost and not same_cost:
+        return True
+    return same_cost and candidate.worst_case_steps < incumbent.worst_case_steps
 
 
 def minimum_cost_active_discrimination_plan(
