@@ -31,6 +31,11 @@ core.
 6. **Active discrimination.** From a current macrostate, a finite adaptive action
    tree either identifies response type with the fewest worst-case interventions or
    certifies that the declared grammar cannot separate it.
+7. **Mechanism-ambiguity frontier.** A canonical family with \(2^m\) response
+   types has a two-state fixed-candidate law but requires \(2^{m+1}\) states for
+   an exact candidate-safe law: state cardinality grows exponentially in the
+   unresolved binary response dimensions, while the memory surcharge is exactly
+   \(m\) bits and \(m\) binary probes are necessary and sufficient for identification.
 
 ## Ecological reading
 
@@ -39,8 +44,8 @@ disturbance effects, pathogen pathways, colonization dynamics, or management
 responses. They may agree on the current visible community but disagree about
 what a future intervention does. MRM formalizes when one deterministic ecological
 macro-law is justified, when a mechanism type must be retained, when only part of
-that type information is needed at a state, and when a set-valued forecast is the
-honest output.
+that type information is needed at a state, when finite interventions can identify
+it, and when a set-valued forecast is the honest output.
 
 ## Provenance
 
@@ -59,8 +64,11 @@ paper and from MLTR's non-nested replacement theory.
   source-to-successor mapping, replay boundary, and added invariants.
 - [Minimal quotient and active discrimination](docs/minimal_quotient_active_discrimination.md)
   — finite theorem statements, witnesses, and boundaries.
+- [Mechanism-ambiguity complexity frontier](docs/mechanism_ambiguity_frontier.md)
+  — exact state-cardinality, memory-surcharge, and intervention-depth witness.
 - `pytest` checks candidate quotient behavior, finite witnesses, response-type
-  invariants, minimal quotient behavior, and replay-report values.
+  invariants, minimal quotient behavior, active discrimination, frontier scaling,
+  and replay-report values.
 - `scripts/verify_mrm_core.py` writes a deterministic JSON artifact.
 
 ## Run
