@@ -14,6 +14,7 @@ analytic statements and finite replay.
 | joint exterior–candidate laws | `mrm.joint.JointUncertaintyFamily` | migrated as a declared joint-separation cardinality witness |
 | no legacy implementation | `mrm.quotient` | finite quotient construction and active discrimination planner on the declared response-type core |
 | no legacy implementation | `mrm.frontier.BinarySignatureFrontier` | canonical exponential-cardinality / linear-memory-surcharge witness with exact probe-depth frontier |
+| no legacy implementation | `mrm.costs` | exact finite minimum-worst-case-cost discrimination under declared positive action costs |
 
 The CCOC open-composition manuscript theorem and MLTR replacement transport
 results are not MRM dependencies.
@@ -36,11 +37,16 @@ The standalone tests and replay verify that:
    deterministic successors while merging locally irrelevant response types;
 8. a finite adaptive intervention tree has the claimed minimum worst-case depth
    on the declared discrimination witness, while an inseparable current state
-   returns no plan; and
+   returns no plan;
 9. canonical binary-signature families of widths one through five have the stated
    response-type counts, full-product minimal quotients, exact memory surcharge,
    unique probe trajectories, and residual-candidate path. The generic planner
-   attains the width-three information lower bound.
+   attains the width-three information lower bound; and
+10. declared positive action costs can change the exact optimal policy: the
+    cost-aware planner selects a two-step cost-2 branch plan over a one-step
+    cost-5 direct probe, agrees with the shortest-depth planner under unit costs,
+    and rejects incomplete, extraneous, zero, negative, infinite, and Boolean
+    cost assignments.
 
 The quotient test also exhausts every pair of two-state, one-action deterministic
 candidate maps and compares quotient equality with future observed-trajectory
@@ -53,15 +59,17 @@ The typed product lower bound and joint lower bound require their stated
 operational separation assumptions. The minimal quotient follows from finite
 observation-preserving partition refinement, and the planner is exact over its
 finite state/subset search space. The binary-signature frontier combines these
-facts with a binary decision-tree leaf count. A replay verifies selected finite
+facts with a binary decision-tree leaf count. The cost-aware planner adds finite
+positive-cost minimax dynamic programming. A replay verifies selected finite
 witnesses and small exhaustive cases; it does not prove all-family statements or
-identify candidate mechanisms from data.
+identify candidate mechanisms or action costs from data.
 
 ## Explicit boundaries
 
 MRM currently assumes a common observable macrostate space, finite deterministic
-candidate maps, exact macrostate observations, and a declared action grammar. It
-does not infer or align candidate state spaces, choose candidate sets from data,
-or treat noisy, stochastic, cost-weighted, or risk-weighted candidate
-disagreement. The canonical frontier does not assert that ecological mechanisms
-are intrinsically binary or that all field interventions have equal feasibility.
+candidate maps, exact macrostate observations, declared action grammar, and
+finite strictly positive action costs. It does not infer or align candidate state
+spaces, choose candidate sets, intervention costs, or risks from data, or treat
+noisy, stochastic, risk-weighted, Bayesian, or hard-budget candidate disagreement.
+The canonical frontier does not assert that ecological mechanisms are intrinsically
+binary or that all field interventions have equal feasibility.
