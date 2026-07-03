@@ -18,7 +18,7 @@ def test_replay_report_matches_declared_witnesses():
         text=True,
     )
     report = json.loads(completed.stdout)
-    assert report["schema_version"] == 3
+    assert report["schema_version"] == 4
     assert report["universal_law"] == {
         "response_type_count": 1,
         "report": "universal",
@@ -82,6 +82,15 @@ def test_replay_report_matches_declared_witnesses():
             "optimal_identification_steps": 4,
         },
     ]
+    assert report["cost_aware_discrimination"] == {
+        "response_type_count": 4,
+        "start_state": 0,
+        "shortest_root_action": "direct",
+        "shortest_worst_case_steps": 1,
+        "minimum_cost_root_action": "cheap_high_bit",
+        "minimum_cost_worst_case_steps": 2,
+        "minimum_worst_case_cost": 2.0,
+    }
     assert report["joint_uncertainty"] == {
         "joint_state_count": 128,
         "fixed_candidate_memory_bits": 5.0,
