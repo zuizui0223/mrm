@@ -11,6 +11,12 @@ from .costs import (
 from .frontier import BinarySignatureFrontier, binary_signature_frontier
 from .joint import JointUncertaintyFamily, joint_safe_memory_bits
 from .laws import CandidateLawFamily, candidate_safe_memory_bits
+from .probabilistic import (
+    PosteriorObservationUpdate,
+    ProbabilisticObservationModel,
+    posterior_observation_update,
+    posterior_set_valued_successor,
+)
 from .quotient import (
     ActiveDiscriminationPlan,
     CandidateSafeQuotient,
@@ -41,4 +47,8 @@ __all__ = [
     "RobustObservationUpdate",
     "robust_observation_update",
     "robust_set_valued_successor",
+    "ProbabilisticObservationModel",
+    "PosteriorObservationUpdate",
+    "posterior_observation_update",
+    "posterior_set_valued_successor",
 ]
