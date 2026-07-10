@@ -60,7 +60,8 @@ def test_noisy_likelihood_updates_posterior_without_forcing_resolution():
     assert math.isclose(posterior[1], 0.60 / 1.15)
     assert not update.resolved_at(0.90)
     assert update.resolved_at(0.50)
-    assert update.credible_set(0.75) == (1, 2)
+    assert update.credible_set(0.70) == (1, 2)
+    assert update.credible_set(0.75) == (1, 2, 0)
     assert posterior_set_valued_successor(family, update, 0, "flip") == frozenset({1, 2, 3, 0})
 
 
@@ -87,7 +88,7 @@ def test_prior_distribution_changes_the_posterior():
     posterior = dict(update.posterior)
     assert update.map_response_types == (2,)
     assert math.isclose(posterior[2], 0.18 / 0.34)
-    assert update.credible_set(0.90) == (2, 1, 3)
+    assert update.credible_set(0.90) == (2, 1, 0)
 
 
 def test_zero_evidence_observation_returns_none():
