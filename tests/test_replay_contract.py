@@ -18,7 +18,7 @@ def test_replay_report_matches_declared_witnesses():
         text=True,
     )
     report = json.loads(completed.stdout)
-    assert report["schema_version"] == 6
+    assert report["schema_version"] == 7
     assert report["universal_law"] == {
         "response_type_count": 1,
         "report": "universal",
@@ -108,6 +108,17 @@ def test_replay_report_matches_declared_witnesses():
     assert probabilistic["resolved_at_090"] is False
     assert probabilistic["credible_set_075"] == [1, 2, 0]
     assert probabilistic["positive_posterior_next_set_valued_successor"] == [0, 1, 2, 3]
+    voi = report["value_of_information_design"]
+    assert voi["best_by_expected_information_gain"] == "perfect"
+    assert voi["best_by_net_information_gain"] == "half_split"
+    assert math.isclose(voi["perfect_expected_information_gain_bits"], 2.0)
+    assert math.isclose(voi["half_split_expected_information_gain_bits"], 1.0)
+    assert math.isclose(voi["uninformative_expected_information_gain_bits"], 0.0)
+    assert math.isclose(voi["perfect_net_information_gain_bits"], -1.0)
+    assert math.isclose(voi["half_split_net_information_gain_bits"], 0.75)
+    assert math.isclose(voi["uninformative_net_information_gain_bits"], 0.0)
+    assert math.isclose(voi["perfect_resolution_probability"], 1.0)
+    assert math.isclose(voi["half_split_resolution_probability"], 0.0)
     assert report["joint_uncertainty"] == {
         "joint_state_count": 128,
         "fixed_candidate_memory_bits": 5.0,
