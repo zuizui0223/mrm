@@ -24,6 +24,7 @@ from mrm.robust import (
     robust_observation_update,
     robust_set_valued_successor,
 )
+from mrm.voi import rank_actions_by_value_of_information
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "artifacts" / "mrm_core_report.json"
@@ -143,6 +144,27 @@ def build_report() -> dict[str, object]:
         0,
         "flip",
     )
+    voi_family = CandidateLawFamily(
+        states=(0, 1, 2, 3),
+        actions=("perfect", "half_split", "uninformative"),
+        transitions=tuple(
+            (
+                (response_type,) * 4,
+                ((response_type >> 1) & 1,) * 4,
+                (0,) * 4,
+            )
+            for response_type in range(4)
+        ),
+    )
+    voi_design = rank_actions_by_value_of_information(
+        voi_family,
+        ProbabilisticObservationModel.exact(voi_family.states),
+        0,
+        {"perfect": 3.0, "half_split": 0.25, "uninformative": 0.0},
+        cost_per_bit=1.0,
+        resolution_threshold=0.99,
+    )
+    voi_values = {value.action: value for value in voi_design.action_values}
     if (
         not universal.universal
         or disagreement.universal
@@ -165,14 +187,20 @@ def build_report() -> dict[str, object]:
         or not posterior_update.resolved_at(0.50)
         or posterior_update.credible_set(0.75) != (1, 2, 0)
         or posterior_successor != frozenset({0, 1, 2, 3})
+        or voi_design.best_by_expected_information_gain.action != "perfect"
+        or voi_design.best_by_net_information_gain.action != "half_split"
+        or not isclose(voi_values["perfect"].expected_information_gain_bits, 2.0)
+        or not isclose(voi_values["half_split"].expected_information_gain_bits, 1.0)
+        or not isclose(voi_values["perfect"].net_information_gain_bits, -1.0)
+        or not isclose(voi_values["half_split"].net_information_gain_bits, 0.75)
     ):
         raise AssertionError("MRM finite witness failed verification")
     return {
-        "schema_version": 6,
+        "schema_version": 7,
         "scope": (
             "declared finite candidate macro-transition tables, exact, bounded-"
             "support, or probabilistic observed macrostates, declared intervention "
-            "grammar, and positive action costs"
+            "grammar, priors, likelihoods, and action costs"
         ),
         "non_claim": (
             "the replay does not infer ecological mechanisms, candidate sets, "
@@ -243,6 +271,38 @@ def build_report() -> dict[str, object]:
             "credible_set_075": list(posterior_update.credible_set(0.75)),
             "positive_posterior_next_set_valued_successor": sorted(
                 posterior_successor
+            ),
+        },
+        "value_of_information_design": {
+            "best_by_expected_information_gain": (
+                voi_design.best_by_expected_information_gain.action
+            ),
+            "best_by_net_information_gain": (
+                voi_design.best_by_net_information_gain.action
+            ),
+            "perfect_expected_information_gain_bits": (
+                voi_values["perfect"].expected_information_gain_bits
+            ),
+            "half_split_expected_information_gain_bits": (
+                voi_values["half_split"].expected_information_gain_bits
+            ),
+            "uninformative_expected_information_gain_bits": (
+                voi_values["uninformative"].expected_information_gain_bits
+            ),
+            "perfect_net_information_gain_bits": (
+                voi_values["perfect"].net_information_gain_bits
+            ),
+            "half_split_net_information_gain_bits": (
+                voi_values["half_split"].net_information_gain_bits
+            ),
+            "uninformative_net_information_gain_bits": (
+                voi_values["uninformative"].net_information_gain_bits
+            ),
+            "perfect_resolution_probability": (
+                voi_values["perfect"].resolution_probability
+            ),
+            "half_split_resolution_probability": (
+                voi_values["half_split"].resolution_probability
             ),
         },
         "joint_uncertainty": {

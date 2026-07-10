@@ -149,12 +149,38 @@ When the declared threshold is not met, MRM should keep posterior ambiguity or u
 the positive-posterior set-valued successor rather than treating the MAP type as
 certain.
 
+## Result XII — One-step value-of-information design
+
+Before choosing action \(a\), the predictive probability of observation \(x\) is
+
+\[
+P_a(x)=\sum_r\pi(r)L(x\mid G_a^r(q)).
+\]
+
+The one-step expected posterior entropy is
+
+\[
+\mathbb{E}[H\mid a]=\sum_xP_a(x)H(\pi'_{a,x}),
+\]
+
+and the expected information gain is
+
+\[
+\mathrm{EIG}(a)=H(\pi)-\mathbb{E}[H\mid a].
+\]
+
+With declared action cost \(c(a)\) and cost-per-bit exchange rate \(\lambda>0\), a
+reported net score is \(\mathrm{EIG}(a)-c(a)/\lambda\). For a resolution threshold
+\(\tau\), MRM also reports the probability that the posterior after observing the
+outcome crosses that threshold. This is a one-step design diagnostic, not a full
+sequential experimental policy.
+
 ## Non-claims
 
 MRM does not infer candidate mechanisms, response types, state alignment,
 intervention grammar, action costs, observation-error supports, likelihoods, or
 priors from field observations. Its quotient, discrimination, frontier, cost-aware,
-robust-update, and probabilistic-update results are finite and conditional on
-declared inputs; they do not yet optimize risk, handle stochastic mechanism
-transitions, propagate hidden current-state uncertainty, estimate likelihoods, or
-incorporate value-of-information experiment design.
+robust-update, probabilistic-update, and one-step VOI results are finite and
+conditional on declared inputs; they do not yet optimize full sequential risk,
+handle stochastic mechanism transitions, propagate hidden current-state
+uncertainty, estimate likelihoods, or solve hard-budget experiment design.

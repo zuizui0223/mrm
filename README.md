@@ -48,6 +48,10 @@ core.
     an observation produces posterior response-type weights, entropy, credible
     sets, and thresholded resolution checks rather than silently treating the MAP
     mechanism as certain.
+11. **Value-of-information design.** Before choosing an action, declared priors,
+    likelihoods, and costs can score each one-step intervention by expected entropy
+    reduction, net information value, and probability of crossing a resolution
+    threshold.
 
 ## Ecological reading
 
@@ -58,8 +62,8 @@ what a future intervention does. MRM formalizes when one deterministic ecologica
 macro-law is justified, when a mechanism type must be retained, when only part of
 that type information is needed at a state, when finite interventions can identify
 it at an explicitly declared cost, how bounded or probabilistic observation error
-changes the retained type set, and when a set-valued or posterior-ambiguous
-forecast is the honest output.
+changes the retained type set, which next action is expected to reduce ambiguity,
+and when a set-valued or posterior-ambiguous forecast is the honest output.
 
 ## Provenance
 
@@ -87,10 +91,13 @@ paper and from MLTR's non-nested replacement theory.
 - [Probabilistic observation update](docs/probabilistic_observation_update.md) —
   posterior response-type weights, entropy, credible sets, and thresholded
   resolution checks.
+- [Value-of-information design](docs/value_of_information_design.md) — one-step
+  expected entropy reduction, net information value, and threshold-crossing
+  probability.
 - `pytest` checks candidate quotient behavior, finite witnesses, response-type
   invariants, minimal quotient behavior, active discrimination, frontier scaling,
-  cost-aware planning, robust and probabilistic observation updates, and replay-report
-  values.
+  cost-aware planning, robust and probabilistic observation updates, VOI scoring,
+  and replay-report values.
 - `scripts/verify_mrm_core.py` writes a deterministic JSON artifact.
 
 ## Run
@@ -107,8 +114,8 @@ The replay writes `artifacts/mrm_core_report.json`.
 
 MRM concerns declared finite candidate families with a common observable
 macrostate space, exact, bounded-support, or probabilistic macrostate observations,
-and declared action grammar and positive action costs. It does not infer candidate
-sets, mechanisms, response types, state alignments, observation-error supports,
-likelihoods, priors, action costs, or ecological validation from data, or treat
-stochastic mechanism transitions, risk-weighted design, or budget-limited
-intervention design.
+and declared action grammar, priors, likelihoods, and action costs. It does not
+infer candidate sets, mechanisms, response types, state alignments,
+observation-error supports, likelihoods, priors, action costs, or ecological
+validation from data, or treat stochastic mechanism transitions, full sequential
+risk-weighted design, or hard-budget intervention design.

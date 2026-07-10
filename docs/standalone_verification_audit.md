@@ -17,6 +17,7 @@ analytic statements and finite replay.
 | no legacy implementation | `mrm.costs` | exact finite minimum-worst-case-cost discrimination under declared positive action costs |
 | no legacy implementation | `mrm.robust` | conservative response-type update under declared bounded observation-error support |
 | no legacy implementation | `mrm.probabilistic` | posterior response-type update under declared priors and observation likelihoods |
+| no legacy implementation | `mrm.voi` | one-step value-of-information scoring under declared priors, likelihoods, and costs |
 
 The CCOC open-composition manuscript theorem and MLTR replacement transport
 results are not MRM dependencies.
@@ -52,10 +53,14 @@ The standalone tests and replay verify that:
 11. bounded observation-error supports can prevent false mechanism identification:
     exact observations recover a singleton response type, wider supports retain
     every compatible type, contradictions return an empty retained set, and robust
-    set-valued successors continue over the retained type subset; and
+    set-valued successors continue over the retained type subset;
 12. declared likelihoods and priors yield normalized posterior response-type
     weights, MAP ties, entropy, credible sets, confidence-threshold resolution,
-    zero-evidence contradictions, and positive-posterior set-valued continuation.
+    zero-evidence contradictions, and positive-posterior set-valued continuation;
+    and
+13. one-step action scores distinguish raw expected information gain from net value:
+    a perfect but expensive probe maximizes expected entropy reduction, while a
+    cheaper half-split probe maximizes cost-adjusted net information gain.
 
 The quotient test also exhausts every pair of two-state, one-action deterministic
 candidate maps and compares quotient equality with future observed-trajectory
@@ -71,19 +76,21 @@ finite state/subset search space. The binary-signature frontier combines these
 facts with a binary decision-tree leaf count. The cost-aware planner adds finite
 positive-cost minimax dynamic programming. The robust update adds support-level
 filtering under a declared observation-error relation. The probabilistic update
-adds one-step Bayesian conditioning under declared likelihoods and priors. A replay
-verifies selected finite witnesses and small exhaustive cases; it does not prove
-all-family statements or identify candidate mechanisms, action costs,
-observation-error supports, likelihoods, or priors from data.
+adds one-step Bayesian conditioning under declared likelihoods and priors. The VOI
+layer adds one-step expected posterior-entropy scoring and cost-adjusted ranking. A
+replay verifies selected finite witnesses and small exhaustive cases; it does not
+prove all-family statements or identify candidate mechanisms, action costs,
+observation-error supports, likelihoods, priors, or losses from data.
 
 ## Explicit boundaries
 
 MRM currently assumes a common observable macrostate space, finite deterministic
-candidate maps, declared action grammar, finite strictly positive action costs, and
-exact, bounded-support, or probabilistic macrostate observations. It does not infer
-or align candidate state spaces, choose candidate sets, intervention costs,
-observation supports, likelihoods, priors, or risks from data, or treat stochastic
-mechanism transitions, hidden current-state uncertainty, risk-weighted design,
-value-of-information experiment design, or hard-budget candidate disagreement. The
-canonical frontier does not assert that ecological mechanisms are intrinsically
-binary or that all field interventions have equal feasibility.
+candidate maps, declared action grammar, finite action costs, and exact,
+bounded-support, or probabilistic macrostate observations. It does not infer or
+align candidate state spaces, choose candidate sets, intervention costs,
+observation supports, likelihoods, priors, losses, or risks from data, or treat
+stochastic mechanism transitions, hidden current-state uncertainty, full sequential
+risk-weighted design, value-of-information dynamic programming, or hard-budget
+candidate disagreement. The canonical frontier does not assert that ecological
+mechanisms are intrinsically binary or that all field interventions have equal
+feasibility.
