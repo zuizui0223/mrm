@@ -29,6 +29,12 @@ from .robust import (
     robust_observation_update,
     robust_set_valued_successor,
 )
+from .voi import (
+    ActionInformationValue,
+    ValueOfInformationDesign,
+    rank_actions_by_value_of_information,
+    score_action_information_value,
+)
 
 __all__ = [
     "CandidateLawFamily",
@@ -51,4 +57,8 @@ __all__ = [
     "PosteriorObservationUpdate",
     "posterior_observation_update",
     "posterior_set_valued_successor",
+    "ActionInformationValue",
+    "ValueOfInformationDesign",
+    "rank_actions_by_value_of_information",
+    "score_action_information_value",
 ]
