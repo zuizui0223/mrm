@@ -129,11 +129,32 @@ support. If \(|S'|>1\), MRM must retain ambiguity or report a set-valued success
 over \(S'\). If \(|S'|=0\), the observation contradicts the retained family and the
 error-support declaration. Exact observation is recovered by \(N(x)=\{x\}\).
 
+## Result XI — Probabilistic observation update
+
+Let a declared likelihood model give \(L(x\mid q)\), the probability of observing
+\(x\) when the true successor macrostate is \(q\), and let \(\pi\) be a declared
+prior over retained response types. After taking action \(a\) from known state
+\(q\) and observing \(x\), the posterior is
+
+\[
+\pi'(r)=
+\frac{\pi(r)L(x\mid G_a^r(q))}
+{\sum_{s\in S}\pi(s)L(x\mid G_a^s(q))}.
+\]
+
+A zero denominator is a contradiction against the retained family, prior support,
+and likelihood model. Otherwise the posterior supports MAP type reporting,
+posterior entropy, credible sets, and explicit confidence-threshold resolution.
+When the declared threshold is not met, MRM should keep posterior ambiguity or use
+the positive-posterior set-valued successor rather than treating the MAP type as
+certain.
+
 ## Non-claims
 
 MRM does not infer candidate mechanisms, response types, state alignment,
-intervention grammar, action costs, or observation-error supports from field
-observations. Its quotient, discrimination, frontier, cost-aware, and robust-update
-results are finite, exact, and support-level; they do not yet optimize risk, handle
-stochastic mechanism transitions, propagate hidden current-state uncertainty, or
-incorporate Bayesian priors or hard budgets.
+intervention grammar, action costs, observation-error supports, likelihoods, or
+priors from field observations. Its quotient, discrimination, frontier, cost-aware,
+robust-update, and probabilistic-update results are finite and conditional on
+declared inputs; they do not yet optimize risk, handle stochastic mechanism
+transitions, propagate hidden current-state uncertainty, estimate likelihoods, or
+incorporate value-of-information experiment design.

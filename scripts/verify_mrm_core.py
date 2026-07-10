@@ -10,6 +10,11 @@ from mrm.costs import minimum_cost_active_discrimination_plan
 from mrm.frontier import binary_signature_frontier
 from mrm.joint import JointUncertaintyFamily
 from mrm.laws import CandidateLawFamily, candidate_safe_memory_bits
+from mrm.probabilistic import (
+    ProbabilisticObservationModel,
+    posterior_observation_update,
+    posterior_set_valued_successor,
+)
 from mrm.quotient import (
     minimal_candidate_safe_quotient,
     shortest_active_discrimination_plan,
@@ -114,6 +119,30 @@ def build_report() -> dict[str, object]:
         0,
         "flip",
     )
+    probabilistic_model = ProbabilisticObservationModel(
+        robust_family.states,
+        {
+            0: {0: 0.70, 1: 0.20, 2: 0.10, 3: 0.00},
+            1: {0: 0.10, 1: 0.60, 2: 0.20, 3: 0.10},
+            2: {0: 0.05, 1: 0.25, 2: 0.60, 3: 0.10},
+            3: {0: 0.00, 1: 0.10, 2: 0.20, 3: 0.70},
+        },
+    )
+    posterior_update = posterior_observation_update(
+        robust_family,
+        probabilistic_model,
+        0,
+        "direct",
+        1,
+    )
+    if posterior_update is None:
+        raise AssertionError("probabilistic witness unexpectedly contradicted")
+    posterior_successor = posterior_set_valued_successor(
+        robust_family,
+        posterior_update,
+        0,
+        "flip",
+    )
     if (
         not universal.universal
         or disagreement.universal
@@ -131,19 +160,25 @@ def build_report() -> dict[str, object]:
         or exact_observation.remaining_response_types != (2,)
         or bounded_observation.remaining_response_types != (0, 1, 2)
         or bounded_successor != frozenset({1, 2, 3})
+        or posterior_update.map_response_types != (1,)
+        or posterior_update.resolved_at(0.90)
+        or not posterior_update.resolved_at(0.50)
+        or posterior_update.credible_set(0.75) != (1, 2, 0)
+        or posterior_successor != frozenset({0, 1, 2, 3})
     ):
         raise AssertionError("MRM finite witness failed verification")
     return {
-        "schema_version": 5,
+        "schema_version": 6,
         "scope": (
-            "declared finite candidate macro-transition tables, exact or bounded-"
-            "support observed macrostates, declared intervention grammar, and "
-            "positive action costs"
+            "declared finite candidate macro-transition tables, exact, bounded-"
+            "support, or probabilistic observed macrostates, declared intervention "
+            "grammar, and positive action costs"
         ),
         "non_claim": (
             "the replay does not infer ecological mechanisms, candidate sets, "
             "response types, action grammars, action costs, observation-error "
-            "supports, or noisy-risk-weighted experiment policies from data"
+            "supports, likelihoods, priors, or noisy-risk-weighted experiment "
+            "policies from data"
         ),
         "universal_law": {
             "response_type_count": universal.response_type_count,
@@ -195,6 +230,20 @@ def build_report() -> dict[str, object]:
                 bounded_observation.eliminated_response_types
             ),
             "bounded_next_set_valued_successor": sorted(bounded_successor),
+        },
+        "probabilistic_observation_update": {
+            "observed_state": posterior_update.observed_state,
+            "evidence_probability": posterior_update.evidence_probability,
+            "posterior": list(posterior_update.posterior),
+            "map_response_types": list(posterior_update.map_response_types),
+            "map_probability": posterior_update.map_probability,
+            "entropy_bits": posterior_update.entropy_bits,
+            "resolved_at_050": posterior_update.resolved_at(0.50),
+            "resolved_at_090": posterior_update.resolved_at(0.90),
+            "credible_set_075": list(posterior_update.credible_set(0.75)),
+            "positive_posterior_next_set_valued_successor": sorted(
+                posterior_successor
+            ),
         },
         "joint_uncertainty": {
             "joint_state_count": joint.joint_state_count,
