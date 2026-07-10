@@ -76,8 +76,11 @@ at `zuizui0223/ccoc`, especially:
 The migration keeps mechanism uncertainty separate from CCOC's open-composition
 paper and from MLTR's non-nested replacement theory.
 
-## Verification
+## Verification and manuscript planning
 
+- [Manuscript skeleton](docs/manuscript_skeleton.md) — paper title, abstract
+  skeleton, theorem placement, figure plan, supplement structure, and submission
+  checklist.
 - [Standalone verification audit](docs/standalone_verification_audit.md) —
   source-to-successor mapping, replay boundary, and added invariants.
 - [Minimal quotient and active discrimination](docs/minimal_quotient_active_discrimination.md)
