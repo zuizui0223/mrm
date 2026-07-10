@@ -40,6 +40,10 @@ core.
    exact design target is the minimum worst-case total cost, not necessarily the
    fewest interventions. A costly one-shot probe can be dominated by a longer,
    cheaper adaptive sequence.
+9. **Robust observation update.** With bounded observation error, an observed
+   successor eliminates only response types whose predicted successor is outside
+   the declared compatible true-state set. Ambiguous or noisy observations keep a
+   set-valued report rather than falsely identifying a mechanism.
 
 ## Ecological reading
 
@@ -49,8 +53,8 @@ responses. They may agree on the current visible community but disagree about
 what a future intervention does. MRM formalizes when one deterministic ecological
 macro-law is justified, when a mechanism type must be retained, when only part of
 that type information is needed at a state, when finite interventions can identify
-it at an explicitly declared cost, and when a set-valued forecast is the honest
-output.
+it at an explicitly declared cost, how bounded observation error changes the
+retained type set, and when a set-valued forecast is the honest output.
 
 ## Provenance
 
@@ -73,9 +77,11 @@ paper and from MLTR's non-nested replacement theory.
   — exact state-cardinality, memory-surcharge, and intervention-depth witness.
 - [Cost-aware active discrimination](docs/cost_aware_active_discrimination.md)
   — exact positive-cost dynamic program and cost-versus-length witness.
+- [Robust observation update](docs/robust_observation_update.md) — bounded-error
+  support updates and conservative set-valued continuation.
 - `pytest` checks candidate quotient behavior, finite witnesses, response-type
   invariants, minimal quotient behavior, active discrimination, frontier scaling,
-  cost-aware planning, and replay-report values.
+  cost-aware planning, robust observation updates, and replay-report values.
 - `scripts/verify_mrm_core.py` writes a deterministic JSON artifact.
 
 ## Run
@@ -91,7 +97,8 @@ The replay writes `artifacts/mrm_core_report.json`.
 ## Scope
 
 MRM concerns declared finite candidate families with a common observable
-macrostate space, exact macrostate observations, and declared action grammar and
-positive action costs. It does not infer candidate sets, mechanisms, response
-types, state alignments, action costs, or ecological validation from data, or treat
-noisy, stochastic, risk-weighted, or budget-limited intervention design.
+macrostate space, exact or bounded-support macrostate observations, and declared
+action grammar and positive action costs. It does not infer candidate sets,
+mechanisms, response types, state alignments, observation-error supports, action
+costs, or ecological validation from data, or treat stochastic, risk-weighted,
+Bayesian, or budget-limited intervention design.

@@ -17,6 +17,12 @@ from .quotient import (
     minimal_candidate_safe_quotient,
     shortest_active_discrimination_plan,
 )
+from .robust import (
+    RobustObservationModel,
+    RobustObservationUpdate,
+    robust_observation_update,
+    robust_set_valued_successor,
+)
 
 __all__ = [
     "CandidateLawFamily",
@@ -31,4 +37,8 @@ __all__ = [
     "binary_signature_frontier",
     "CostAwareDiscriminationPlan",
     "minimum_cost_active_discrimination_plan",
+    "RobustObservationModel",
+    "RobustObservationUpdate",
+    "robust_observation_update",
+    "robust_set_valued_successor",
 ]

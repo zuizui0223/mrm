@@ -14,6 +14,11 @@ from mrm.quotient import (
     minimal_candidate_safe_quotient,
     shortest_active_discrimination_plan,
 )
+from mrm.robust import (
+    RobustObservationModel,
+    robust_observation_update,
+    robust_set_valued_successor,
+)
 
 ROOT = Path(__file__).resolve().parents[1]
 REPORT = ROOT / "artifacts" / "mrm_core_report.json"
@@ -70,6 +75,45 @@ def build_report() -> dict[str, object]:
         0,
         {"direct": 5.0, "cheap_high_bit": 1.0, "cheap_low_bit": 1.0},
     )
+    robust_family = CandidateLawFamily(
+        states=(0, 1, 2, 3),
+        actions=("direct", "flip"),
+        transitions=tuple(
+            (
+                (response_type,) * 4,
+                ((response_type + 1) % 4,) * 4,
+            )
+            for response_type in range(4)
+        ),
+    )
+    exact_observation = robust_observation_update(
+        robust_family,
+        RobustObservationModel.exact(robust_family.states),
+        0,
+        "direct",
+        2,
+    )
+    bounded_observation = robust_observation_update(
+        robust_family,
+        RobustObservationModel(
+            robust_family.states,
+            {
+                0: (0, 1),
+                1: (0, 1, 2),
+                2: (1, 2, 3),
+                3: (2, 3),
+            },
+        ),
+        0,
+        "direct",
+        1,
+    )
+    bounded_successor = robust_set_valued_successor(
+        robust_family,
+        bounded_observation.remaining_response_types,
+        0,
+        "flip",
+    )
     if (
         not universal.universal
         or disagreement.universal
@@ -84,18 +128,22 @@ def build_report() -> dict[str, object]:
         or cheapest_cost_tradeoff is None
         or cheapest_cost_tradeoff.action != "cheap_high_bit"
         or not isclose(cheapest_cost_tradeoff.worst_case_cost, 2.0)
+        or exact_observation.remaining_response_types != (2,)
+        or bounded_observation.remaining_response_types != (0, 1, 2)
+        or bounded_successor != frozenset({1, 2, 3})
     ):
         raise AssertionError("MRM finite witness failed verification")
     return {
-        "schema_version": 4,
+        "schema_version": 5,
         "scope": (
-            "declared finite candidate macro-transition tables, exact observed "
-            "macrostates, declared intervention grammar, and positive action costs"
+            "declared finite candidate macro-transition tables, exact or bounded-"
+            "support observed macrostates, declared intervention grammar, and "
+            "positive action costs"
         ),
         "non_claim": (
             "the replay does not infer ecological mechanisms, candidate sets, "
-            "response types, action grammars, action costs, or noisy-risk-weighted "
-            "experiment policies from data"
+            "response types, action grammars, action costs, observation-error "
+            "supports, or noisy-risk-weighted experiment policies from data"
         ),
         "universal_law": {
             "response_type_count": universal.response_type_count,
@@ -131,6 +179,22 @@ def build_report() -> dict[str, object]:
             "minimum_cost_root_action": cheapest_cost_tradeoff.action,
             "minimum_cost_worst_case_steps": cheapest_cost_tradeoff.worst_case_steps,
             "minimum_worst_case_cost": cheapest_cost_tradeoff.worst_case_cost,
+        },
+        "robust_observation_update": {
+            "exact_remaining_response_types": list(
+                exact_observation.remaining_response_types
+            ),
+            "bounded_observed_state": bounded_observation.observed_state,
+            "bounded_compatible_true_states": list(
+                bounded_observation.compatible_true_states
+            ),
+            "bounded_remaining_response_types": list(
+                bounded_observation.remaining_response_types
+            ),
+            "bounded_eliminated_response_types": list(
+                bounded_observation.eliminated_response_types
+            ),
+            "bounded_next_set_valued_successor": sorted(bounded_successor),
         },
         "joint_uncertainty": {
             "joint_state_count": joint.joint_state_count,

@@ -18,7 +18,7 @@ def test_replay_report_matches_declared_witnesses():
         text=True,
     )
     report = json.loads(completed.stdout)
-    assert report["schema_version"] == 4
+    assert report["schema_version"] == 5
     assert report["universal_law"] == {
         "response_type_count": 1,
         "report": "universal",
@@ -90,6 +90,14 @@ def test_replay_report_matches_declared_witnesses():
         "minimum_cost_root_action": "cheap_high_bit",
         "minimum_cost_worst_case_steps": 2,
         "minimum_worst_case_cost": 2.0,
+    }
+    assert report["robust_observation_update"] == {
+        "exact_remaining_response_types": [2],
+        "bounded_observed_state": 1,
+        "bounded_compatible_true_states": [0, 1, 2],
+        "bounded_remaining_response_types": [0, 1, 2],
+        "bounded_eliminated_response_types": [3],
+        "bounded_next_set_valued_successor": [1, 2, 3],
     }
     assert report["joint_uncertainty"] == {
         "joint_state_count": 128,
