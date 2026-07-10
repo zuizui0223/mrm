@@ -113,10 +113,27 @@ cannot separate the remaining types. Strictly positive costs exclude beneficial
 configuration cycles. When all costs are one, the objective agrees with the
 minimum worst-case action count in Result VI.
 
+## Result X — Robust observation update
+
+Let bounded observation error be declared by nonempty supports \(N(x)\subseteq Q\),
+where \(N(x)\) is the set of true successor macrostates compatible with observed
+macrostate \(x\). For current known macrostate \(q\), action \(a\), observed
+successor \(x\), and prior response-type set \(S\), the conservative update is
+
+\[
+S'=\{r\in S:G_a^r(q)\in N(x)\}.
+\]
+
+If \(|S'|=1\), the observation identifies a response type under the declared error
+support. If \(|S'|>1\), MRM must retain ambiguity or report a set-valued successor
+over \(S'\). If \(|S'|=0\), the observation contradicts the retained family and the
+error-support declaration. Exact observation is recovered by \(N(x)=\{x\}\).
+
 ## Non-claims
 
 MRM does not infer candidate mechanisms, response types, state alignment,
-intervention grammar, or action costs from field observations. Its quotient,
-discrimination, frontier, and cost-aware results are finite, exact, and noiseless;
-they do not yet optimize risk, handle stochastic transitions or observation error,
-or incorporate Bayesian priors or hard budgets.
+intervention grammar, action costs, or observation-error supports from field
+observations. Its quotient, discrimination, frontier, cost-aware, and robust-update
+results are finite, exact, and support-level; they do not yet optimize risk, handle
+stochastic mechanism transitions, propagate hidden current-state uncertainty, or
+incorporate Bayesian priors or hard budgets.
