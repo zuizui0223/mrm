@@ -33,17 +33,21 @@ When the report target is the full future-action behavior, this neutral refineme
 
 ## Relation to CED
 
-CED supplies an experiment-induced partition before future-action refinement. A noisy experiment may leave a compatible set rather than one exact record class. MRM then answers whether the requested target is constant in that remaining class and, if not, which intervention refines it.
+CED may supply an experiment-induced partition before future-action refinement. A noisy experiment may leave a compatible set rather than one exact record class. MRM then answers whether the requested target is constant across the retained response possibilities and, if not, which declared intervention can refine the mechanism-relative ambiguity.
 
-Thus the combined construction is:
+A valid bridge is therefore:
 
 ```text
 latent worlds
-  -> experiment-induced classes
-  -> reliability-qualified compatible classes
-  -> future-action-stable target-safe refinement
-  -> deterministic or set-valued report.
+  -> CED experiment / evidence classes
+  -> reliability-qualified compatible worlds
+  -> MRM future-action-stable target-safe refinement
+  -> deterministic or ambiguity-explicit report.
 ```
+
+This is a **composition of distinct audits**, not a claim that CED and MRM define one quotient theorem. CED equivalence is record/evidence-relative; MRM refinement is future-response/target-relative. Their current manuscripts should remain separable even when one finite example uses both layers.
+
+See `contract_relative_ecological_state_theory.md` for the broader program-level distinction among future, inherited-semantic, mechanism, and evidence contracts.
 
 ## Minimality proof
 
@@ -57,4 +61,4 @@ Any deterministic interface preserving `P0`, supporting the target report, and h
 
 The active objective should be to reach a class on which `T` is constant, not necessarily a singleton latent world. Response types that remain behaviorally different but induce the same requested management report need not be identified.
 
-This distinction is essential for the combined paper: experimental effort is justified by report resolution, not by mechanism labeling for its own sake.
+This distinction is essential for the cross-repository bridge: experimental effort is justified by report resolution, not by mechanism labeling for its own sake.

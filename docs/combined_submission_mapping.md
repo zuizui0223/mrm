@@ -1,88 +1,90 @@
-# MRM contribution map for the combined evidence-and-prediction paper
+# Superseded combined CED–MRM submission mapping
 
-## Combined paper role
+> **Status:** superseded by the program-level CREST synthesis. The former combined
+> manuscript plan remains recoverable in Git history. This file now records only
+> the reusable mathematical bridge and the publication boundary.
 
-MRM supplies the reporting and future-action layer of the proposed combined CED–MRM manuscript. CED asks which latent ecological worlds a finite experiment can separate under observation error. MRM asks whether the ecological report target is constant across the worlds that remain compatible.
+## Current decision
 
-The combined paper should not reproduce the full MRM theorem inventory. It should import only the results needed to turn an experiment-induced quotient into an honest ecological prediction.
+CED and MRM remain separate theorem and manuscript units.
 
-## Headline MRM contributions retained
+- **CED** asks what finite and imperfect evidence can legitimately resolve and
+  report under an experiment / observation / failure / risk contract.
+- **MRM** asks what can be predicted when retained response mechanisms still
+  disagree about future declared actions.
 
-### 1. Universal / typed / set-valued report criterion
+They share a latent-world language in some finite examples, but they do not have the
+same central uncertainty, theorem output, or publication identity.
 
-A candidate-independent deterministic law is justified only when all retained response types agree on every declared future action. Under disagreement, the report must retain response type or remain set-valued.
+See [`contract_relative_ecological_state_theory.md`](contract_relative_ecological_state_theory.md)
+for the current upper-level architecture.
 
-In the combined notation, this becomes the target-constancy criterion on each experiment-record class.
+## Reusable bridge
 
-### 2. Minimal candidate-safe quotient
+The useful cross-repository composition is directional:
 
-The coarsest observation-preserving deterministic quotient of observable state × response type retains exactly the distinctions that declared future actions can expose.
+```text
+CED evidence contract
+  -> experiment-induced or reliability-qualified compatible worlds
+  -> MRM target-agreement / candidate-safe refinement
+  -> deterministic, typed, set-valued, or posterior-ambiguous report
+```
 
-In the combined paper, this is the future-action-stable refinement of the experiment-induced quotient. This is the main MRM minimality result and should remain theorem-level.
+CED may therefore provide the compatible class on which MRM asks whether the
+requested ecological target is constant across retained response types.
 
-### 3. Active discrimination
+This bridge does **not** imply that the CED experiment-induced quotient and MRM
+candidate-safe quotient are one theorem:
 
-The shortest and minimum-cost adaptive intervention trees refine the remaining response-type class until the report target becomes deterministic, or certify that the declared grammar cannot do so.
+- CED equivalence is induced by records / compatible evidence;
+- MRM equivalence is induced by target-relevant future response under retained
+  mechanisms.
 
-In the combined paper, the objective should be stated as target resolution, not necessarily full mechanism identification.
+## MRM contribution retained in the bridge
 
-### 4. Mechanism-ambiguity frontier
+1. **Universal / typed / set-valued report criterion.** A candidate-independent
+   deterministic law is justified only when the retained response types agree on
+   the declared target behavior.
+2. **Minimal candidate-safe quotient.** The coarsest observation-preserving,
+   target-safe, action-stable quotient retains exactly the response distinctions
+   needed for the requested future report.
+3. **Active discrimination.** Declared interventions can refine the remaining
+   response-type class until the target becomes deterministic, or certify that the
+   grammar cannot do so.
+4. **Mechanism-ambiguity frontier.** A finite witness quantifies the memory and
+   intervention burden of unresolved response dimensions.
 
-The canonical binary family shows how unresolved response dimensions increase the size of the exact candidate-safe representation and the number of interventions needed for identification.
-
-This remains the quantitative witness for why unresolved mechanism ambiguity matters, but it should appear after the joint presence × mechanism example rather than as a separate paper opening.
-
-## Results demoted to methods or supplement
-
-- joint exterior-mechanism product lower bound;
-- bounded-support observation update;
-- Bayesian posterior update;
-- credible sets and MAP diagnostics;
-- one-step value-of-information scores;
-- detailed dynamic-programming implementation;
-- all secondary witness tables.
-
-These results remain useful. They are not equal headline contributions in the combined paper.
+Bounded-support observation updates, Bayesian posterior updates, and one-step VOI
+remain MRM adapters / design extensions. They do not make MRM the owner of CED's
+broader evidence-certification and risk-accounting theory.
 
 ## Joint witness interpretation
 
-The CED bridge witness uses latent worlds `(presence, response_type)`.
+A latent world may contain both a presence coordinate and a response-type
+coordinate.
 
-- Passive records leave all worlds together.
-- Detection separates absence from presence.
-- Detection alone cannot determine the management response among present worlds.
-- A response intervention separates present response types.
-- Response type remains irrelevant in absent worlds because the report target is identical there.
+- Passive evidence can leave both unresolved.
+- Detection can resolve presence without resolving response type.
+- A response intervention can separate target-relevant response types among worlds
+  where the interaction is present.
+- Response type can remain irrelevant where the ecological target is identical.
 
-This recovers the central MRM principle in a target-aware form: the goal is not to retain every mechanism label, but only distinctions that change the report under declared future actions.
+The point is **target-relative retention of mechanism information**, not full latent
+world identification.
 
-## Required MRM-side analysis before submission
+## Publication firewall
 
-1. Express `minimal_candidate_safe_quotient` in the neutral latent-world notation used by the combined paper.
-2. Prove that the fixed point is the coarsest refinement preserving current observation and deterministic future target transitions.
-3. Recast shortest and minimum-cost discrimination as target-resolution policies rather than full type-identification policies.
-4. Build one small cost-aware policy for the joint plant–pollinator example:
-   - additional detection effort;
-   - response-typing intervention;
-   - stop and report set-valued prediction.
-5. Compare the policy selected under perfect observation with the policy selected under a CED false-alert or common-mode risk constraint.
+Do not describe the current projects as one combined paper by default.
 
-## Story discipline
+- CED owns finite evidence and risk-limited reportability.
+- MRM owns mechanism-robust reporting and candidate-safe state.
+- A future joint paper would require a genuinely new theorem coupling evidence
+  reliability and mechanism-safe prediction, not just composition of two existing
+  quotients.
 
-The MRM section should answer one question:
+## Development rule
 
-> Given the latent class left by the experiment, what ecological prediction can be reported honestly, and which intervention is worth taking next?
-
-It should not become a separate tutorial on Bayesian model selection or value of information.
-
-## Submission decision
-
-The combined manuscript is supportable if:
-
-- the experiment-induced quotient and minimal candidate-safe quotient use one notation;
-- the joint witness requires both presence and mechanism dimensions;
-- active discrimination is expressed as refinement of target-compatible classes;
-- observation-error results enter as reliability of that refinement; and
-- one ecological example supports the entire narrative.
-
-Otherwise MRM should remain a later standalone mechanism-reporting paper.
+MRM-side work belongs here only when it changes mechanism-robust reporting,
+minimal mechanism-relative state, or target-relevant discrimination. New monitoring
+risk, calibration, shared-failure, or finite-closure certification results should be
+routed to CED rather than expanded in MRM.
