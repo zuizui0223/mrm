@@ -65,6 +65,25 @@ it at an explicitly declared cost, how bounded or probabilistic observation erro
 changes the retained type set, which next action is expected to reduce ambiguity,
 and when a set-valued or posterior-ambiguous forecast is the honest output.
 
+## Program-level synthesis: contract-relative ecological state
+
+MRM is the **mechanism-relative state layer** of a broader working synthesis called
+[Contract-Relative Ecological State Theory (CREST)](docs/contract_relative_ecological_state_theory.md).
+
+The upper principle is that ecological state identity is not intrinsic to the
+present visible configuration. It is indexed by distinct declared contracts:
+
+- **CCOC:** which distinctions can matter under future composition / action;
+- **MLTR:** which distinctions must preserve inherited meaning across structural change;
+- **MRM:** which distinctions must remain because retained mechanisms disagree about future response;
+- **CED:** which distinctions finite evidence can legitimately resolve and report.
+
+CREST is a program-level architecture, not a claim that the four repositories share
+one quotient theorem or should be merged. In particular, MRM remains responsible
+for mechanism-robust reporting and candidate-safe state. Its observation-update
+and VOI modules are conditional adapters around that target; they do not replace
+CED's broader finite-evidence and risk-contract theory.
+
 ## Provenance
 
 The initial standalone core is reconstructed from the frozen CCOC legacy source
@@ -78,6 +97,9 @@ paper and from MLTR's non-nested replacement theory.
 
 ## Verification and manuscript planning
 
+- [Contract-relative ecological state synthesis](docs/contract_relative_ecological_state_theory.md)
+  — program-level relation among CCOC, MLTR, MRM, and CED, with explicit claim
+  firewalls and future synthesis questions.
 - [Manuscript skeleton](docs/manuscript_skeleton.md) — paper title, abstract
   skeleton, theorem placement, figure plan, supplement structure, and submission
   checklist.
