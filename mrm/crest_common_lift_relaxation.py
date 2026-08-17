@@ -268,15 +268,20 @@ class MinimumCommonLiftRelaxation:
     optimal_plans: tuple[CommonLiftRelaxationPlan, ...]
 
     def __post_init__(self) -> None:
-        plans = tuple(self.optimal_plans)
-        if not plans or any(plan.costs != self.costs for plan in plans):
-            raise ValueError("optimal_plans must be nonempty and share one cost contract")
+        raw_plans = tuple(self.optimal_plans)
+        if not raw_plans or any(plan.costs != self.costs for plan in raw_plans):
+            raise ValueError(
+                "optimal_plans must be nonempty and share one cost contract"
+            )
+        plans = tuple(
+            sorted(raw_plans, key=lambda plan: plan.retained_indices)
+        )
         minimum = plans[0].total_cost
         if any(plan.total_cost != minimum for plan in plans):
             raise ValueError("all optimal plans must have the same total cost")
         retained = tuple(plan.retained_indices for plan in plans)
-        if retained != tuple(sorted(set(retained))):
-            raise ValueError("optimal plans must be unique and canonically ordered")
+        if len(set(retained)) != len(retained):
+            raise ValueError("optimal retained-subset witnesses must be unique")
         object.__setattr__(self, "optimal_plans", plans)
 
     @property
