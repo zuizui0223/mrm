@@ -44,7 +44,7 @@ and when declared interventions can resolve it.
 Canonical synthesis:
 
 - [Contract-Relative Ecological State Theory](docs/contract_relative_ecological_state_theory.md)
-- [CREST J1/J2/J3 synthesis proof ledger](docs/crest_synthesis_proof_ledger_2026-08-17.md)
+- [CREST J1/J2/J3/J4 synthesis proof ledger](docs/crest_synthesis_proof_ledger_2026-08-17.md)
 
 The four companion audits are:
 
@@ -59,19 +59,25 @@ The four companion audits are:
 
 ### Proved synthesis chain
 
-CREST now has three conditional finite synthesis theorems:
+CREST now has four conditional finite synthesis theorems:
 
 1. **CREST-J3 — maximal synchronized common carrier.** From a declared finite
    ambient component synchronization, compute the unique greatest compatible
    transition-closed carrier `U*`. A common lift exists iff `U*` is nonempty; a
    coverage-complete lift exists iff `U*` represents every required component
    label. Removed tuples carry finite action-chain no-go certificates.
-2. **CREST-J1 — unique coarsest joint state.** On one finite common carrier with four
+2. **CREST-J4 — exact least-cost declared contract relaxation.** When J3 is empty or
+   coverage-incomplete, assign explicit costs to admitting an incompatible tuple,
+   disabling one legal transition, and waiving one coverage obligation. For each
+   retained subset the required operations are forced, and exhaustive finite
+   minimization returns the exact optimum. With strictly positive operation costs,
+   optimum zero iff the original J3 problem was already admissible.
+3. **CREST-J1 — unique coarsest joint state.** On one finite common carrier with four
    monotone inflationary audit closures, fair refinement produces the unique
    coarsest common fixed point `J`. Full deterministic state reporting is licensed
    exactly when the evidence partition refines `J`; otherwise the sharp state report
    remains set-valued. A target may still be reportable without the full state.
-3. **CREST-J2 — faithful-lift invariance.** If a detailed finite lift projects
+4. **CREST-J2 — faithful-lift invariance.** If a detailed finite lift projects
    surjectively to a reduced lift while preserving all audit/evidence/target
    structure, then `J_U = pi^* J_V` and the quotient states are isomorphic. Raw
    latent detail invisible to every declared contract cannot change the scientific
@@ -79,29 +85,37 @@ CREST now has three conditional finite synthesis theorems:
 
 ```text
 declared ambient synchronization
-  -> J3 maximal coherent carrier U*
+  -> J3 maximal coherent carrier U* or finite no-go
+  -> if no-go: J4 exact least-cost declared contract relaxation
+  -> repaired J3 carrier
   -> J1 unique coarsest four-audit state J + evidence gate
   -> J2 invariance across faithfully redundant lifts
 ```
 
 This is a conditional theorem ladder, not a claim that nature supplies one universal
-state partition. Uniqueness is within one declared finite contract and across
-faithfully equivalent lifts—not across different grammars, inherited meanings,
-mechanism families, evidence contracts, targets, or ambient alignments.
+state partition or one objectively correct repair cost. Uniqueness is within one
+declared finite contract and across faithfully equivalent lifts—not across different
+grammars, inherited meanings, mechanism families, evidence contracts, targets,
+ambient alignments, or cost schedules.
 
 ## Claim firewall
 
-Shared refinement/fixed-point machinery is classical substrate.
+Shared refinement/fixed-point/repair machinery is established substrate.
 
 - independently optimized closed-vs-open interface lower bounds belong to CCOC;
 - inherited-law transport, repair, defect, and history belong to MLTR;
 - retained mechanism disagreement and candidate-safe state belong to MRM;
 - finite/noisy evidence, failure architecture, calibration, and risk-limited
   reportability belong to CED;
-- conditional carrier/joint-state/lift synthesis is maintained here as CREST.
+- conditional carrier, contract-relaxation, joint-state, and lift synthesis is
+  maintained here as CREST.
+
+CREST-J4 is not MLTR repair: it weakens a cross-component synchronization contract
+before a joint carrier exists, rather than repairing one inherited semantic law
+after structural replacement.
 
 Do not add a theorem family merely because it can be described using `state`,
-`quotient`, `refinement`, `uncertainty`, or `adequacy`.
+`quotient`, `refinement`, `uncertainty`, `repair`, or `adequacy`.
 
 ## Proof and verification map
 
@@ -119,6 +133,9 @@ Do not add a theorem family merely because it can be described using `state`,
 
 - [J3 maximal common lift](docs/crest_maximal_common_lift_theorem_2026-08-17.md)
   — `mrm/crest_common_lift.py`, `tests/test_crest_common_lift.py`
+- [J4 minimum common-lift relaxation](docs/crest_minimum_common_lift_relaxation_theorem_2026-08-17.md)
+  — `mrm/crest_common_lift_relaxation.py`,
+  `tests/test_crest_common_lift_relaxation.py`
 - [J1 joint-state theorem](docs/crest_joint_state_theorem_2026-08-17.md)
   — `mrm/crest_joint_state.py`, `tests/test_crest_joint_state.py`
 - [J2 faithful-lift invariance](docs/crest_lift_invariance_theorem_2026-08-17.md)
@@ -134,7 +151,7 @@ Do not add a theorem family merely because it can be described using `state`,
 - `docs/crest_biology_philosophy_submission_audit_2026-08-17.md`
 
 The current journal manuscript retains the safe claim that no **unconditional
-universal** ecological state has been proved. J1–J3 may be integrated only after a
+universal** ecological state has been proved. J1–J4 may be integrated only after a
 fresh manuscript claim/prior-art audit.
 
 ## Run
@@ -155,5 +172,7 @@ implementation surface, not the quantified analytic proofs by itself.
 The current mathematics is finite and declared-model relative. It does not infer
 future grammars, source-target relations, mechanism families, synchronization
 relations, observation-error contracts, priors, action costs, ecological targets,
-or empirical validity from data. Stochastic, approximate, infinite, controlled
-viability, and empirical common-lift inference remain open extensions.
+or empirical validity from data. J4 costs encode declared scientific or normative
+preferences; the theorem does not infer or endorse them. Stochastic, approximate,
+infinite, controlled-viability, richer repair-language, and empirical common-lift
+inference remain open extensions.
