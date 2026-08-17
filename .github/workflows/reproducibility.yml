@@ -27,9 +27,14 @@ jobs:
       - name: Write deterministic replay report
         if: matrix.python-version == '3.12'
         run: python scripts/verify_mrm_core.py
-      - name: Upload replay artifact
+      - name: Verify CREST philosophy submission controls
+        if: matrix.python-version == '3.12'
+        run: python scripts/verify_crest_philosophy_submission.py --write-report
+      - name: Upload replay and submission artifacts
         if: matrix.python-version == '3.12'
         uses: actions/upload-artifact@v4
         with:
           name: mrm-core-reproducibility
-          path: artifacts/mrm_core_report.json
+          path: |
+            artifacts/mrm_core_report.json
+            artifacts/crest_philosophy_submission_report.json
