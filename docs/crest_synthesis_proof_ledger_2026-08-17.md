@@ -1,8 +1,9 @@
-# CREST synthesis proof ledger — J1/J2/J3/J4/J5/J6/J7
+# CREST synthesis proof ledger — J1/J2/J3/J4/J5/J6/J7 + O1
 
 > **Status:** canonical cross-contract proof ledger. Last synchronized
-> 2026-08-18. `crest_proof_recovery_2026-08-17.md` remains the detailed audit of
-> CCOC, MLTR, MRM, and CED before synthesis.
+> 2026-08-18. The J/O series is owned by the separate CREST synthesis unit,
+> temporarily hosted in the MRM repository. `crest_proof_recovery_2026-08-17.md`
+> remains the detailed audit of CCOC, MLTR, MRM, and CED before synthesis.
 
 ## Status convention
 
@@ -15,6 +16,19 @@
 Green CI guards implementation and replay. It is not itself the proof of a
 quantified theorem.
 
+## Ownership and freeze
+
+J1–J7 and O1 are not part of the MRM mechanism theorem family. They form a fifth
+logical unit because their statements essentially couple multiple companion
+contracts. See:
+
+- `crest_synthesis/README.md`;
+- `docs/crest_synthesis_migration_manifest_2026-08-18.md`; and
+- `docs/crest_next_proof_novelty_gate_2026-08-18.md`.
+
+No J8 or new O-family may be added under `mrm/` before extraction to the dedicated
+CREST repository.
+
 ## Theorem baselines
 
 - **J1:** `96130b91c1f5b8d4512869545dd598af02e14361`
@@ -25,14 +39,14 @@ quantified theorem.
 - **J6:** `2b687d3797a4403cb0eadb939328cb2d97939496`
 - **J7:** `59b521d4c9a4bfa5e11bc057d835e61de96079ae`
 
-All seven current synthesis results are **Status A**.
+All seven theorem results remain **Status A**. O1 is a proved executable obstruction,
+not a new theorem-family baseline.
 
 ## 1. Carrier gates
 
-### J3 — maximal universal common carrier
+### J3 — maximal universal common carrier — Status A
 
-For finite ambient worlds `W`, compatible set `W0`, partial deterministic legal
-actions, and component-coverage requirements, descending iteration of
+Descending iteration of
 
 \[
 F(S)=\{w\in S\cap W_0:
@@ -44,9 +58,8 @@ returns the unique greatest compatible transition-closed carrier `U*`.
 
 Proved:
 
-1. a nonempty universal common lift exists iff `U*` is nonempty;
-2. a coverage-complete lift exists iff `U*` represents every required component
-   label; and
+1. nonempty universal common lift iff `U*` is nonempty;
+2. coverage-complete lift iff `U*` represents every required label; and
 3. each eliminated world has a finite rank-decreasing action-chain certificate.
 
 Sources:
@@ -55,9 +68,9 @@ Sources:
 - `mrm/crest_common_lift.py`
 - `tests/test_crest_common_lift.py`
 
-### J6 — maximal controlled common carrier
+### J6 — maximal controlled common carrier — Status A
 
-Partition actions into uncontrollable `A_u` and controllable `A_c`. Define
+Descending iteration of
 
 \[
 \begin{aligned}
@@ -65,23 +78,20 @@ G(S)=\{w\in S\cap W_0:\;&
 \forall a\in A_u,
 \tau_a(w)\downarrow\Rightarrow\tau_a(w)\in S,\\
 &\exists a\in A_c,
-\tau_a(w)\downarrow\text{ and }\tau_a(w)\in S\}.
+\tau_a(w)\downarrow\text{ and }\tau_a(w)\in S\}
 \end{aligned}
 \]
 
-Descending iteration returns the unique greatest robustly controlled-invariant
-carrier `K*`.
+returns the unique greatest robustly controlled-invariant carrier `K*`.
 
 Proved:
 
-1. a nonempty controlled lift exists iff `K*` is nonempty;
-2. a coverage-complete controlled lift exists iff `K*` represents every required
-   label;
+1. nonempty controlled lift iff `K*` is nonempty;
+2. coverage-complete controlled lift iff `K*` represents every required label;
 3. every nonempty `K*` admits a deterministic memoryless safe selector;
-4. every eliminated world has a finite AND/OR certificate for static
-   incompatibility, uncontrollable escape, or failure of every control choice; and
-5. under explicit control nonblocking, the corresponding J3 carrier is contained
-   in the J6 carrier, with strict inclusion witnessed.
+4. eliminated worlds have finite typed AND/OR certificates; and
+5. under control nonblocking, the corresponding J3 carrier is contained in the J6
+   carrier, with strict inclusion witnessed.
 
 Sources:
 
@@ -89,136 +99,93 @@ Sources:
 - `mrm/crest_controlled_lift.py`
 - `tests/test_crest_controlled_lift.py`
 
-The executable witness gives
-
-\[
-U^*_{J3}=\{\mathsf{safe}\}
-\subsetneq
-K^*_{J6}=\{\mathsf{safe},\mathsf{choice}\}.
-\]
-
 J3 and J6 answer different action quantifiers; neither supersedes the other.
 
 ## 2. Typed carrier-repair gates
 
-### J4 — exact repair of a failed universal J3 contract
+### J4 — universal J3 repair characterization — Status A
 
-The declared operation language permits:
-
-1. admitting an originally incompatible world;
-2. disabling an originally legal transition; and
-3. waiving one component-coverage obligation.
-
-For nonempty retained subset `S`, define
-
-\[
-\begin{aligned}
-A(S)&=S\setminus W_0,\\
-E(S)&=\{(w,a):w\in S,\tau_a(w)\downarrow,
-                  \tau_a(w)\notin S\},\\
-D(S)&=\{(k,\ell):\ell\in R_k,\ell\notin p_k(S)\}.
-\end{aligned}
-\]
-
-The exact fixed-witness cost is
+For fixed nonempty retained subset `S`,
 
 \[
 R(S)=\sum_{w\in A(S)}c_w+
 \sum_{(w,a)\in E(S)}d_{w,a}+
-\sum_{(k,\ell)\in D(S)}r_{k,\ell},
+\sum_{(k,\ell)\in D(S)}r_{k,\ell}
 \]
 
-and the global optimum is
+is both necessary and sufficient. The global value is
 
 \[
 \boxed{R^*=\min_{\varnothing\neq S\subseteq W}R(S).}
 \]
 
-Necessity and sufficiency coincide. With strictly positive changing costs,
-`R*=0` iff the original J3 problem is admissible. Optimal repairs may tie.
+Proved:
+
+1. the operation set is forced conditional on `S`;
+2. those operations make `S` a valid J3 witness;
+3. every admissible repair is lower-bounded by its repaired kernel's fixed-witness
+   cost;
+4. positive-cost zero iff the original J3 problem is admissible;
+5. tied optima are retained explicitly; and
+6. the J4-REPAIR decision problem is NP-complete by weighted set cover.
+
+The NP-hardness holds with no transitions and binary component labels. The solver's
+`2^|W|-1` enumeration is therefore an exact exponential oracle, not a tractability
+claim.
 
 Sources:
 
 - `docs/crest_minimum_common_lift_relaxation_theorem_2026-08-17.md`
+- `docs/crest_repair_complexity_boundary_2026-08-18.md`
 - `mrm/crest_common_lift_relaxation.py`
-- related tests
+- J4 and set-cover reduction tests
 
-### J7 — exact repair of a failed controlled J6 contract
+### J7 — controlled J6 repair characterization — Status A
 
-J7 preserves the uncontrollable/controllable distinction. Its declared operation
-language permits:
-
-1. admitting an originally incompatible world;
-2. disabling an **uncontrollable** transition;
-3. installing one declared local fallback control; and
-4. waiving one component-coverage obligation.
-
-For nonempty retained subset `S`, let `A(S)` and `D(S)` be as above, and define
-
-\[
-U(S)=\{(w,a):w\in S,\ a\in A_u,
-\tau_a(w)\downarrow,\tau_a(w)\notin S\},
-\]
-
-\[
-C(S)=\{w\in S:\nexists a\in A_c
-\text{ with }\tau_a(w)\downarrow\text{ and }\tau_a(w)\in S\}.
-\]
-
-A subset is repair-feasible only if every `w` in `C(S)` has a declared fallback
-successor `f(w)` lying in `S`. For feasible `S`,
+For a repair-feasible retained subset `S`,
 
 \[
 R_c(S)=
 \sum_{w\in A(S)}c_w+
 \sum_{(w,a)\in U(S)}d_{w,a}+
 \sum_{w\in C(S)}g_w+
-\sum_{(k,\ell)\in D(S)}r_{k,\ell}.
+\sum_{(k,\ell)\in D(S)}r_{k,\ell}
 \]
 
-If `F` is the family of repair-feasible nonempty subsets, then
+is necessary and sufficient. If `F` is the family of feasible nonempty subsets,
 
 \[
 \boxed{R_c^*=\min_{S\in\mathcal F}R_c(S)}
 \]
 
-when `F` is nonempty. If `F` is empty, no repair exists in the declared language.
+when `F` is nonempty; otherwise the declared language admits no repair.
 
 Proved:
 
-1. the four operation sets are forced for every fixed feasible witness `S`;
-2. applying exactly those operations makes `S` controlled-invariant and satisfies
-   every unwaived coverage obligation;
-3. the displayed minimum is the exact global optimum in the declared language;
-4. with strictly positive changing costs, `R_c*=0` iff the original J6 problem is
-   admissible;
-5. optimal repair may tie and all optimal retained-subset witnesses are returned;
-6. increasing declared operation costs cannot lower the optimum; and
-7. a repair language with no feasible retained subset returns an exact no-repair
-   result rather than silently weakening the theorem.
+1. fixed-witness operations are forced;
+2. applying them makes the witness controlled invariant and coverage complete;
+3. every admissible repair is lower-bounded by its repaired J6 kernel;
+4. positive-cost zero iff the original J6 problem is admissible;
+5. ties, monotonicity, and language-level infeasibility are explicit; and
+6. the J7-REPAIR decision problem is NP-complete by weighted set cover.
+
+The hardness already holds with no uncontrollable transitions and one controllable
+self-loop per world. The global exponential search cannot be attributed only to
+safety-game structure.
 
 Sources:
 
 - `docs/crest_minimum_controlled_lift_relaxation_theorem_2026-08-18.md`
+- `docs/crest_repair_complexity_boundary_2026-08-18.md`
 - `mrm/crest_controlled_lift_relaxation.py`
-- `tests/test_crest_controlled_lift_relaxation.py`
+- J7 and set-cover reduction tests
 
-The canonical witness has three scientifically different repair routes:
-
-- install one local safe fallback;
-- block one uncontrollable hazard edge; or
-- waive the missing coverage obligation.
-
-Declared costs select the optimum; equal costs can produce multiple optimal
-repairs. J7 does not infer action roles, fallback feasibility, or ecological costs.
-
-J4 and J7 are not interchangeable, and neither is MLTR semantic repair. J4/J7
-weaken cross-component carrier contracts before J1 constructs a state. MLTR repairs
-one inherited macro-law after structural replacement.
+J4/J7 are not MLTR semantic repair. They weaken cross-component carrier contracts
+before J1 state construction.
 
 ## 3. Joint state and evidence
 
-### J1 — unique coarsest four-audit state
+### J1 — unique coarsest four-audit state — Status A
 
 On one admissible finite carrier `U`, with baseline `B` and monotone inflationary
 idempotent audit closures,
@@ -233,9 +200,9 @@ Proved:
 
 1. fair iteration reaches `J` without pairwise commutation;
 2. one pass through separately minimized audits can be insufficient;
-3. full deterministic state reporting exists iff `J\preceq E_D`;
-4. failure gives the sharp set of compatible `J` blocks; and
-5. target reporting may remain deterministic without full-state identification.
+3. full deterministic state reporting iff `J\preceq E_D`;
+4. failure gives the sharp compatible-block set; and
+5. a target may remain deterministic without full-state identification.
 
 Sources:
 
@@ -243,158 +210,122 @@ Sources:
 - `mrm/crest_joint_state.py`
 - `tests/test_crest_joint_state.py`
 
+The generic least-common-fixed-point result is classical substrate. J1's claim must
+remain the conditional four-contract mapping and evidence gate, not a priority claim
+for partition refinement.
+
 ## 4. Lift and contract comparison
 
-### J2 — faithful-lift invariance
+### J2 — faithful-lift invariance — Status A
 
-For a surjective contract projection `pi:U -> V` preserving baseline, evidence,
-target, audit labels, action legality, and successors exactly,
+For a surjective faithful projection `pi:U -> V`,
 
 \[
 C_i^U(\pi^*P)=\pi^*C_i^V(P),
+\qquad
+J_U=\pi^*J_V,
+\qquad
+U/J_U\cong V/J_V.
 \]
 
-so
+Full-state and target-only licensing are invariant. Audit-visible duplication can
+break the condition and refine the state.
+
+### J5 — one-sided lift-refinement bounds — Status A
+
+With exact evidence/target pullback and exact shared-action semantics,
 
 \[
-\boxed{J_U=\pi^*J_V,\qquad U/J_U\cong V/J_V.}
-\]
-
-Full-state and target-only licensing are invariant. Audit-visible latent duplication
-can break the condition and refine the state.
-
-Sources:
-
-- `docs/crest_lift_invariance_theorem_2026-08-17.md`
-- `mrm/crest_lift_invariance.py`
-- `tests/test_crest_lift_invariance.py`
-
-### J5 — one-sided lift-refinement bounds
-
-With exact evidence/target pullback and exact shared-action semantics:
-
-\[
-\boxed{
 \text{source stronger}\Rightarrow\pi^*J_V\preceq J_U,
-}
 \]
 
 \[
-\boxed{
 \text{source weaker}\Rightarrow J_U\preceq\pi^*J_V.
-}
 \]
 
-Both directions recover J2 equality. Target-only licensing is invariant. Full-state
-licensing is one-sided in the corresponding direction. Strict four-versus-three
-and two-versus-three witnesses are executable.
+Both directions recover J2 equality. Target-only licensing is invariant;
+full-state licensing follows the corresponding one-sided implication.
 
 Sources:
 
-- `docs/crest_lax_lift_bounds_theorem_2026-08-18.md`
-- `mrm/crest_lax_lift.py`
-- `tests/test_crest_lax_lift.py`
+- J2: `docs/crest_lift_invariance_theorem_2026-08-17.md`, implementation, tests
+- J5: `docs/crest_lax_lift_bounds_theorem_2026-08-18.md`, implementation, tests
 
-## 5. Dependency structure
+## 5. O1 — repair/evidence ordering obstruction
+
+O1 proves by finite executable witness that
+
+\[
+\boxed{R_{\mathrm{struct}}^*=1<R_{\mathrm{licensed}}^*=2.}
+\]
+
+The cheapest J7 carrier repair can yield a J1 state not resolved by the declared
+evidence, while a costlier repair is fully licensed. The target remains reportable
+under the cheaper repair. O1 therefore refutes automatic commutation of structural
+repair optimization and downstream full-state licensing.
+
+Sources:
+
+- `docs/crest_repair_evidence_noncommutation_2026-08-18.md`
+- `tests/test_crest_repair_evidence_noncommutation.py`
+
+O1 is a supporting obstruction, not J8.
+
+## 6. Dependency structure
 
 ```text
 declared ambient synchronization
-  -> choose action quantification:
-       J3 universal safety under every legal action
-       J6 robust safety under every uncontrollable move + one safe control
+  -> choose action quantification: J3 or J6
   -> maximal carrier or finite typed no-go
-  -> choose matching repair language if declared:
-       J4 exact universal-carrier repair
-       J7 exact controlled-carrier repair
+  -> choose matching repair language: J4 or J7
+  -> exact objective characterization + NP-hard global subset selection
   -> admissible carrier
-  -> J1 unique coarsest four-audit state + evidence gate
-  -> alternate lift/contract comparison:
-       J2 exact faithful equality
-       J5 one-sided refinement/coarsening bounds
+  -> J1 joint state + evidence gate
+  -> J2/J5 lift comparison
+  -> O1 warns that structural and fully licensed optima can differ
 ```
 
 The mathematical objects differ:
 
-- J3/J6 — greatest **carrier** problems;
-- J4/J7 — minimum-cost **typed contract-repair** problems;
-- J1 — least-information **partition** problem;
-- J2 — exact **morphism/invariance** problem; and
-- J5 — one-sided **morphism/order-comparison** problem.
+- J3/J6 — greatest carrier problems;
+- J4/J7 — fixed-witness exactness plus NP-hard global contract-repair selection;
+- J1 — least-information partition problem;
+- J2 — exact morphism/invariance problem;
+- J5 — one-sided morphism/order problem; and
+- O1 — cross-gate noncommutation witness.
 
-## 6. Current strongest safe statement
+## 7. Prior-art firewall
 
-For one declared finite synchronization and action contract:
-
-\[
-\boxed{
-\begin{aligned}
-&\mathrm{J3}\text{ or }\mathrm{J6}
-\Longrightarrow
-\text{one maximal carrier or finite typed no-go},\\
-&\mathrm{J6}\text{ nonempty}
-\Longrightarrow
-\text{one memoryless safe selector exists},\\
-&\mathrm{J3\ no\mbox{-}go}+\text{declared J4 language/costs}
-\Longrightarrow
-\text{exact universal repair optimum},\\
-&\mathrm{J6\ no\mbox{-}go}+\text{declared J7 language/costs}
-\Longrightarrow
-\text{exact controlled repair optimum or no feasible repair},\\
-&\text{admissible carrier}
-\Longrightarrow
-\text{one unique coarsest joint state }J,\\
-&\text{fully licensed state}
-\Longleftrightarrow J\preceq E_D,\\
-&\pi\text{ faithful}
-\Longrightarrow J_U=\pi^*J_V,\\
-&\pi\text{ one-sided}
-\Longrightarrow
-\text{the corresponding J5 partition bound.}
-\end{aligned}}
-\]
-
-## 7. Remaining boundaries
-
-Not proved:
-
-- a nature-given synchronization, action-role assignment, fallback, or cost scale;
-- that every companion model admits a coverage-complete J3 or J6 carrier;
-- reward/cost optimality of a J6 selector beyond safety;
-- exhaustiveness of the J4/J7 repair languages;
-- arbitrary transition redirection or action-role reclassification;
-- comparison under partial or approximate action simulation;
-- stochastic, partial-observation, delayed-control, infinite, or risk-limited forms;
-- philosophical exhaustiveness of the four audits; or
-- empirical validity of any declared contract.
-
-A stronger contract is not thereby normatively better. J3 is not superseded by J6,
-and J4 is not superseded by J7; they answer different action quantifications.
-
-## 8. Prior-art firewall
-
-The following are not CREST novelty claims:
+Not CREST novelty:
 
 - closure operators, fair iteration, and partition refinement;
 - invariant, viability, and safety kernels;
-- finite safety games and memoryless safety policies;
-- minimum-cost model/safety-game repair and exhaustive subset search;
+- finite safety games and memoryless policies;
+- minimum-cost model repair, weighted set cover, and exhaustive subset search;
 - quotient naturality, simulation, and abstraction precision; and
 - target reportability as evidence factorization.
 
 The candidate contribution is the ecology-specific contract coupling and typed
-diagnostic chain, not the generic algorithms.
+failure/repair sequence, not generic algorithms or their complexity classes.
 
-## 9. Next-proof gate
+## 8. Remaining boundaries
 
-The remaining directions are broader and should not be opened automatically:
+Not proved:
 
-1. partial-observation and finite-memory control;
-2. stochastic/adversarial risk-limited safety and repair;
-3. weakest or approximate lift simulation;
-4. richer repair-language comparison; and
-5. empirical inference of synchronization, action roles, fallbacks, costs, and
-   evidence.
+- nature-given synchronization, action roles, fallbacks, or costs;
+- guaranteed coverage-complete J3/J6 carriers for arbitrary companion models;
+- reward optimality beyond safety;
+- exhaustive J4/J7 repair languages;
+- polynomial algorithms or tractable subclass classifications for J4/J7;
+- arbitrary redirection or action-role reclassification;
+- stochastic, partial-observation, delayed-control, approximate, infinite, or
+  risk-limited forms;
+- philosophical exhaustiveness of the four audits; or
+- empirical validity of declared contracts.
 
-Any next theorem must change a coupled premise or prove a new impossibility,
-noncommutation, or minimality result. A relabelled viability, repair, or refinement
-algorithm does not qualify.
+## 9. Development gate
+
+The active line is consolidation and physical extraction, not theorem count. A new
+cross-contract result must prove a genuinely new coupled impossibility,
+noncommutation, necessary-and-sufficient boundary, or minimality statement. No J8
+or new O-family may be implemented under `mrm/`.
