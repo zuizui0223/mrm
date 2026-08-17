@@ -1,29 +1,19 @@
 # Contract-Relative Ecological State Theory (CREST)
 
-> **Status:** program-level synthesis / working upper concept. This document does not
-> introduce a new theorem, does not merge the companion repositories, and does not
-> claim novelty for the phrase or for quotient/refinement machinery.
+> **Status:** program-level metatheory with three conditional finite synthesis
+> theorems. CREST does not merge CCOC, MLTR, MRM, and CED, does not claim that their
+> generic quotient/refinement machinery is new, and does not supply a nature-given
+> canonical ontology of ecological states.
 
 ## 1. Central principle
 
-The shared research program can be stated as one ecological principle:
+CREST begins from one ecological claim:
 
-> **An ecological state is not determined by the present visible configuration
-> alone. State identity is relative to the future operations that may become
-> relevant, the meanings inherited across structural change, the mechanisms still
-> retained as possible, and the evidence contract under which distinctions may be
-> reported.**
+> **Treating two ecological configurations as the same state is a scientific
+> commitment about which differences may be ignored for a declared future,
+> inherited meaning, retained mechanism family, and evidence/reporting task.**
 
-A compact working form is
-
-\[
-\boxed{\text{ecological state identity is contract-relative, not intrinsic}.}
-\]
-
-CREST therefore treats an ecological state representation as indexed by a declared
-contract rather than as an unconditional label attached to a configuration.
-
-Write a program-level contract schematically as
+A compact program notation is
 
 \[
 \mathcal C=(\Gamma,\mathcal H,\Theta,D;T),
@@ -31,290 +21,257 @@ Write a program-level contract schematically as
 
 where
 
-- \(\Gamma\) is the declared future-action / composition grammar;
-- \(\mathcal H\) is the inherited-semantics contract, including any accepted
-  source law and source--target relation;
-- \(\Theta\) is the retained mechanism or response-type family;
-- \(D\) is the experiment / observation / detection contract; and
-- \(T\) is the ecological report or decision target.
+- \(\Gamma\) is the future-action/composition contract;
+- \(\mathcal H\) is the inherited-semantics contract;
+- \(\Theta\) is the retained mechanism/response-type family;
+- \(D\) is the experiment, observation, detection, failure, and risk contract; and
+- \(T\) is the report or decision target.
 
-The tuple is a synthesis notation, not a claim that all four repositories already
-share one state space or one equivalence relation.
-
-## 2. Four adequacy audits
-
-A proposed ecological state variable is **operationally admissible under
-\(\mathcal C\)** only to the extent that four logically distinct questions have
-been answered.
-
-### A. Future sufficiency — CCOC
-
-**Question:** What distinctions can become necessary when the legal future is
-opened?
-
-CCOC holds the finite system and declared grammar family fixed and asks how the
-minimum exact response interface changes when independently available closed
-futures are replaced by a jointly open future grammar.
-
-Its characteristic failure is
+The older slogan
 
 \[
-\boxed{\text{future insufficiency}.}
+\text{“ecological state identity is contract-relative”}
 \]
 
-A state representation can be exact in every supplied closed context yet fail to
-be comparably small for the open grammar. The missing information is not created by
-observation error or mechanism uncertainty; it is forced by distinctions that
-future legal operations can expose.
+should be read as shorthand for **scientific state-representation adequacy**, not
+as a claim that ecological systems lack mind-independent structure.
 
-Program-level ecological reading:
+## 2. Four companion adequacy audits
 
-> Current functional equivalence need not imply causal equivalence under future
-> colonization, reconnection, dispersal, rewiring, or newly legal intervention.
+| Audit | Repository | Question | Characteristic failure | Formal remedy/output |
+|---|---|---|---|---|
+| future sufficiency | CCOC | Which distinctions can an enlarged legal future expose? | future insufficiency | open-interface lower bound / finer predictive interface |
+| semantic coherence | MLTR | Can one inherited source law retain its meaning after structural change? | semantic non-portability | unique coarsest source-relative repair, defect, history context |
+| mechanism robustness | MRM | Do retained response mechanisms support one future prediction? | mechanism non-robustness | deterministic, typed, or set-valued report; candidate-safe state |
+| evidential licensing | CED | Which target-relevant distinctions does finite imperfect evidence justify reporting? | evidential non-resolvability | compatible-world report, required target-safe resolution, risk-limited design |
 
-### B. Semantic coherence — MLTR
+Passing one companion audit does not imply passing another. Their state spaces,
+initial conditions, quantifier orders, failure certificates, and remedies differ.
+The shared use of words such as `state`, `quotient`, or `refinement` does not merge
+their theorem ownership.
 
-**Question:** Which distinctions must be added so that an inherited ecological law
-keeps its meaning after structural change?
+## 3. Conditional synthesis theorem ladder
 
-MLTR fixes one accepted source macro-law, carries its labels through a declared
-source--target relation, and tests whether the inherited partition remains exact.
-If not, it returns the unique coarsest exact target refinement constrained to
-preserve inherited semantics.
+CREST now has three proved finite synthesis layers. Their generic order-theoretic
+machinery is established prior art; the result is the explicit ecology-program
+mapping and its gates.
 
-Its characteristic failure is
+### CREST-J3 — maximal synchronized common carrier
 
-\[
-\boxed{\text{semantic non-portability}.}
-\]
-
-Program-level ecological reading:
-
-> A guild label, resilience class, occupancy class, or functional state that was
-> meaningful before turnover or rewiring is not automatically meaningful after it.
-
-### C. Mechanism robustness — MRM
-
-**Question:** What may be predicted when several retained causal mechanisms agree
-on the present state but disagree about future interventions?
-
-MRM fixes a common observed macrostate space and a declared family of candidate
-transition mechanisms. Raw candidate labels are collapsed to response types.
-A candidate-independent deterministic law is licensed only where all retained
-response types agree. Otherwise an honest state representation must retain the
-response distinction where it matters, or the report must remain set-valued or
-posterior-ambiguous.
-
-Its characteristic failure is
-
-\[
-\boxed{\text{mechanism non-robustness}.}
-\]
-
-MRM's minimal candidate-safe quotient is therefore the **mechanism-relative state
-layer** of CREST: it retains exactly the response-type distinctions that declared
-future actions can expose while allowing locally irrelevant mechanism distinctions
-to merge.
-
-Program-level ecological reading:
-
-> The same visible community state may not define one predictive state when
-> retained mechanisms imply different management or disturbance responses.
-
-### D. Evidential licensing — CED
-
-**Question:** Which distinctions can finite and imperfect evidence justify
-reporting?
-
-CED partitions latent worlds by the records produced under a declared experiment
-and observation contract. A deterministic report is licensed only when the target
-is constant over the remaining compatible class; otherwise the honest output is
-ambiguity-retaining, set-valued, or risk-limited.
-
-Its characteristic failure is
-
-\[
-\boxed{\text{evidential non-resolvability}.}
-\]
-
-Program-level ecological reading:
-
-> An ecologically real or predictively important distinction is not automatically
-> a distinction that finite monitoring has resolved.
-
-## 3. Why MRM is a genuine fourth axis
-
-MRM is not reducible to the other three audits.
-
-- It is not CCOC: CCOC varies the admissible future grammar / exterior
-  addressability in a declared system, whereas MRM retains alternative transition
-  laws on a common observed macrostate space.
-- It is not MLTR: MLTR fixes one inherited source law and asks for its least
-  semantics-preserving repair after a declared replacement. MRM instead asks what
-  can be reported when several candidate response laws remain possible.
-- It is not CED: CED asks what an experiment record resolves. MRM asks whether the
-  worlds or response types that remain possible agree on future target behavior.
-
-The four questions can interact without becoming the same theorem.
-
-## 4. MRM integration map
-
-The present MRM theorem program fits CREST as follows.
-
-| MRM result | CREST role |
-|---|---|
-| universal deterministic criterion | mechanism-robustness gate |
-| typed / set-valued report | honest fallback when mechanism robustness fails |
-| candidate-safe product lower bound | memory cost of uniformly relevant response ambiguity |
-| minimal candidate-safe quotient | minimal mechanism-relative state representation |
-| mechanism-ambiguity frontier | sharp witness for retained mechanism memory |
-| active / cost-aware discrimination | intervention route for resolving target-relevant mechanism ambiguity |
-| bounded / probabilistic observation update | adapter from an evidence contract into the remaining response-type set |
-| one-step VOI | optional design diagnostic after the mechanism-report target is fixed |
-| joint exterior--mechanism lower bound | conditional CCOC--MRM bridge under joint operational separation |
-
-This keeps the MRM publication identity narrow: **honest prediction under unresolved
-mechanism ambiguity**. CREST is an upper concept, not a reason to promote every
-cross-repository bridge into the MRM main theorem list.
-
-## 5. CED--MRM boundary
-
-MRM already contains bounded-support and probabilistic observation updates. Under
-CREST these are interpreted as **adapters**, not as ownership of the full evidence
-layer.
-
-CED owns the broader question of finite reportability under intervention design,
-imperfect detection, shared failure, calibration, and explicit risk contracts.
-MRM may consume a CED-style compatible-world or posterior class and ask a different
-question:
-
-> Do the still-compatible response types agree on the requested future target?
-
-Thus a legitimate cross-repository composition is
-
-```text
-CED: evidence contract -> compatible latent worlds / risk-limited class
-MRM: retained worlds -> target agreement, mechanism-safe state, or set-valued report
-```
-
-This composition does not imply that CED and MRM should be one manuscript or that
-one quotient subsumes the other.
-
-## 6. CCOC--MRM boundary
-
-Both CCOC and MRM can produce memory lower bounds, but the indexed uncertainty is
-different.
-
-- CCOC: exterior / future-composition distinctions become operationally
-  addressable under a wider grammar.
-- MRM: retained response mechanisms disagree under declared actions.
-
-The existing joint exterior--mechanism result is a bridge only when the full
-exterior-by-response-type product is jointly realizable and operationally
-separable. The two lower bounds must not be added arithmetically without that joint
-premise.
-
-## 7. MLTR--MRM boundary
-
-MLTR fixes one source semantics and one declared transport relation. MRM retains a
-family of possible response laws. A future synthesis could admit uncertainty over
-replacement relations or replacement mechanisms, but that would be a new joint
-problem.
-
-Do not silently reinterpret the current MRM candidate-safe quotient as an MLTR
-repair theorem, and do not reinterpret MLTR transport defect as mechanism
-ambiguity.
-
-## 8. A four-layer ecological example
-
-Consider a coarse state labelled **pollination maintained**.
-
-1. **CCOC / future contract:** future colonization or a newly connected pollinator
-   channel can expose response distinctions hidden by the current community.
-2. **MLTR / inherited semantics:** after pollinator turnover, the old functional
-   class may need to split into states with and without substitute-response
-   capacity.
-3. **MRM / retained mechanisms:** even within a repaired visible state, retained
-   mechanisms may disagree about whether competitor removal, floral manipulation,
-   or habitat restoration will recover pollination. A deterministic prediction is
-   licensed only where those response types agree.
-4. **CED / evidence contract:** camera, eDNA, visitation, or experimental records
-   may still be unable to distinguish the target-relevant worlds because of finite
-   sensitivity or shared failure. The report must not claim a mechanism-resolved
-   state that the evidence has not licensed.
-
-The same present configuration can therefore support different legitimate state
-representations depending on which contracts are declared.
-
-## 9. Program-level adequacy principle
-
-CREST uses the following statement as a **research principle**, not yet as a proved
-single theorem:
+Start with a declared finite ambient synchronization of component states, a static
+compatibility relation, lifted partial actions, and component-coverage obligations.
+Descending transition-closure pruning yields a unique greatest compatible carrier
+\(U^*\).
 
 \[
 \boxed{
-\text{usable ecological state}
-\Rightarrow
-\begin{cases}
-\text{future-sufficient},\\
-\text{semantically coherent},\\
-\text{mechanism-robust or ambiguity-explicit},\\
-\text{evidentially licensed}.
-\end{cases}}
+\text{a nonempty common lift exists}
+\iff
+U^*\neq\varnothing
+}
 \]
 
-Equivalently:
+and
 
-> **Remember distinctions that can matter, preserve distinctions required by
-> inherited meaning, retain mechanism distinctions that change prediction, and
-> report only distinctions that the evidence can support.**
+\[
+\boxed{
+\text{a coverage-complete common lift exists}
+\iff
+U^*\text{ represents every required component label}.}
+\]
 
-Passing one audit does not imply passing the others.
+Every rejected tuple has a finite action chain ending at a statically incompatible
+tuple. Thus carrier failure is returned as a finite no-go certificate rather than
+hidden inside a later partition algorithm.
 
-## 10. Why the repositories remain separate
+Proof and implementation:
 
-CREST is an upper research architecture. It is **not** a repository-merger rule.
-The theorem and provenance units remain separate:
+- `docs/crest_maximal_common_lift_theorem_2026-08-17.md`
+- `mrm/crest_common_lift.py`
+- `tests/test_crest_common_lift.py`
 
-- **CCOC:** open-future exact-interface obstruction and sharpness;
-- **MLTR:** source-relative transport, minimal repair, defect, and history;
-- **MRM:** mechanism-robust deterministic / typed / set-valued reporting and
-  candidate-safe state;
-- **CED:** finite evidence, imperfect detection, failure architecture, and
-  risk-limited reportability.
+### CREST-J1 — unique coarsest joint state on a fixed carrier
 
-Keeping the proofs separate prevents a shared vocabulary such as `quotient`,
-`refinement`, `state`, or `uncertainty` from hiding different quantifier orders and
-different mathematical objects.
+On a declared finite common carrier \(U\), let
 
-## 11. Future synthesis questions
+\[
+C_\Gamma,C_\mathcal H,C_\Theta,C_{D,T}:\Pi(U)\to\Pi(U)
+\]
 
-Only a result that genuinely couples two or more contracts should become a new
-synthesis theorem. High-value questions include:
+be monotone, inflationary, idempotent audit closures, and let \(B\) be the baseline
+partition. Their join closure has one least common fixed point:
 
-1. **Audit commutation.** Under what conditions does mechanism-robustification
-   commute with structural transport or with evidence-induced quotienting?
-2. **Joint admissible state.** Given a common latent representation, when is there a
-   finite state interface that is simultaneously future-sufficient,
-   inheritance-coherent, mechanism-robust, and evidentially resolvable?
-3. **Failure localization.** Can one identify the minimum contract that must be
-   strengthened when an ecological state fails the full adequacy audit?
+\[
+\boxed{
+J=(C_\Gamma\vee C_\mathcal H\vee C_\Theta\vee C_{D,T})(B).}
+\]
 
-Do not create a new theorem merely by intersecting existing partitions or adding
-existing complexity bounds. A synthesis result must expose a new noncommutation,
-minimality statement, or impossibility that is not already one companion theorem
-under renamed variables.
+Hence \(J\) is the unique coarsest/least-information partition satisfying all four
+representational obligations, up to block renaming. Pairwise audit commutation is
+not required; fair cyclic refinement converges to the same \(J\).
 
-## 12. Development rule
+The full joint state is deterministically reportable from reliability-qualified
+evidence \(E_D\) exactly when
 
-MRM remains responsible for the mechanism-relative layer. New MRM theorem work
-should therefore change one of these questions:
+\[
+\boxed{J\preceq E_D,}
+\]
 
-- when mechanism ambiguity can be safely forgotten;
-- what minimal mechanism-relative state must be retained;
-- what honest report replaces unsupported determinism; or
-- what intervention can resolve target-relevant mechanism ambiguity.
+meaning that every evidence class lies inside one \(J\)-block. If this fails, the
+sharp state report is the set of \(J\)-blocks compatible with the evidence class. A
+requested target may still be deterministic even when the full state is not.
 
-Questions whose central object is open-composition interface growth, inherited-law
-repair, or finite-evidence certification should be routed to CCOC, MLTR, or CED
-respectively.
+Proof and implementation:
+
+- `docs/crest_joint_state_theorem_2026-08-17.md`
+- `mrm/crest_joint_state.py`
+- `tests/test_crest_joint_state.py`
+
+### CREST-J2 — faithful-lift invariance
+
+Let \(\pi:U\twoheadrightarrow V\) be a finite surjective contract projection that
+preserves baseline/evidence/target partitions, audit-static distinctions, action
+legality, and projected successors. Then every audit closure commutes with
+pullback:
+
+\[
+C_i^U(\pi^*P)=\pi^*C_i^V(P),
+\]
+
+and therefore
+
+\[
+\boxed{J_U=\pi^*J_V,\qquad U/J_U\cong V/J_V.}
+\]
+
+Full-state and target-only evidence licensing are also preserved. Thus adding
+latent detail that no declared contract can see does not change the scientific
+joint state. Adding an audit-visible distinction can break the projection and make
+the joint state finer.
+
+Proof and implementation:
+
+- `docs/crest_lift_invariance_theorem_2026-08-17.md`
+- `mrm/crest_lift_invariance.py`
+- `tests/test_crest_lift_invariance.py`
+
+## 4. The proved CREST workflow
+
+```text
+declared ambient component synchronization
+    -> J3: maximal compatible transition-closed carrier U*
+    -> if nonempty and coverage complete, declare four audit closures and evidence
+    -> J1: unique coarsest required joint state J
+    -> J1: deterministic full state, target-only report, or set-valued ambiguity
+    -> J2: invariance under faithfully redundant refinements of the common lift
+```
+
+The arrows are theorem dependencies, not a universal order for field research.
+Evidence, mechanisms, or targets may be specified first in an application.
+
+## 5. What “one state” now means
+
+The strongest safe statement is:
+
+\[
+\boxed{
+\begin{aligned}
+&\text{one declared finite ambient synchronization that passes J3}
+\\
+&\Longrightarrow
+\text{one unique coarsest four-audit required state }J,
+\\
+&\text{fully licensed state}
+\Longleftrightarrow
+J\preceq E_D,
+\\
+&\text{faithfully redundant lift}
+\Longrightarrow
+\text{the same quotient state up to isomorphism.}
+\end{aligned}}
+\]
+
+This does **not** prove:
+
+- a unique state across different future grammars, inherited laws, mechanism
+  families, evidence contracts, targets, or ambient alignments;
+- that every arbitrary collection of four companion models has a nonempty
+  coverage-complete synchronization;
+- that the four audits are philosophically exhaustive;
+- that their costs, defects, memory bounds, and risks add; or
+- that current ecological observations identify the required state.
+
+## 6. Ecological reading
+
+For a state labelled **pollination maintained**:
+
+1. J3 asks whether the future, inherited, mechanism, and evidence descriptions can
+   be synchronized into any transition-consistent set of joint ecological worlds.
+2. CCOC asks whether future colonization, reconnection, or intervention exposes a
+   distinction hidden by the current label.
+3. MLTR asks whether the inherited meaning survives pollinator turnover or needs a
+   source-relative split.
+4. MRM asks whether retained response mechanisms agree on restoration or
+   disturbance outcomes.
+5. CED asks whether field evidence has earned the distinction needed by the report.
+6. J1 computes the least joint distinction satisfying the declared obligations.
+7. J2 guarantees that duplicating scientifically invisible latent descriptions does
+   not change the resulting state.
+
+The result is contract-relative without being arbitrary: the scientist declares
+what the representation must preserve, while the declared dynamics and evidence can
+objectively refute a proposed merge.
+
+## 7. Repository ownership remains separate
+
+- **CCOC:** independently optimized closed-vs-open interface complexity.
+- **MLTR:** one inherited source law, target transport, least semantic repair,
+  defect, and history.
+- **MRM:** retained mechanism disagreement, candidate-safe state, and honest
+  deterministic/typed/set-valued prediction.
+- **CED:** finite evidence, target reportability, observation failure, calibration,
+  and risk-limited design.
+- **CREST synthesis in MRM:** conditional carrier construction, joint fixed point,
+  evidence gate, and faithful-lift invariance.
+
+The synthesis theorems consume companion contracts; they do not transfer ownership
+of the companion headline theorems to MRM.
+
+## 8. Prior-art firewall
+
+CREST does not claim novelty for:
+
+- partition refinement, bisimulation, causal/predictive state abstraction;
+- closure operators, lattice fixed points, or fair iteration;
+- invariant/safety kernels or viability-style pruning;
+- quotient naturality under structure-preserving maps;
+- adequacy-for-purpose, perspectival representation, partial observability, or
+  ecological model transferability.
+
+The candidate contribution is the theorem-grounded ecology-specific diagnostic
+architecture and the explicit sequence of carrier, partition, evidence, and lift
+conditions.
+
+## 9. Current proof control
+
+- [Companion proof recovery](crest_proof_recovery_2026-08-17.md) — detailed CCOC,
+  MLTR, MRM, and CED proof audit before synthesis.
+- [Synthesis proof ledger](crest_synthesis_proof_ledger_2026-08-17.md) — canonical
+  J1/J2/J3 proof status and boundaries.
+- [Cross-repository validation](crest_final_validation_2026-08-17.md) — ownership
+  and quantifier firewalls.
+
+## 10. Next proof questions
+
+The main unresolved mathematical directions are now:
+
+1. minimum relaxation of compatibility, transition, or coverage constraints needed
+   to make the J3 carrier admissible;
+2. lax/one-sided lift maps yielding refinement inequalities rather than exact J2
+   invariance;
+3. existential/control-selective common-lift viability;
+4. stochastic, approximate, infinite, and risk-limited variants; and
+5. empirical inference and validation of the synchronization and contract objects.
+
+A new theorem must change one of these coupled questions. Renaming another fixed
+partition refinement is not a CREST synthesis contribution.
