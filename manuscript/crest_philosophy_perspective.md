@@ -123,7 +123,7 @@ Parker, W. S. (2020). Model Evaluation: An Adequacy-for-Purpose View. *Philosoph
 
 Shalizi, C. R., & Crutchfield, J. P. (2001). Computational Mechanics: Pattern and Prediction, Structure and Simplicity. *Journal of Statistical Physics*, 104, 817–879.
 
-Stringham, T. K., Krueger, W. C., & Shaver, P. L. (2003). State and transition modeling: An ecological process approach. *Journal of Range Management*, 56(2). https://doi.org/10.2307/4003893
+Stringham, T. K., Krueger, W. C., & Shaver, P. L. (2003). State and transition modeling: An ecological process approach. *Journal of Range Management*, 56(2), 106–113. https://doi.org/10.2307/4003893
 
 Swanson, D. T. (2026). *Carriers and Adequacy for Purpose: A Formal Framework for Representation-Constrained Adequacy*. PhilArchive manuscript, archived 21 May 2026.
 
