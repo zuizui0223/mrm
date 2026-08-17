@@ -20,13 +20,21 @@ Ecology routinely compresses heterogeneous configurations into shared states use
 
 ## B. Review-manuscript declarations
 
-### Use of generative AI
+### Use of generative AI — PROPOSED WORDING ONLY
 
 > OpenAI ChatGPT was used during manuscript development to assist with literature triage, organization of claim and citation audits, and drafting and revision of portions of the text. All cited sources, mathematical claims, interpretations, and final wording were reviewed by the human author(s), who take responsibility for the manuscript.
 
-This is intentionally treated as **substantive generative use**, not undeclared AI-assisted copyediting.
+**AUTHOR FINAL REVIEW REQUIRED BEFORE THIS WORDING MAY BE USED.**
 
-Before submission, recheck the current Springer Nature / Biology & Philosophy policy and revise wording if required.
+The second sentence describes a submission-state responsibility that must actually be true at submission. Until the human author(s) have completed that final review, treat the paragraph above as a **proposed future disclosure**, not as an accomplished declaration.
+
+The use is intentionally classified as **substantive generative use**, not undeclared AI-assisted copyediting.
+
+Before submission:
+
+1. recheck the current Springer Nature / Biology & Philosophy AI policy;
+2. complete human review of all cited sources, mathematical claims, interpretations, and final wording;
+3. only then promote the proposed disclosure to final submission text.
 
 ### Competing Interests
 
@@ -74,12 +82,14 @@ The four theorem programs can be described as mathematical components without li
 
 ## E. Reference-list rule for the Biology & Philosophy version
 
-The current journal instructions say the reference list should contain works that are **published or accepted for publication**. Therefore the submission-facing reference list should not contain the following current novelty-audit sources unless their publication status changes before submission:
+The current journal instructions say the reference list should contain works that are **published or accepted for publication**. Therefore the submission-facing reference list excludes the following current novelty-audit sources unless their publication status changes before submission:
 
 - Swanson (2026), PhilArchive manuscript;
 - Huang (2026), arXiv preprint.
 
-Keep them in the internal literature-positioning and novelty-audit documents. Removing them from the submitted reference list **does not** raise the manuscript's novelty claim.
+They remain in the internal literature-positioning and novelty-audit documents. Removing them from the submitted reference list **does not** raise the manuscript's novelty claim.
+
+The journal-target manuscript `crest_philosophy_biology_philosophy.md` already applies this rule.
 
 ## F. Length gate
 
@@ -92,24 +102,35 @@ Development target for this paper:
 
 > **5,500–7,500 words** before references.
 
-Do not fill the gap by adding theorem families or examples.
+The journal-target manuscript now includes the major philosophical expansion requested for Original Research fit:
 
-Expand only the philosophical argument:
+- why one generic `adequacy` score hides scientifically different failures;
+- how the four audits differ in starting object and quantifier order;
+- why different failure diagnoses imply different remedies;
+- why one rich POMDP/causal model can encode the ingredients without making the adequacy questions synonymous;
+- how contract-relativity remains compatible with realism and constraint.
 
-1. why one generic `adequacy` score would hide different scientific failures;
-2. how the four audits differ in starting object and quantifier order;
-3. why different failure diagnoses imply different remedies;
-4. why a sufficiently rich POMDP/causal model can encode the ingredients without making the adequacy questions synonymous;
-5. how contract-relativity remains compatible with realism and constraint.
+Do not add theorem families or additional ecological examples merely to increase length.
 
 ## G. Current submission blockers
 
 ### Scientific / manuscript-controlled
 
-- expand the philosophical argument to a full Original Research length without theorem proliferation;
-- integrate the `Biology & Philosophy` reference-list rule into the submission-facing manuscript;
-- run a final claim-ledger audit after expansion;
-- rerun citation-to-claim audit after any new literature is added.
+Completed in the current target branch:
+
+- journal-specific philosophical expansion without theorem proliferation;
+- 225-word abstract;
+- six keywords;
+- published/accepted-only submission reference list;
+- primary/fallback/reach journal positioning.
+
+Still required:
+
+- final claim-ledger audit of the expanded Biology & Philosophy target manuscript;
+- final citation-to-claim audit of any wording added during expansion;
+- exact submission word-count check against the current journal rule;
+- final double-blind scrub;
+- current-policy recheck immediately before submission.
 
 ### Author-controlled
 
@@ -120,7 +141,8 @@ Expand only the philosophical argument:
 - acknowledgements;
 - funding statement;
 - competing-interest statement;
-- final human approval of the AI-use disclosure and complete manuscript.
+- **human source/claim/text review required before AI disclosure becomes final**;
+- final human approval of the complete manuscript.
 
 ## H. Fallback routing
 
