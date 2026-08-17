@@ -43,37 +43,48 @@ Canonical documents:
 
 ## Proved conditional synthesis ladder
 
-CREST currently has six finite synthesis theorems. They do not form a nature-given
-ontology; they operate after the synchronization, action roles, audits, evidence,
-targets, and any repair costs are declared.
+CREST currently has seven finite synthesis theorems. They do not form a nature-given
+ontology; they operate after synchronization, action roles, audits, evidence,
+targets, repair languages, and costs are declared.
 
 ### Carrier gates
 
-1. **J3 — universal common carrier.** Keep exactly the greatest compatible carrier
-   closed under **every** declared legal transition. Return finite elimination and
-   coverage no-go certificates when it fails.
-2. **J6 — controlled common carrier.** Keep exactly the greatest compatible carrier
-   that survives every uncontrollable transition and has at least one safe
-   controllable transition at every retained world. Return a memoryless safe
-   selector or a typed finite AND/OR no-go certificate.
-3. **J4 — exact declared repair after carrier no-go.** Within the explicit language
-   “admit one incompatible world / disable one transition / waive one coverage
-   obligation,” minimize the forced weighted repair cost over all nonempty retained
-   subsets. Tied optima remain explicit.
+1. **J3 — universal common carrier.** Keep the greatest compatible carrier closed
+   under every declared legal transition. Return finite elimination and coverage
+   no-go certificates when it fails.
+2. **J6 — controlled common carrier.** Keep the greatest compatible carrier that
+   survives every uncontrollable transition and has at least one safe controllable
+   transition at every retained world. Return a memoryless safe selector or a typed
+   finite AND/OR no-go certificate.
 
 J3 and J6 answer different contracts. J3 requires safety under all actions; J6 asks
-whether one control policy can remain safe against all uncontrollable moves.
+whether one control policy remains safe against all uncontrollable moves.
+
+### Typed repair gates
+
+3. **J4 — exact repair of the universal J3 contract.** Within the language “admit
+   one incompatible world / disable one legal transition / waive one coverage
+   obligation,” minimize the forced weighted cost over every nonempty retained
+   subset. Tied optima remain explicit.
+4. **J7 — exact repair of the controlled J6 contract.** Within the language “admit
+   one incompatible world / disable one uncontrollable transition / install one
+   declared local fallback control / waive one coverage obligation,” minimize over
+   all control-feasible nonempty retained subsets. If no such subset exists, return
+   an exact language-level no-repair result.
+
+J4 and J7 are not interchangeable. J4 repairs universal action closure; J7 preserves
+the distinction between unavoidable transitions and selectable controls.
 
 ### State and lift results
 
-4. **J1 — unique coarsest four-audit state.** On one admissible finite carrier,
+5. **J1 — unique coarsest four-audit state.** On one admissible finite carrier,
    fair refinement of the four audit closures reaches one least-information common
    fixed point `J`. Full deterministic reporting is licensed iff evidence resolves
    `J`; otherwise the sharp state report is set-valued. A requested target can still
    be reportable without the full state.
-5. **J2 — faithful-lift invariance.** Scientifically invisible latent duplication
+6. **J2 — faithful-lift invariance.** Scientifically invisible latent duplication
    leaves `J` and evidential licensing unchanged up to quotient isomorphism.
-6. **J5 — one-sided lift bounds.** Adding preserved obligations can only refine the
+7. **J5 — one-sided lift bounds.** Adding preserved obligations can only refine the
    pulled joint state; forgetting obligations can only coarsen it. J2 is the equality
    case. Full-state licensing changes only in the corresponding one-sided direction.
 
@@ -82,8 +93,10 @@ declared ambient synchronization
   -> choose action contract:
        J3 universal carrier
        J6 controlled carrier + safe selector
-  -> carrier or finite no-go
-  -> if needed: J4 exact least-cost declared relaxation
+  -> carrier or finite typed no-go
+  -> if repair is declared:
+       J4 exact universal-contract repair
+       J7 exact controlled-contract repair
   -> admissible carrier
   -> J1 unique coarsest four-audit state + evidence gate
   -> compare alternate lifts/contracts:
@@ -110,11 +123,12 @@ Ownership remains:
 - MLTR — inherited-law transport, repair, defect, and history;
 - MRM — retained mechanism disagreement and candidate-safe prediction;
 - CED — finite evidence, observation failure, calibration, and risk-limited report;
-- CREST in MRM — conditional carrier, repair, joint-state, evidence, and
+- CREST in MRM — conditional carrier, typed repair, joint-state, evidence, and
   cross-lift synthesis.
 
-J4 is not MLTR semantic repair. J6 does not infer which actions are controllable.
-J5 does not establish that a stronger contract is normatively preferable.
+J4/J7 are not MLTR semantic repair. J6/J7 do not infer which actions or fallbacks are
+empirically controllable. J5 does not establish that a stronger contract is
+normatively preferable.
 
 ## Proof and verification map
 
@@ -131,8 +145,10 @@ J5 does not establish that a stronger contract is normatively preferable.
   — `mrm/crest_common_lift.py`, `tests/test_crest_common_lift.py`
 - [J6 controlled common-lift viability](docs/crest_controlled_common_lift_theorem_2026-08-18.md)
   — `mrm/crest_controlled_lift.py`, `tests/test_crest_controlled_lift.py`
-- [J4 minimum declared common-lift relaxation](docs/crest_minimum_common_lift_relaxation_theorem_2026-08-17.md)
+- [J4 minimum universal common-lift relaxation](docs/crest_minimum_common_lift_relaxation_theorem_2026-08-17.md)
   — `mrm/crest_common_lift_relaxation.py`, related tests
+- [J7 minimum controlled common-lift relaxation](docs/crest_minimum_controlled_lift_relaxation_theorem_2026-08-18.md)
+  — `mrm/crest_controlled_lift_relaxation.py`, related tests
 - [J1 joint-state theorem](docs/crest_joint_state_theorem_2026-08-17.md)
   — `mrm/crest_joint_state.py`, `tests/test_crest_joint_state.py`
 - [J2 faithful-lift invariance](docs/crest_lift_invariance_theorem_2026-08-17.md)
@@ -157,7 +173,7 @@ implementation surface, not the analytic proofs by itself.
 
 The mathematics is finite and declared-model relative. It does not infer future
 grammars, source-target relations, mechanism families, ambient synchronizations,
-action controllability, evidence contracts, repair costs, ecological targets, or
-empirical validity from data. Stochastic, partial-observation, delayed-control,
-approximate, infinite, richer-repair, and empirical common-lift inference remain
-open extensions.
+action controllability, fallback feasibility, evidence contracts, repair costs,
+ecological targets, or empirical validity. Stochastic, partial-observation,
+delayed-control, approximate, infinite, richer-repair, and empirical common-lift
+inference remain open extensions.
