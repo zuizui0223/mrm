@@ -112,8 +112,14 @@ The initial standalone core is reconstructed from the historical CCOC source at
 The migration keeps mechanism uncertainty separate from CCOC's open-composition
 paper and from MLTR's non-nested replacement theory.
 
-## Verification and manuscript planning
+## Verification, proofs, and manuscript planning
 
+- [Recovered MRM core proofs](docs/mrm_core_proofs.md) — analytic proof spine for
+  existing Results I–IX, including minimality and dynamic-programming optimality;
+  finite tests/replay are treated as implementation guards rather than proof substitutes.
+- [CREST proof-recovery ledger](docs/crest_proof_recovery_2026-08-17.md) —
+  cross-repository map of analytic proof, executable replay, and metatheoretical
+  non-proof obligations for CCOC, MLTR, MRM, and CED.
 - [Contract-relative ecological state synthesis](docs/contract_relative_ecological_state_theory.md)
   — canonical program-level relation among CCOC, MLTR, MRM, and CED, with explicit
   claim firewalls and future synthesis questions.
