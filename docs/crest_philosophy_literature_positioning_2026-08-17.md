@@ -4,7 +4,7 @@
 
 ## 1. Immediate conclusion
 
-Seven broad novelty claims are now excluded.
+Eight broad novelty claims are now excluded.
 
 ### Not novel 1 — purpose/context relativity
 
@@ -46,28 +46,43 @@ MLTR therefore cannot be sold as the discovery that ecological models or categor
 
 ### Not novel 7 — minimal predictive/behavioral state abstraction
 
-The formal substrate of coarse state equivalence is also mature.
+The formal substrate of coarse state equivalence is mature.
 
 - Computational mechanics defines **causal states** as equivalence classes of histories with the same predictive future distribution and proves a unique minimal predictive representation.
-- Bisimulation / MDP model-minimization theory groups states when all actions preserve the relevant reward/output and transition behavior and studies coarsest reduced models.
-- Predictive/causal state representations under partial observability learn or characterize coarsest action-observation history partitions.
+- Bisimulation / MDP model-minimization theory groups states when actions preserve the relevant reward/output and transition behavior and studies coarsest reduced models.
+- Predictive/causal state representations under partial observability characterize action-observation history partitions.
 - State aggregation and approximate abstraction have extensive literatures in decision theory and reinforcement learning.
+
+CREST must not claim novelty for defining states by future behavior, constructing coarsest future-preserving quotients, partition refinement, action-conditioned behavioral equivalence, or generic state-abstraction minimality.
+
+### Not novel 8 — intervention-consistent causal abstraction
+
+Causal-abstraction theory already gives formal accounts of when low-level and high-level causal models represent the same system consistently across interventions.
+
+Relevant results include:
+
+- exact transformations and strong abstractions;
+- explicit maps between low- and high-level states and interventions;
+- approximate causal abstractions when exact consistency fails;
+- comparison of abstraction consistency versus information loss;
+- learning one abstraction jointly across multiple interventional distributions;
+- causal-model equivalence and compositional abstraction error.
 
 Therefore CREST must not claim novelty for:
 
-- defining states by future behavior;
-- constructing a coarsest future-preserving quotient;
-- using partition refinement;
-- using action-conditioned behavioral equivalence;
-- deriving generic state-abstraction minimality.
+- causal abstraction itself;
+- preserving interventions under coarse graining;
+- relating micro- and macro-causal models;
+- approximate interventional consistency;
+- generic compositional abstraction.
 
-These are formal substrates used by individual CREST axes.
+CCOC and parts of MLTR live near this formal neighborhood, but their safe claims are the repository-specific lower-bound and inherited-repair problems already isolated in the proof ledger.
 
 ---
 
 ## 2. What remains distinctive enough to test
 
-After the identity, adequacy, intervention, POMDP, transferability, and state-abstraction audits, CREST's novelty target is narrow and explicitly **metatheoretical**.
+After the identity, adequacy, intervention, POMDP, transferability, state-abstraction, and causal-abstraction audits, CREST's novelty target is narrow and explicitly **metatheoretical**.
 
 Take one proposed coarse ecological equivalence
 
@@ -77,7 +92,7 @@ x\sim y,
 
 meaning that two configurations are to count as one scientific state.
 
-CREST does not ask only whether this is a good predictive abstraction. It separates four different adequacy obligations:
+CREST does not ask only whether this is a good predictive or interventional abstraction. It separates four adequacy obligations:
 
 1. **future sufficiency** — can a declared future operation expose a distinction erased by the equivalence?
 2. **semantic coherence** — after structural replacement, does an inherited state meaning survive, and if not what is the least source-relative repair?
@@ -102,7 +117,7 @@ one proposed coarse equivalence
                -> ambiguity-retaining report / required additional resolution
 ```
 
-Existing state abstraction usually specifies one behavioral/task criterion and constructs a representation adequate for that criterion. CREST's remaining claim is that **different scientific inadequacies should not be collapsed into one abstraction objective merely because they can all be encoded in a large decision model**.
+Existing state/causal abstraction usually specifies a behavioral, interventional, predictive, or decision criterion and constructs a representation adequate for that criterion. CREST's remaining claim is that **scientifically different inadequacies should not be collapsed into one abstraction objective merely because a sufficiently large formal model can encode all ingredients**.
 
 ---
 
@@ -138,8 +153,6 @@ CCOC does not originate intervention-relative state classification. Its formal a
 
 POMDP/adaptive-management frameworks can jointly encode actions, hidden states, model uncertainty, observation models, and learning.
 
-This is a serious neighbor, not a minor analogy.
-
 CREST differs by **diagnostic target**:
 
 - POMDPs primarily define a decision problem and optimize a policy under uncertainty;
@@ -149,11 +162,9 @@ CREST also makes inherited semantics after structural replacement a separate con
 
 ### 3.5 Policy-relevant state abstraction — Nicol & Chadès
 
-Their work shows that not every ecological detail needs to be preserved: a compact discretization can retain only the states needed for an optimal management policy.
+Their work shows that not every ecological detail needs to be preserved: a compact discretization can retain only states needed for an optimal management policy.
 
-CREST therefore cannot claim “retain only task-relevant distinctions” as new.
-
-Its narrower question is whether the failure comes from future sufficiency, semantic reuse, mechanism disagreement, or evidence licensing, because the remedy differs.
+CREST therefore cannot claim “retain only task-relevant distinctions” as new. Its narrower question is why a proposed compression fails and which remedy follows.
 
 ### 3.6 Model transferability
 
@@ -163,15 +174,25 @@ MLTR's narrower object is one accepted source macro-law carried by a declared so
 
 ### 3.7 Causal states / bisimulation / predictive state representations
 
-These formal theories are the closest neighbors to the quotient language used in CCOC/MRM/CED.
-
-They already own generic future-predictive or action-conditioned minimal-state representation.
+These formal theories already own generic future-predictive or action-conditioned minimal-state representation.
 
 CREST should therefore say:
 
-> the quotient/refinement machinery is inherited substrate; the philosophical issue is which contract supplies the relevant equivalence criterion and what kind of failure is being diagnosed.
+> quotient/refinement machinery is inherited substrate; the philosophical issue is which scientific contract supplies the relevant equivalence criterion and what kind of failure is being diagnosed.
 
-This is exactly why CREST keeps the four theorem programs separate rather than calling one generic behavioral quotient a new ecological theory.
+### 3.8 Causal abstraction
+
+Causal-abstraction theory is an especially close formal predecessor for CCOC/MLTR-style language because it explicitly studies coarse causal descriptions and intervention preservation between levels.
+
+CREST must not imply that “macro variables should preserve intervention behavior” is new.
+
+The remaining difference is that CREST is not one abstraction relation between two causal models. It is an **audit architecture over different obligations**:
+
+- a future-valid abstraction can still fail inherited-semantic preservation;
+- a semantically repaired state can still fail mechanism robustness;
+- a mechanism-safe state can still exceed what current evidence licenses us to report.
+
+This cross-contract sequence is a philosophical diagnostic, not a new generic causal-abstraction definition.
 
 ---
 
@@ -186,7 +207,8 @@ This is exactly why CREST keeps the four theorem programs separate rather than c
 | POMDP/adaptive management | action + hidden state + model uncertainty + observation + policy | separates adequacy failures rather than optimizing one encoded decision process | “CREST is diagnostic, not another POMDP.” |
 | Conservation state abstraction | policy-relevant state compression | distinguishes four reasons a proposed compression may be inadequate | “Task relevance itself is not a CREST novelty.” |
 | Model transferability | contextual model reuse/adaptation | source-relative semantic repair of inherited state labels | “MLTR formalizes one constrained transfer problem.” |
-| Causal states / bisimulation / MDP abstraction | minimal future-/action-preserving state representations | asks which scientific contract defines the equivalence and what remedy follows failure | “Generic quotient minimality is substrate.” |
+| Causal states / bisimulation / MDP abstraction | minimal future-/action-preserving state representations | asks which scientific contract defines the equivalence and what remedy follows | “Generic quotient minimality is substrate.” |
+| Causal abstraction | intervention-consistent mappings across levels, exact/approximate abstraction | separates interventional/future adequacy from inherited semantics, mechanism robustness, and evidence licensing | “Generic causal abstraction is substrate.” |
 | Robustness/model pluralism | robust conclusions across models | mechanism disagreement as exact report/state problem | “MRM returns ambiguity-explicit alternatives.” |
 | Partial observability / HMM/POMDP | hidden-state inference under observation error | reportability criterion + required target resolution | “CED is an evidential-licensing audit.” |
 | Historical contingency | legacies/path dependence | inherited-semantic history requirement | “MLTR supplies a semantics-of-state history theorem.” |
@@ -199,17 +221,17 @@ This is exactly why CREST keeps the four theorem programs separate rather than c
 
 > CREST discovers context-relative ecological states.
 
-> CREST invents ecological identity, model adequacy, task-relevant state compression, behavioral state abstraction, adaptive uncertainty integration, or model transferability.
+> CREST invents ecological identity, model adequacy, task-relevant state compression, behavioral state abstraction, causal abstraction, adaptive uncertainty integration, or model transferability.
 
 ### Current safe working formulation
 
-> Existing ecology, philosophy, and decision theory already provide accounts of ecological-system identity, model adequacy, intervention-sensitive states, adaptive management under uncertainty, task-relevant state abstraction, model transferability, predictive causal states, bisimulation, robustness, and partial observability. CREST addresses a narrower representational question: given one proposed coarse equivalence among ecological configurations, which scientific obligation has been violated when that equivalence ceases to support prediction or reporting? It separates future sufficiency, inherited-semantic coherence, mechanism robustness, and evidential licensing because the formal failure objects and remedies differ.
+> Existing ecology, philosophy, causal modelling, and decision theory already provide accounts of ecological-system identity, model adequacy, intervention-sensitive states, adaptive management under uncertainty, task-relevant state abstraction, model transferability, predictive causal states, bisimulation, intervention-consistent causal abstraction, robustness, and partial observability. CREST addresses a narrower representational question: given one proposed coarse equivalence among ecological configurations, which scientific obligation has been violated when that equivalence ceases to support prediction or reporting? It separates future sufficiency, inherited-semantic coherence, mechanism robustness, and evidential licensing because the formal failure objects and remedies differ.
 
 ### Strongest novelty hypothesis still worth testing
 
 > **CREST may provide a new theorem-backed, failure-oriented metatheoretical decomposition of coarse ecological state-equivalence adequacy into future-sufficiency, inherited-semantic, mechanism-robustness, and evidential-licensing audits.**
 
-The novelty target is the **cross-contract diagnostic architecture**. No individual mathematical minimization principle is claimed as new merely by appearing inside CREST.
+The novelty target is the **cross-contract diagnostic architecture**. No individual abstraction/minimization principle is claimed as new merely by appearing inside CREST.
 
 ---
 
@@ -217,37 +239,35 @@ The novelty target is the **cross-contract diagnostic architecture**. No individ
 
 ### CCOC
 
-Uses existing behavioral/state-abstraction substrate but asks a different comparative question: independently small closed-context interfaces can require a sharply larger interface when future grammars are jointly opened.
+Uses existing behavioral/causal-abstraction substrate but asks a comparative lower-bound question: independently small closed-context interfaces can require a sharply larger interface when future grammars are jointly opened.
 
 ### MLTR
 
-Uses refinement substrate but constrains repair to preserve one inherited source semantics. The object is not a fresh target abstraction but the least exact **repair of an inherited law**.
+Uses refinement/causal-abstraction substrate but constrains repair to preserve one inherited source semantics. The object is not a fresh target abstraction but the least exact **repair of an inherited law**.
 
 ### MRM
 
-Uses behavioral equivalence substrate but indexes hidden variation by retained response types and distinguishes unsupported determinism from exact typed/set-valued reporting.
+Uses behavioral-equivalence substrate but indexes hidden variation by retained response types and distinguishes unsupported determinism from exact typed/set-valued reporting.
 
 ### CED
 
 Uses partition/refinement substrate but separates what current evidence identifies from what additional target-safe resolution would be sufficient for a deterministic report.
 
-The philosophy paper should make these differences in quantifier order and starting objects visible, rather than present four copies of state minimization.
+The philosophy paper should make these differences in quantifier order and starting objects visible rather than present four copies of state minimization.
 
 ---
 
 ## 7. Revised opening
 
-> Ecology already has mature accounts of ecosystem identity, model adequacy, intervention-sensitive states, adaptive decision-making under partial observability and model uncertainty, state aggregation, model transferability, and predictive state abstraction. These frameworks answer different questions. A narrower representational issue remains easy to hide: when several ecological configurations are assigned the same coarse state label, which scientific obligation is that sameness supposed to satisfy? CREST separates four obligations—future sufficiency, inherited-semantic coherence, mechanism robustness, and evidential licensing—and uses distinct mathematical results to diagnose their failure.
+> Ecology and adjacent formal sciences already have mature accounts of ecosystem identity, model adequacy, intervention-sensitive states, adaptive decision-making under partial observability and model uncertainty, state aggregation, causal/predictive state abstraction, intervention-consistent causal abstraction, and model transferability. These frameworks answer different questions. A narrower representational issue remains easy to hide: when several ecological configurations are assigned the same coarse state label, which scientific obligation is that sameness supposed to satisfy? CREST separates four obligations—future sufficiency, inherited-semantic coherence, mechanism robustness, and evidential licensing—and uses distinct mathematical results to diagnose their failure.
 
 ---
 
 ## 8. Remaining exact prior-art question
 
-The remaining search question is now deliberately difficult to satisfy accidentally:
+> **Is there already a framework that takes one coarse ecological state equivalence as its object, explicitly separates future-action sufficiency, inherited semantic portability, retained-mechanism robustness, and evidence-licensed reportability, and treats failures as requiring distinct formal remedies rather than one unified abstraction/policy objective?**
 
-> **Is there already a framework that takes one coarse ecological state equivalence as its object, explicitly separates future-action sufficiency, inherited semantic portability, retained-mechanism robustness, and evidence-licensed reportability, and treats failures as requiring distinct formal remedies rather than one unified policy/abstraction objective?**
-
-Targeted searches have found frameworks combining multiple ingredients, especially POMDP/adaptive management and behavioral state abstraction, but not this exact four-contract failure architecture. This is a provisional negative search result, not proof of novelty.
+Targeted searches have found frameworks combining multiple ingredients, especially causal abstraction, POMDP/adaptive management, and behavioral state abstraction, but not this exact four-contract failure architecture. This is a provisional negative search result, not proof of novelty.
 
 ---
 
@@ -266,6 +286,7 @@ Priority anchors:
 - Yates et al. model-transferability review;
 - Shalizi & Crutchfield on causal states;
 - bisimulation/MDP model-minimization and state-abstraction literature;
+- Beckers & Halpern and subsequent causal-abstraction literature;
 - predictive/causal state representations under partial observability;
 - Giere; Massimi; Bokulich & Parker;
 - Odenbaugh; Justus; Plutynski;
@@ -285,6 +306,7 @@ existing theory:
   + intervention-sensitive states
   + POMDP/adaptive management
   + state aggregation / causal states / bisimulation
+  + causal abstraction
   + model transferability
   + robustness / history / evidence
         ↓
