@@ -60,7 +60,7 @@ This is the most important direct ecological precursor for the word **adequacy**
 
 ### Intervention-sensitive ecological states
 
-**Stringham, T. K., Krueger, W. C., & Shaver, P. L. (2003).** State and transition modeling: An ecological process approach. *Journal of Range Management*, **56**(2). DOI: `10.2307/4003893`.
+**Stringham, T. K., Krueger, W. C., & Shaver, P. L. (2003).** State and transition modeling: An ecological process approach. *Journal of Range Management*, **56**(2), 106–113. DOI: `10.2307/4003893`.
 
 Use for:
 
