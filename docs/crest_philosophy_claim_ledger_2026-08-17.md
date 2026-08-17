@@ -259,3 +259,31 @@ Before a sentence enters the manuscript:
 5. delete or rewrite it if REJECT.
 
 The manuscript should be written to survive the complete loss of any priority claim in C35.
+
+
+---
+
+## O1 integration controls — 2026-08-18
+
+### C37 — strict repair/licensing separation
+
+- **Type:** FORMAL.
+- **Allowed:** the finite witness proves `R_structural^* = 1 < R_licensed^* = 2`.
+- **Source:** `docs/crest_repair_evidence_noncommutation_2026-08-18.md` and `tests/test_crest_repair_evidence_noncommutation.py`.
+
+### C38 — full-state versus target-only licensing
+
+- **Type:** FORMAL.
+- **Allowed:** the cost-1 repair leaves the full J1 state unlicensed while the target remains reportable; the cost-2 repair is fully licensed.
+- **Boundary:** do not rewrite required state resolution as an observed state.
+
+### C39 — distinct optimization targets
+
+- **Type:** INTERPRETIVE.
+- **Allowed:** carrier feasibility, state-representation adequacy, and evidential licensing should remain diagnostically distinct.
+- **Dependency:** C37–C38.
+
+### C40 — rejected normative and priority readings
+
+- **Type:** REJECT.
+- **Forbidden:** the costlier repair is ecologically better, CREST imposes one mandatory workflow, or CREST first discovered observability-aware repair.

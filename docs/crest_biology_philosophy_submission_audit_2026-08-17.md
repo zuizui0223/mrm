@@ -161,3 +161,54 @@ Required:
 ## 8. Verdict
 
 **The Biology & Philosophy target manuscript is formally and automatically clean at the current branch head. It is not yet submission-ready because final author-controlled metadata and human responsibility checks remain outstanding.**
+
+
+## 8. CREST-O1 integration re-audit — 2026-08-18
+
+### Scope
+
+O1 was integrated as one diagnostic paragraph in the existing argument against collapsing all adequacy failures into one objective. It was not promoted to J8 or to a new theorem section.
+
+### Claim audit
+
+- **PASS:** exact witness only: `R_structural^* = 1 < R_licensed^* = 2`;
+- **PASS:** full-state licensing remains distinct from target-only reporting;
+- **PASS:** no claim that the costlier repair is normatively superior;
+- **PASS:** no mandatory audit order, exhaustiveness, commutation, or priority claim;
+- **PASS:** no new external citation used as proof of an internal theorem.
+
+### Automated verification
+
+```json
+{
+  "abstract_words": 227,
+  "author_controlled_blockers": {
+    "ai_disclosure_requires_final_human_review": true,
+    "competing_interests_placeholder": true,
+    "funding_placeholder": true,
+    "title_page_metadata_required": true
+  },
+  "automated_blockers": [],
+  "automated_checks_pass": true,
+  "blind_hits": {},
+  "development_target_5500_7500_met": false,
+  "excluded_unpublished_reference_hits": [],
+  "hard_cap_10000_met": true,
+  "keyword_count": 6,
+  "keywords": [
+    "philosophy of ecology",
+    "ecological state",
+    "scientific representation",
+    "model adequacy",
+    "causal abstraction",
+    "uncertainty"
+  ],
+  "manuscript_words_before_references": 5094,
+  "repository_word_count_definition": "visible markdown tokens before References; publisher count may differ slightly",
+  "submission_ready": false,
+  "submission_ready_reason": "author-controlled metadata, final human source/claim/text review, and final policy recheck remain required",
+  "target": "manuscript/crest_philosophy_biology_philosophy.md"
+}
+```
+
+Full pytest and `git diff --check` also passed on the integration branch. Final human review remains required before submission.

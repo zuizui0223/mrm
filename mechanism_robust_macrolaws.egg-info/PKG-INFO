@@ -1,0 +1,7 @@
+Metadata-Version: 2.4
+Name: mechanism-robust-macrolaws
+Version: 0.1.0
+Summary: Finite universal, typed, and set-valued macro-laws under mechanism uncertainty
+Requires-Python: >=3.10
+Provides-Extra: dev
+Requires-Dist: pytest>=8; extra == "dev"
