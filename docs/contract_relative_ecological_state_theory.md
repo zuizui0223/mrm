@@ -1,6 +1,6 @@
 # Contract-Relative Ecological State Theory (CREST)
 
-> **Status:** program-level metatheory with six conditional finite synthesis
+> **Status:** program-level metatheory with seven conditional finite synthesis
 > theorems. CREST does not merge CCOC, MLTR, MRM, and CED, does not claim novelty
 > for generic quotient/refinement/repair/viability machinery, and does not supply a
 > nature-given ontology of ecological states.
@@ -11,46 +11,44 @@
 > commitment about which differences may be ignored for a declared future,
 > inherited meaning, retained mechanism family, evidence contract, and target.**
 
-Write the program-level contract schematically as
+Write the program contract schematically as
 
 \[
 \mathcal C=(\Gamma,\mathcal H,\Theta,D;T).
 \]
 
-The phrase “state identity is contract-relative” concerns the adequacy of a
-scientific state representation. It does not deny mind-independent ecological
-structure.
+“State identity is contract-relative” concerns scientific representation adequacy.
+It does not deny mind-independent ecological structure.
 
 ## 2. Four companion audits
 
-| Audit | Repository | Question | Failure | Output/remedy |
+| Audit | Repository | Question | Failure | Formal output |
 |---|---|---|---|---|
-| future sufficiency | CCOC | Which distinctions can an enlarged legal future expose? | future insufficiency | interface lower bound or finer predictive state |
-| semantic coherence | MLTR | Can one inherited law retain its meaning after structural change? | semantic non-portability | least source-relative repair, defect, history |
+| future sufficiency | CCOC | Which distinctions can an enlarged legal future expose? | future insufficiency | interface lower bound / finer predictive state |
+| semantic coherence | MLTR | Can one inherited law retain its meaning after change? | semantic non-portability | least source-relative repair, defect, history |
 | mechanism robustness | MRM | Do retained response mechanisms support one prediction? | mechanism non-robustness | deterministic, typed, or set-valued report |
 | evidential licensing | CED | Which distinctions does finite imperfect evidence justify reporting? | evidential non-resolvability | compatible-world report, required resolution, design |
 
-The audits differ in carrier, starting partition, quantifier order, certificate, and
-remedy. Passing one does not silently satisfy another.
+The audits differ in carriers, starting partitions, quantifier orders, certificates,
+and remedies. Passing one does not satisfy another automatically.
 
-## 3. Synthesis requires a common carrier
+## 3. Carrier semantics
 
-The four companion contracts do not automatically share one world set. CREST first
-asks whether their declared component descriptions can be synchronized into a
-finite carrier. It provides two carrier semantics.
+The companion contracts do not automatically share one world set. CREST first asks
+whether their component descriptions can be synchronized into a finite carrier.
 
-### J3 — universal carrier
+### J3 — universal common carrier
 
-Given finite candidate joint worlds \(W\), static compatibility \(W_0\), and partial
-deterministic transitions \(\tau_a\), define
+For finite ambient worlds \(W\), static compatibility \(W_0\), and partial
+deterministic actions \(\tau_a\), define
 
 \[
 F(S)=\{w\in S\cap W_0:
 \tau_a(w)\downarrow\Rightarrow\tau_a(w)\in S
-\text{ for every declared action }a\}.
+\text{ for every action }a\}.
 \]
 
-Descending iteration from \(W_0\) reaches the unique greatest universally
+Descending iteration from \(W_0\) yields the unique greatest universally
 transition-closed carrier \(U^*\).
 
 \[
@@ -58,13 +56,12 @@ transition-closed carrier \(U^*\).
 \]
 
 A coverage-complete lift exists iff \(U^*\) represents every required component
-label. Eliminated worlds have finite action-chain certificates.
+label. Eliminated worlds have finite action-chain certificates. J3 is appropriate
+when the representation must survive **every** declared legal action.
 
-J3 is appropriate when the representation must survive every declared legal action.
+### J6 — controlled common carrier
 
-### J6 — controlled carrier
-
-Partition the actions into uncontrollable \(A_u\) and controllable \(A_c\). Define
+Partition actions into uncontrollable \(A_u\) and controllable \(A_c\). Define
 
 \[
 \begin{aligned}
@@ -76,42 +73,39 @@ G(S)=\{w\in S\cap W_0:\;&
 \end{aligned}
 \]
 
-Descending iteration reaches the unique greatest robustly controlled-invariant
+Descending iteration yields the unique greatest robustly controlled-invariant
 carrier \(K^*\).
 
 \[
-\text{nonempty controlled common lift exists}\iff K^*\neq\varnothing.
+\text{nonempty controlled lift exists}\iff K^*\neq\varnothing.
 \]
 
-A coverage-complete controlled lift exists iff \(K^*\) represents all required
-labels. Every nonempty \(K^*\) admits a deterministic memoryless safe selector.
-Every eliminated world has a finite typed AND/OR certificate:
+Coverage is complete iff \(K^*\) represents all required labels. Every nonempty
+\(K^*\) admits a deterministic memoryless safe selector. Eliminated worlds receive
+finite AND/OR certificates for:
 
 - static incompatibility;
-- an uncontrollable escape; or
+- uncontrollable escape; or
 - failure of every legal control choice.
 
-J6 is appropriate when unavoidable exterior moves must all be survived but the
-system or manager may choose one safe action. If doing nothing is allowed, it must
-be declared explicitly as a safe action or self-loop.
+J6 is appropriate when unavoidable exterior moves must all be survived but one safe
+control may be selected. A no-op or wait option must be declared explicitly.
 
-Under the control-nonblocking condition, the J3 carrier computed over
-\(A_u\cup A_c\) is contained in the corresponding J6 carrier. The inclusion can be
-strict. This is not a dominance claim: J3 and J6 certify different scientific
-contracts.
+Under control nonblocking, the corresponding J3 universal carrier is contained in
+J6's carrier; strict inclusion is possible. J3 and J6 certify different action
+quantifications rather than competing notions of correctness.
 
-## 4. Repairing a failed carrier contract
+## 4. Typed carrier repair
 
-### J4 — exact minimum declared relaxation
+### J4 — repair of the universal J3 contract
 
-If the selected J3-style carrier gate is empty or coverage-incomplete, J4 uses an
-explicit repair language:
+J4 permits:
 
-1. admit one incompatible candidate world;
-2. disable one originally legal transition; or
-3. waive one coverage obligation.
+1. admitting an incompatible world;
+2. disabling one legal transition; and
+3. waiving one coverage obligation.
 
-For every nonempty retained subset \(S\subseteq W\), let
+For every nonempty retained \(S\subseteq W\), let
 
 \[
 \begin{aligned}
@@ -122,11 +116,10 @@ D(S)&=\{(k,\ell):\ell\in R_k,\ell\notin p_k(S)\}.
 \end{aligned}
 \]
 
-The forced repair cost is
+Then
 
 \[
-R(S)=
-\sum_{w\in A(S)}c_w+
+R(S)=\sum_{w\in A(S)}c_w+
 \sum_{(w,a)\in E(S)}d_{w,a}+
 \sum_{(k,\ell)\in D(S)}r_{k,\ell},
 \]
@@ -137,146 +130,181 @@ and
 \boxed{R^*=\min_{\varnothing\neq S\subseteq W}R(S).}
 \]
 
-Every operation in the formula is necessary for that witness, and those operations
-are sufficient. Costs are declared scientific or normative inputs. Tied optima are
-reported rather than collapsed into a fictitious unique repair.
+The operations are necessary and sufficient for that retained witness. Costs are
+inputs, and tied optima remain explicit.
 
-The current J4 theorem is attached to the universal J3 operation language. A
-cost-aware controlled-J6 repair language would be a distinct extension and is not
-silently assumed here.
+### J7 — repair of the controlled J6 contract
 
-## 5. One joint state on an admissible carrier
+J7 preserves the distinction between unavoidable transitions and selectable
+controls. Its repair language permits:
+
+1. admitting an incompatible world;
+2. disabling one **uncontrollable** transition;
+3. installing one declared local fallback control; and
+4. waiving one coverage obligation.
+
+For nonempty \(S\subseteq W\), define \(A(S)\) and \(D(S)\) as above, and
+
+\[
+U(S)=\{(w,a):w\in S,\ a\in A_u,
+\tau_a(w)\downarrow,\ \tau_a(w)\notin S\}.
+\]
+
+Let
+
+\[
+C(S)=\{w\in S:\nexists a\in A_c
+\text{ with }\tau_a(w)\downarrow\text{ and }\tau_a(w)\in S\}.
+\]
+
+The subset is **repair-feasible** only when each \(w\in C(S)\) has a declared
+fallback successor \(f(w)\in S\). For feasible \(S\),
+
+\[
+\boxed{
+R_c(S)=
+\sum_{w\in A(S)}c_w+
+\sum_{(w,a)\in U(S)}d_{w,a}+
+\sum_{w\in C(S)}g_w+
+\sum_{(k,\ell)\in D(S)}r_{k,\ell}.
+}
+\]
+
+If \(\mathcal F\) is the family of repair-feasible nonempty subsets, then
+
+\[
+\boxed{R_c^*=\min_{S\in\mathcal F}R_c(S)}
+\]
+
+when \(\mathcal F\neq\varnothing\). If \(\mathcal F=\varnothing\), no repair exists
+in the declared language.
+
+For a fixed feasible witness, every term is necessary: incompatible worlds must be
+admitted, uncontrollable exits must be blocked, control-deficient worlds need their
+declared fallback, and missing labels must be waived. Those operations are also
+sufficient, so the bounds coincide. With strictly positive change costs,
+\(R_c^*=0\) iff the original J6 contract is admissible. Tied optima remain explicit.
+
+J4 and J7 are not interchangeable, and neither is MLTR semantic repair. J4/J7 weaken
+a cross-component carrier contract before J1 constructs a state; MLTR repairs one
+inherited macro-law after structural replacement.
+
+## 5. Joint state on an admissible carrier
 
 ### J1 — unique coarsest four-audit state
 
-On a declared finite common carrier \(U\), let
+On finite carrier \(U\), let
 
 \[
 C_\Gamma,C_\mathcal H,C_\Theta,C_{D,T}:\Pi(U)\to\Pi(U)
 \]
 
-be monotone, inflationary, idempotent audit closures, and let \(B\) be the baseline
-partition. Their join closure gives
+be monotone, inflationary, idempotent closures, with baseline \(B\). Their join gives
+
+\[
+\boxed{J=(C_\Gamma\vee C_\mathcal H\vee C_\Theta\vee C_{D,T})(B).}
+\]
+
+`J` is the unique coarsest partition satisfying all four obligations. Fair finite
+iteration reaches it without pairwise commutation; a single pass through separately
+computed minima can fail.
+
+For reliability-qualified evidence partition \(E_D\),
 
 \[
 \boxed{
-J=(C_\Gamma\vee C_\mathcal H\vee C_\Theta\vee C_{D,T})(B).
+\text{full deterministic state report exists}\iff J\preceq E_D.
 }
 \]
 
-`J` is the unique coarsest partition satisfying all four representational
-obligations. Pairwise audit commutation is unnecessary; fair finite iteration
-converges to the same fixed point. One pass through four separately computed minima
-can be insufficient.
+Otherwise the sharp state report is the set of `J` blocks compatible with the
+evidence class. A target may still be deterministic without full-state resolution.
 
-Let \(E_D\) be the reliability-qualified evidence partition. Then
-
-\[
-\boxed{
-\text{full deterministic joint-state report exists}
-\iff J\preceq E_D.
-}
-\]
-
-When this fails, the sharp state report is the set of `J` blocks intersecting the
-evidence class. A target can still be deterministic when it is constant on each
-evidence class, even if the full state is unresolved.
-
-## 6. Comparing alternative common lifts and contracts
+## 6. Comparing lifts and contracts
 
 ### J2 — faithful-lift equality
 
-Let \(\pi:U\twoheadrightarrow V\) preserve baseline, evidence, target, audit labels,
-action legality, and projected successors exactly. Then
+If surjection \(\pi:U\twoheadrightarrow V\) preserves baseline, evidence, target,
+audit labels, action legality, and successors exactly, then
 
 \[
 C_i^U(\pi^*P)=\pi^*C_i^V(P)
 \]
 
-for every audit, and
+and
 
 \[
 \boxed{J_U=\pi^*J_V,\qquad U/J_U\cong V/J_V.}
 \]
 
-Scientifically invisible latent duplication cannot change the state or its
-evidential licensing.
+Scientifically invisible latent duplication cannot change the state or licensing.
 
 ### J5 — one-sided lift bounds
 
-When evidence and target remain exact pullbacks and shared action semantics commute,
-J5 allows the audit obligations to differ.
+With exact evidence/target pullback and exact shared-action semantics:
 
-If the source baseline/static distinctions are finer and it retains every target
-action, possibly adding actions, then
+- finer source obligations plus all target actions imply
+  \[
+  \boxed{\pi^*J_V\preceq J_U};
+  \]
+- coarser source obligations plus a subset of target actions imply
+  \[
+  \boxed{J_U\preceq\pi^*J_V}.
+  \]
 
-\[
-\boxed{\pi^*J_V\preceq J_U.}
-\]
+Both directions recover J2 equality. Target-only licensing is invariant; full-state
+licensing is one-sided in the corresponding direction.
 
-If the source baseline/static distinctions are coarser and its actions are subsets
-of the target actions, then
-
-\[
-\boxed{J_U\preceq\pi^*J_V.}
-\]
-
-Added preserved obligations can only refine the required state; forgotten
-obligations can only coarsen it. Satisfying both directions recovers J2 equality.
-Target-only licensing is invariant under the exact evidence/target pullback. Full
-state licensing is one-sided in the expected direction.
-
-## 7. The proved dependency map
+## 7. Proved dependency map
 
 ```text
 declared ambient synchronization
-  -> choose carrier semantics:
+  -> choose action contract:
        J3: survive every legal action
-       J6: survive every uncontrollable action + choose one safe control
+       J6: survive all uncontrollable moves + choose one safe control
   -> maximal carrier or finite typed no-go
-  -> if using the declared J3 repair language and repair is needed:
-       J4 exact least-cost weakening
+  -> choose matching repair language if needed:
+       J4: universal-contract repair
+       J7: controlled-contract repair
   -> admissible carrier
   -> J1 unique coarsest four-audit state + evidence gate
   -> compare alternate lifts/contracts:
        J2 faithful equality
-       J5 one-sided refinement bounds
+       J5 one-sided bounds
 ```
 
-These arrows are theorem dependencies, not a universal order for field research.
+These arrows are theorem dependencies, not a mandatory field-work order.
 
 ## 8. Ecological reading
 
 For a state called **pollination maintained**:
 
-- CCOC asks whether future colonization, reconnection, or intervention exposes a
-  hidden distinction.
-- MLTR asks whether the inherited meaning survives pollinator turnover.
-- MRM asks whether retained mechanisms agree about restoration responses.
-- CED asks whether field evidence has earned the needed distinction.
-- J3 asks whether one synchronized description survives every declared action.
-- J6 asks whether one synchronized description can survive unavoidable exterior
-  moves under at least one declared management policy.
-- J1 constructs the least joint distinction required by the four audits.
-- J2/J5 determine whether another lift represents the same, a stronger, or a weaker
-  scientific contract.
+- CCOC tests future colonization, reconnection, and intervention exposure;
+- MLTR tests inherited meaning after pollinator turnover;
+- MRM tests retained mechanisms' restoration predictions;
+- CED tests whether field evidence earned the distinction;
+- J3 asks whether all declared actions preserve one synchronized carrier;
+- J6 asks whether unavoidable exterior moves can be survived under one policy;
+- J4/J7 price the least declared concession when the relevant carrier fails;
+- J1 constructs the least joint state; and
+- J2/J5 compare alternative latent descriptions and contract strengths.
 
-Contract-relativity is therefore constrained rather than arbitrary: scientists
-declare the obligations and action roles, while the dynamics and evidence can
-refute the merge, carrier, policy, or report.
+Contract-relativity is constrained rather than arbitrary: scientists declare the
+obligations, action roles, fallbacks, and costs, while dynamics and evidence can
+refute a merge, carrier, policy, repair, or report.
 
 ## 9. Prior-art and ownership firewall
 
 CREST does not claim novelty for:
 
-- partition refinement, closure operators, and lattice fixed points;
+- partition refinement, closure operators, or lattice fixed points;
 - invariant, viability, and safety kernels;
-- controllable-predecessor iteration and memoryless finite safety strategies;
-- minimum-cost model repair and finite subset optimization;
+- controllable-predecessor iteration or memoryless finite safety strategies;
+- minimum-cost model/safety-game repair or subset optimization;
 - quotient naturality, simulation, or abstraction precision;
-- adequacy-for-purpose, partial observability, and ecological transferability.
+- adequacy-for-purpose, partial observability, or ecological transferability.
 
-The program contribution is the theorem-grounded ecology-specific contract map and
+Its candidate contribution is the theorem-grounded ecology-specific contract map and
 its typed carrier, repair, partition, evidence, and comparison gates.
 
 Repository ownership remains:
@@ -284,18 +312,19 @@ Repository ownership remains:
 - CCOC — open-future interface obstruction;
 - MLTR — inherited-law transport and semantic repair;
 - MRM — mechanism-robust prediction;
-- CED — evidential reportability and observation design;
+- CED — evidential reportability and design;
 - CREST synthesis in MRM — conditional cross-contract coupling.
 
 ## 10. What is not proved
 
-- a nature-given unique synchronization or action-role assignment;
-- that every companion model admits a coverage-complete J3 or J6 carrier;
-- that J6 policies optimize ecological value;
-- an exact J4 repair theorem for the controlled-action language;
-- comparison for every arbitrary nonfaithful lift map;
+- a nature-given synchronization, action-role assignment, fallback, or cost scale;
+- that every companion model admits a coverage-complete J3/J6 carrier;
+- policy optimality beyond safety;
+- exhaustiveness of the J4/J7 repair languages;
+- arbitrary transition redirection or action-role reclassification;
+- comparison for every nonfaithful lift;
 - stochastic, partial-observation, delayed-control, approximate, or infinite forms;
-- that the four axes are philosophically exhaustive; or
+- philosophical exhaustiveness of the four axes; or
 - empirical validity of the declared contracts.
 
 ## 11. Proof control and next questions
@@ -304,13 +333,14 @@ Repository ownership remains:
 - [Companion proof recovery](crest_proof_recovery_2026-08-17.md)
 - [Cross-repository validation](crest_final_validation_2026-08-17.md)
 
-The next high-value questions are now narrower:
+The next high-value questions are:
 
-1. minimum repair of a failed controlled-J6 contract;
-2. partial-observation and policy-memory requirements;
-3. stochastic/adversarial disturbance kernels and risk-limited safety;
-4. weakest simulation and approximate lift bounds; and
-5. empirical inference of synchronizations, action roles, and evidence contracts.
+1. partial-observation and finite-memory control;
+2. stochastic/adversarial risk-limited safety and repair;
+3. weakest/approximate lift simulations;
+4. richer repair-language comparison; and
+5. empirical inference of synchronization, action roles, fallbacks, costs, and
+   evidence.
 
 A new theorem must change a coupled premise or failure boundary. Renaming another
 refinement, viability, or repair result is not a CREST contribution.
