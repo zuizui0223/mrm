@@ -150,3 +150,49 @@ If Biology & Philosophy rejects primarily on fit/article type rather than the su
 ## Current verdict
 
 **The repository-controlled scientific manuscript is clean enough to hand over for final human authorship review. No further theorem development or automated manuscript repair is currently justified.**
+
+
+## G2. CREST-O1 integration status — 2026-08-18
+
+Completed repository-controlled work:
+
+- one O1 diagnostic paragraph integrated into the Biology & Philosophy manuscript;
+- no new theorem section, acronym family, external citation, or priority claim;
+- C37–C40 added to the claim ledger;
+- theorem suite and submission verifier passed after integration.
+
+Verifier report:
+
+```json
+{
+  "abstract_words": 227,
+  "author_controlled_blockers": {
+    "ai_disclosure_requires_final_human_review": true,
+    "competing_interests_placeholder": true,
+    "funding_placeholder": true,
+    "title_page_metadata_required": true
+  },
+  "automated_blockers": [],
+  "automated_checks_pass": true,
+  "blind_hits": {},
+  "development_target_5500_7500_met": false,
+  "excluded_unpublished_reference_hits": [],
+  "hard_cap_10000_met": true,
+  "keyword_count": 6,
+  "keywords": [
+    "philosophy of ecology",
+    "ecological state",
+    "scientific representation",
+    "model adequacy",
+    "causal abstraction",
+    "uncertainty"
+  ],
+  "manuscript_words_before_references": 5094,
+  "repository_word_count_definition": "visible markdown tokens before References; publisher count may differ slightly",
+  "submission_ready": false,
+  "submission_ready_reason": "author-controlled metadata, final human source/claim/text review, and final policy recheck remain required",
+  "target": "manuscript/crest_philosophy_biology_philosophy.md"
+}
+```
+
+Remaining blockers are author-controlled: final human source/claim/text review, author and affiliation metadata, funding, competing interests, acknowledgements, final AI-disclosure approval, policy recheck, and visual read-through.
