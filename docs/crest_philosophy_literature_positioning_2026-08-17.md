@@ -4,270 +4,268 @@
 
 ## 1. Immediate conclusion
 
-The broad statement
+Three broad novelty claims are now excluded.
 
-> scientific/ecological representations are perspective-, purpose-, boundary-, or context-relative
+### Not novel 1 — purpose/context relativity
 
-is **not** available as a CREST novelty claim.
+The general idea that scientific representations are purpose-, perspective-, context-, or boundary-relative is already well developed in philosophy of science and philosophy of ecology.
 
-Existing philosophy of science and philosophy of ecology already contain strong versions of:
+Relevant traditions include:
 
-- purpose-relative scientific representation;
-- scientific perspectivism and perspectival realism;
-- model pluralism and representational pluralism;
+- pragmatic scientific representation;
+- scientific perspectivism / perspectival realism;
+- model pluralism;
 - adequacy-for-purpose / fitness-for-purpose;
-- open-system and boundary-choice arguments in ecology;
-- historical contingency and ecological memory;
-- robustness analysis across multiple models;
-- context-sensitive mechanistic modelling.
+- open-system and boundary-choice arguments in ecology.
 
-CREST must therefore be positioned more narrowly.
+Therefore CREST must not claim:
 
-The strongest defensible philosophical contribution currently visible is:
+> ecological state identity is novel because scientific purposes differ.
 
-> **CREST separates four different sources of state-relativity that existing contextualist or perspectival language can easily conflate, and anchors each source in a distinct formal failure/minimality problem.**
+### Not novel 2 — ecological identity as a philosophical problem
 
-The four are:
+Ecological and complex-system identity already has a direct literature.
 
-1. future-operation relativity;
-2. inherited-semantic relativity;
-3. mechanism-relative predictive relativity;
-4. evidence-relative reportability.
+- Cumming & Collier (2005) ask how complex systems retain identity through change and emphasize system definitions, boundaries, spatial continuity, and temporal continuity.
+- Collier & Cumming (2011) argue for a **dynamical** approach to ecosystem identity because measurements, interactions, and interventions are themselves dynamic.
+- Delettre (2021) explicitly analyzes the **identity of ecological systems**, distinguishing typological, numerical, global-state, and local-state identity and relating these to different notions of resilience. Delettre also notes that the choice of key variables depends partly on scale, research objectives, and researcher judgement.
 
-The contribution is not the discovery of contextuality itself.
+Therefore CREST must not claim:
 
----
+> ecological identity has not previously been analyzed;
 
-## 2. Claim matrix
+or
 
-| Existing philosophical/ecological claim | Representative literature family | What it already owns | CREST formal contribution | Safe CREST manuscript claim |
-|---|---|---|---|---|
-| Models represent targets for particular purposes | pragmatic scientific representation; Giere | representation is agent-/purpose-relative; no representation captures everything for every use | CCOC/MLTR/MRM/CED make four different adequacy failures mathematically explicit rather than leave “purpose” as one undifferentiated pragmatic parameter | “CREST refines purpose-relativity into four formally different adequacy contracts.” |
-| Data/model adequacy is fitness-for-purpose | Bokulich & Parker; pragmatic-representational accounts | data/model quality is evaluated relative to intended scientific purposes | CED gives an exact finite reportability criterion and separates current evidence from required target-safe resolution | “CED supplies one formal evidential-licensing instance of adequacy-for-purpose.” |
-| Scientific knowledge is perspectival yet can remain realist | Giere; Massimi; perspectival realism | perspectives may be partial, situated, plural, historically/culturally conditioned, while remaining world-directed | CREST does not need anti-realism: declared contracts generate objective failure conditions once fixed | “Contract-relative does not mean arbitrary; CREST is compatible with realism about ecological processes.” |
-| Ecological systems are open | philosophy of ecology; Plutynski and open-system discussions | ecosystems interact with environments; closure assumptions are problematic | CCOC proves a sharp future-grammar consequence: separately small closed interfaces can require much larger joint open interfaces | “CCOC turns ecological openness into an exact state-sufficiency obstruction under declared future operations.” |
-| Ecological/system boundaries are question- and scale-dependent | ecosystem-boundary literature; systems modelling | boundaries depend on research question, scale, flow, and modelling aims | CCOC identifies when changing the admissible exterior/future contract forces additional state information rather than merely changing descriptive scope | “Boundary choice can change minimum causal state requirements, not only model interpretation.” |
-| Ecological models are plural and idealized | Levins tradition; Odenbaugh; Justus; model pluralism | different models trade realism/generality/precision and answer different questions | MRM asks a different question: after several response laws remain admissible, when do they support one common prediction and when must ambiguity stay explicit? | “MRM formalizes predictive agreement across a retained mechanism family rather than general model pluralism.” |
-| Robust predictions can be sought across multiple models | Levins/Wimsatt/Weisberg robustness analysis | convergence across independent models can support robust conclusions | MRM's universal/typed/set-valued distinction identifies the exact finite condition under which retained response laws agree at the requested predictive level | “MRM is adjacent to robustness analysis but treats disagreement as a state/reporting problem rather than as confirmation by convergence.” |
-| Mechanistic explanation is context-sensitive in ecology | mechanistic philosophy in ecological model building | ecological mechanism identification and modelling can be context-sensitive and heuristic | MRM distinguishes raw mechanism identity from response type and proves when mechanism distinctions can be safely merged for prediction | “CREST does not require full mechanism identity; only target-relevant response distinctions must survive.” |
-| History and path dependence matter in ecology | historical contingency, ecological memory, landscape/pathway literature | present ecological conditions can depend on past trajectories and legacies | MLTR gives a source-relative semantic criterion: history context is required exactly to preserve incompatible carried inherited meanings in the declared transport problem | “MLTR formalizes one specific sense in which historical context becomes part of a predictive state.” |
-| Evidence underdetermines ecological conclusions | philosophy of ecology, observation/uncertainty literature | finite data and experiments do not uniquely determine ecological truth | CED separates compatible-world information from target-safe required resolution and risk-qualified reporting | “CED formalizes when a deterministic ecological report is licensed and when ambiguity must remain explicit.” |
+> CREST is the first four-way decomposition of ecological identity.
+
+### Not novel 3 — openness, history, pluralism, or limited evidence by themselves
+
+Existing literatures already establish that:
+
+- ecological systems are open and system boundaries matter;
+- ecological outcomes can be historically contingent and path dependent;
+- multiple models/mechanisms may be required and robustness can be assessed across them;
+- data and experiments can underdetermine ecological conclusions.
+
+CREST cannot claim priority for any of those generic statements.
 
 ---
 
-## 3. Nearest philosophical neighbors
+## 2. What remains distinctive enough to test
 
-### 3.1 Pragmatic scientific representation
+The revised CREST novelty target is **not a taxonomy of identity types**.
 
-Giere's agent-based/pragmatic account is a direct warning against claiming that CREST discovered purpose-relative representation. Scientific agents use models to represent aspects of the world for particular purposes.
+It is a taxonomy of **state-representation adequacy failures**.
 
-CREST should therefore not argue:
+The question is:
 
-> state identity is relative because scientists choose different purposes.
+> Once an ecologist has chosen a coarse state representation, under what distinct contracts can that proposed sameness fail to support prediction and reporting?
 
-That is too generic and already well developed.
+CREST separates four contracts:
 
-CREST should instead ask:
+1. **future-operation contract** — can future legal operations expose a distinction that the state representation erased?
+2. **inherited-semantic contract** — after structural change, does a previously accepted state label preserve its inherited operational meaning?
+3. **mechanism contract** — do retained response mechanisms agree on the future prediction requested of the state?
+4. **evidence contract** — has the observation/experiment actually licensed the distinction that the target report requires?
 
-> once a purpose is decomposed into future operations, inherited semantics, retained mechanisms, and evidence/report targets, do those dimensions impose mathematically different identity conditions?
+These are not four metaphysical meanings of identity in the Delettre sense. They are four different ways a **chosen scientific state representation** can be inadequate for a declared use.
 
-The current theorem program answers yes for the declared finite settings.
-
-### 3.2 Perspectival realism
-
-Massimi and the broader perspectivist tradition already show that partial, situated, plural representation need not collapse into relativism.
-
-This is useful for CREST because it provides a philosophical vocabulary for the distinction
-
-\[
-\text{contract-relative}\neq\text{arbitrary}.
-\]
-
-But CREST should not claim to introduce perspectival realism or to prove realism.
-
-Its narrower addition is a diagnostic architecture:
-
-- future insufficiency;
-- semantic non-portability;
-- mechanism non-robustness;
-- evidential non-resolvability.
-
-### 3.3 Adequacy-for-purpose
-
-Bokulich and Parker's pragmatic-representational account of data is particularly close to the CED side: data are evaluated for adequacy relative to purposes, and context/processing history matters to reuse.
-
-CED should therefore be presented as a formal finite reportability theory that instantiates a broader adequacy-for-purpose philosophy, not as the origin of that philosophy.
-
-### 3.4 Philosophy of ecological modelling
-
-Odenbaugh and Justus already emphasize idealization, abstraction, representation, model testing, and the relation between theoretical ecology and policy.
-
-CREST's potential philosophical value is therefore not another general defense of ecological models. It is a proposal that one hidden modelling decision deserves explicit treatment:
-
-> **what identity criterion is being used when heterogeneous ecological configurations are assigned the same state label?**
-
-The four theorem programs show that this identity criterion can fail in several non-equivalent ways.
-
-### 3.5 Open systems and ecological boundaries
-
-Philosophy-of-ecology sources explicitly describe ecological systems as open. Ecological boundary literature also stresses that system boundaries depend on scale, processes, and the question being asked.
-
-Therefore:
-
-- “ecosystems are open” is not a CCOC discovery;
-- “boundaries are chosen relative to questions” is not a CCOC discovery.
-
-CCOC's stronger formal role is:
-
-> an enlarged future/composition grammar can force a strictly finer exact state representation, even when every supplied closed context admits a small exact interface.
-
-That is the mathematical content that can support a philosophical discussion of openness.
-
-### 3.6 Robustness and model pluralism
-
-Levins/Wimsatt/Weisberg-style robustness analysis asks whether conclusions survive variation across models and idealizations.
-
-MRM is adjacent but not identical. It starts from a retained finite response-law family and asks:
-
-- whether all retained response types induce one deterministic law;
-- what exact typed/set-valued report is justified when they do not;
-- what minimum mechanism-relative state must be retained;
-- which declared interventions can resolve the ambiguity.
-
-The philosophical paper should explicitly distinguish “robust theorem across models” from “honest predictive state under unresolved model/mechanism disagreement.”
-
-### 3.7 Historical contingency and ecological memory
-
-Ecology already has extensive discussion of historical contingency, legacy effects, pathways, succession, and ecological memory.
-
-MLTR therefore cannot claim to discover that history matters.
-
-Its specific philosophical contribution is narrower:
-
-> inherited ecological categories can carry incompatible semantics along different declared structural histories, and the minimum history context needed to preserve those inherited meanings can be characterized within the finite transport model.
-
-This is a semantics-of-state point, not a general theory of ecological contingency.
+This distinction must be explicit in the manuscript.
 
 ---
 
-## 4. Revised novelty hypothesis
+## 3. Direct comparison with ecological-identity literature
 
-### Unsafe novelty claim
+### Cumming & Collier / Collier & Cumming
 
-> CREST is novel because it says ecological states are context-/purpose-/perspective-relative.
+Their target is **system identity through change**:
 
-Reject this.
+- what constitutes one complex/ecological system;
+- how boundaries are drawn;
+- what continuity is required;
+- why ecosystem identity should be dynamic rather than purely structural.
 
-### Safer working claim
+CREST should treat this work as a direct predecessor, not a distant analogy.
 
-> Existing perspectivist, pluralist, pragmatic, and open-system approaches establish that scientific representations and ecological boundaries are context- and purpose-sensitive. CREST contributes a formal diagnostic decomposition of one narrower problem: when a coarse ecological state is used for prediction and reporting, four distinct contracts can independently invalidate the proposed state identity—future operations, inherited semantics, retained mechanisms, and evidence. Each failure is associated with a different formal object and a different honest remedy.
+CREST's different target is:
 
-### Strongest currently defensible version
+> given a state representation *within* a declared ecological system/model, what future, semantic, mechanism, and evidence contracts determine whether two configurations may safely share that state label?
 
-> **The philosophical contribution is the separation of four non-equivalent identity conditions for usable ecological states, together with theorem-backed examples showing that satisfying one does not by definition collapse the others.**
+Thus:
 
-Even this must be literature-audited further before submission. In particular, the paper must check whether an existing philosophy-of-science framework already makes an equally explicit four-way decomposition.
+```text
+system identity
+    ≠
+state-representation adequacy
+```
 
----
+although the two questions interact.
 
-## 5. What the mathematics adds to philosophy
+### Delettre
 
-The mathematics prevents the philosophical thesis from becoming generic contextualism.
+Delettre distinguishes four **kinds of ecological identity**:
 
-### CCOC
+- typological identity;
+- numerical identity;
+- global-state identity;
+- local-state identity.
 
-Not merely:
+CREST distinguishes four **adequacy audits of a state representation**:
 
-> future context matters.
+- future sufficiency;
+- semantic coherence;
+- mechanism robustness;
+- evidential licensing.
 
-But:
+These decompositions are orthogonal rather than competing.
 
-> a wider declared future grammar can provably force interface growth; there are finite families with small closed interfaces and sharply larger open interfaces.
+For example, one shallow lake may preserve Delettre's numerical identity while an inherited management state label fails MLTR semantic coherence after a change in the available interventions. Conversely, two numerically distinct lakes may occupy the same global ecological state while CCOC shows that the same coarse label is not future-sufficient under a broader action grammar.
 
-### MLTR
+Safe manuscript language:
 
-Not merely:
+> Previous ecological-identity frameworks distinguish what kind of identity an ecological system preserves. CREST asks a different question: what conditions must a *state representation* satisfy to remain adequate for prediction and reporting under explicitly declared scientific contracts?
 
-> history and meaning matter.
+Unsafe language:
 
-But:
-
-> after a source law is fixed, there is a unique coarsest exact source-relative repair, and preserving incompatible inherited terminal maps forces finite history context.
-
-### MRM
-
-Not merely:
-
-> mechanisms are uncertain.
-
-But:
-
-> deterministic reporting is justified exactly where retained response types agree; otherwise typed/set-valued reports and a unique coarsest candidate-safe state give exact finite alternatives.
-
-### CED
-
-Not merely:
-
-> evidence is limited.
-
-But:
-
-> deterministic reporting is justified exactly when the target is constant on the compatible evidence class; the target-safe quotient states what additional resolution would be sufficient, not what has already been observed.
-
-This is the main reason to retain the mathematics in a philosophy paper.
+> Earlier work ignored ecological state identity.
 
 ---
 
-## 6. Literature-based revision to the paper architecture
+## 4. Claim matrix after the direct-identity audit
 
-The philosophy paper should now avoid opening with “models are purpose-relative.”
-
-Better opening:
-
-> Ecologists routinely treat different configurations as the same state. Philosophers already have strong accounts of why scientific representations are purpose-sensitive, perspectival, plural, and boundary-dependent. The unresolved question pursued here is more specific: **which kind of sameness is being claimed when one ecological state variable is expected to survive future intervention, structural change, mechanism uncertainty, and finite evidence?**
-
-The paper can then present CREST as a **diagnostic refinement of perspectival/pragmatic representation**, not as a replacement for those traditions.
-
----
-
-## 7. Bibliographic anchors for the next pass
-
-The next literature pass should begin from these anchors and expand through their citations:
-
-- Ronald Giere — pragmatic / agent-based scientific representation and purpose-relative model use.
-- Michela Massimi — perspectival realism and perspectival scientific representation.
-- Alisa Bokulich & Wendy Parker — data models and adequacy-for-purpose.
-- Jay Odenbaugh — ecological models, idealization, testing, policy, and ecological stability.
-- James Justus — modelling, representation, and reduction in ecology.
-- Anya Plutynski — ecology as an open-system science and underdetermination/uncertainty.
-- Richard Levins / William Wimsatt / Michael Weisberg — model pluralism and robustness analysis.
-- philosophy-of-science-in-practice work on context-sensitive mechanistic modelling in ecology.
-- ecological historical-contingency / memory literature.
-- ecological boundary and system-boundary literature.
-
-Do not cite these as proof that no one has anticipated CREST. They define the nearest conceptual neighborhoods that must be searched more deeply.
+| Existing claim | Literature already owns | CREST formal addition | Safe manuscript claim |
+|---|---|---|---|
+| Scientific models represent for purposes | Giere / pragmatic representation | purpose is decomposed into four formally different adequacy contracts | “CREST refines purpose-relativity into four operational audits.” |
+| Representations can be perspectival yet realist | Massimi / perspectival realism | once contracts are declared, failure conditions are mathematically constrained | “Contract-relative does not mean arbitrary.” |
+| Data/model adequacy is purpose-relative | Bokulich & Parker | CED gives exact finite reportability and required-resolution conditions | “CED is one formal evidential-licensing account inside a broader adequacy-for-purpose philosophy.” |
+| Ecological systems are open | Plutynski and open-system ecology | CCOC proves that widening future grammar can force a larger exact state interface | “CCOC turns openness into a state-sufficiency obstruction.” |
+| Ecological boundaries depend on question/scale | ecosystem-boundary literature | CCOC identifies when a changed boundary/future contract forces new state information | “Boundary choice can change minimum causal state requirements.” |
+| Ecological/complex systems require identity criteria | Cumming & Collier | CREST shifts from identity of the whole system to adequacy of a chosen coarse state representation | “CREST complements dynamical ecosystem identity with state-representation audits.” |
+| Ecological identity has multiple meanings | Delettre | CREST supplies four different contract failures, not four additional metaphysical identity types | “CREST is an adequacy decomposition, not an alternative identity taxonomy.” |
+| Ecological models are plural and idealized | Levins / Odenbaugh / Justus | MRM formalizes exact agreement/disagreement of retained response laws at the predictive-state level | “MRM concerns honest predictive state under unresolved mechanism disagreement.” |
+| Robust conclusions can survive model variation | Levins/Wimsatt/Weisberg | MRM treats disagreement itself as a state/reporting problem rather than only seeking convergence | “MRM is adjacent to robustness analysis but has a different scientific output.” |
+| Mechanistic modelling is context-sensitive | philosophy of science in ecological modelling | MRM collapses raw mechanisms to response types and keeps only future-relevant mechanism distinctions | “Full mechanism identity is unnecessary when response distinctions are predictively irrelevant.” |
+| History/path dependence matters | historical-contingency and ecological-memory literature | MLTR gives one exact source-relative sense in which inherited semantic conflict forces history context | “MLTR formalizes a semantics-of-state version of ecological history dependence.” |
+| Evidence can underdetermine ecological truth | philosophy of ecology / data adequacy | CED distinguishes compatible evidence classes from the finer resolution required for deterministic target reporting | “A required ecological distinction need not yet be an evidence-licensed distinction.” |
 
 ---
 
-## 8. Current decision
+## 5. The revised philosophical contribution
 
-Proceed with the philosophy manuscript only under this positioning:
+### Unsafe formulation
 
-\[
-\boxed{
-\text{CREST novelty target}
-\neq
-\text{context/purpose relativity itself}
-}
-\]
+> CREST discovers that ecological states are context-relative.
 
-\[
-\boxed{
-\text{CREST novelty target}
-=
-\text{formal four-contract decomposition of ecological state adequacy}
-\quad\text{(subject to deeper prior-art audit).}
-}
-\]
+Reject.
 
-The next literature task is to test this revised novelty target specifically, rather than continue broad searches for “philosophy of ecology.”
+### Also unsafe
+
+> CREST is the first framework to analyze ecological identity or to distinguish multiple ecological identities.
+
+Reject.
+
+### Current safe working formulation
+
+> Philosophy of ecology already contains rich accounts of ecosystem identity, dynamical continuity, purpose-relative representation, open-system boundaries, model pluralism, and ecological history. CREST addresses a narrower representational problem: when a coarse ecological state is expected to support prediction and reporting, its proposed equivalence can fail under four formally different contracts—future operations, inherited semantics, retained mechanisms, and evidence. The four theorem programs make those failures and their honest remedies explicit.
+
+### Strongest novelty hypothesis worth testing further
+
+> **CREST may contribute the first theorem-backed decomposition of ecological state-representation adequacy into future-sufficiency, inherited-semantic, mechanism-robustness, and evidential-licensing audits.**
+
+The words **may** and **state-representation adequacy** are essential.
+
+A targeted search on combinations of ecological state, intervention/future, historical meaning, mechanism uncertainty, and evidence did not surface an existing framework with this same four-contract decomposition. That is **not proof of absence**; deeper citation chaining is still required.
+
+---
+
+## 6. What the mathematics adds beyond existing philosophy
+
+### CCOC — future sufficiency
+
+Existing philosophy already says ecological systems are open and boundaries matter.
+
+CCOC adds a theorem-backed statement:
+
+> a wider declared future grammar can force a strictly larger exact state interface even when every supplied closed context admits a small exact interface.
+
+The philosophical content is not “openness matters,” but that **future addressability can change the minimum information required for state identity**.
+
+### MLTR — semantic coherence
+
+Existing identity/history literature already says continuity and history matter.
+
+MLTR adds:
+
+> after one source macro-law is fixed, target exactness can fail locally and the unique coarsest source-relative repair identifies the least added distinction compatible with inherited meaning.
+
+History enters only when incompatible inherited semantic maps must be preserved.
+
+### MRM — mechanism robustness
+
+Existing model pluralism/robustness literature already asks which predictions survive model variation.
+
+MRM adds:
+
+> if retained response laws disagree, one deterministic ecological state/report is not uniformly justified; typed or set-valued reports and a unique coarsest candidate-safe state give exact finite alternatives.
+
+### CED — evidential licensing
+
+Existing philosophy already recognizes underdetermination and adequacy-for-purpose.
+
+CED adds:
+
+> deterministic reporting is licensed exactly when the target is constant on the compatible evidence class; the target-safe quotient describes what additional resolution would be sufficient, not what the present data have already resolved.
+
+---
+
+## 7. Revised opening for the manuscript
+
+Do **not** open with perspectivism or “states are purpose-relative.”
+
+Better:
+
+> Ecologists routinely decide that different configurations count as the same state. This is not a new philosophical observation: ecosystem identity, dynamic continuity, model purpose, perspectival representation, and ecological boundary choice all have substantial literatures. A different question remains. When a coarse ecological state is used as a predictive and reportable scientific variable, what must that proposed sameness survive? We distinguish four formally different tests: future operations, inherited meaning, retained mechanisms, and finite evidence.
+
+This makes the paper a continuation of philosophy of ecology rather than a reinvention of it.
+
+---
+
+## 8. Bibliographic anchors
+
+The next pass should citation-chain from, at minimum:
+
+- Cumming & Collier (2005), *Change and Identity in Complex Systems*;
+- Collier & Cumming (2011), *A Dynamical Approach to Ecosystem Identity*;
+- Delettre (2021), *Identity of Ecological Systems and the Meaning of Resilience*;
+- Giere on pragmatic / agent-based scientific representation;
+- Massimi on perspectival realism;
+- Bokulich & Parker on adequacy-for-purpose;
+- Odenbaugh and Justus on ecological modelling;
+- Plutynski on ecology and open systems;
+- Levins / Wimsatt / Weisberg on robustness and model pluralism;
+- ecological historical-contingency / memory literature;
+- ecological boundary literature;
+- context-sensitive mechanistic modelling in ecology.
+
+The search question is no longer “has anyone said ecology is contextual?” It is:
+
+> **Has anyone already separated state-representation adequacy into these same four operational contracts, or an equivalent set with the same formal roles?**
+
+---
+
+## 9. Current decision
+
+Proceed with the philosophy paper under the following hierarchy:
+
+```text
+existing philosophy:
+  ecological identity / perspectivism / purpose / boundaries / pluralism / history
+        ↓
+CREST contribution under test:
+  formal four-contract audit of coarse ecological state representations
+        ↓
+mathematical anchors:
+  CCOC / MLTR / MRM / CED
+```
+
+No stronger novelty language is currently justified.
