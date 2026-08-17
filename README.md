@@ -7,11 +7,11 @@ question:
 > disagree about future macro transitions, what is the strongest law that can be
 > reported without pretending the mechanism uncertainty has vanished?
 
-MRM is the standalone successor of CCOC legacy `ID-2` and `ID-3`. CCOC remains
-frozen provenance; this repository contains the active mechanism-uncertainty
-core.
+MRM is the standalone successor of CCOC legacy `ID-2` and `ID-3`. CCOC now retains
+its own independent open-future theorem program and also preserves the historical
+provenance from which the MRM mechanism-uncertainty core was separated.
 
-## Theorem core
+## Executable theorem and design surface
 
 1. **Universal deterministic law.** A candidate-independent macro-law exists
    exactly when all retained candidates induce the same transition maps.
@@ -53,6 +53,14 @@ core.
     reduction, net information value, and probability of crossing a resolution
     threshold.
 
+CREST hierarchy is narrower than this executable inventory. The publication identity is
+**honest prediction under unresolved mechanism ambiguity**: universal/typed/set-valued
+reporting, minimal candidate-safe state, the ambiguity frontier, and target-relevant
+discrimination. The product/joint bounds and cost-aware planner are supporting
+mechanism results. Items 9–11 are conditional observation/design adapters and do not
+make MRM the owner of the broader evidence, failure, calibration, or risk-contract
+layer.
+
 ## Ecological reading
 
 Different retained mechanisms can represent alternative pollination responses,
@@ -67,27 +75,36 @@ and when a set-valued or posterior-ambiguous forecast is the honest output.
 
 ## Program-level synthesis: contract-relative ecological state
 
-MRM is the **mechanism-relative state layer** of a broader working synthesis called
+MRM maintains the canonical program-level synthesis
 [Contract-Relative Ecological State Theory (CREST)](docs/contract_relative_ecological_state_theory.md).
 
 The upper principle is that ecological state identity is not intrinsic to the
 present visible configuration. It is indexed by distinct declared contracts:
 
-- **CCOC:** which distinctions can matter under future composition / action;
-- **MLTR:** which distinctions must preserve inherited meaning across structural change;
-- **MRM:** which distinctions must remain because retained mechanisms disagree about future response;
-- **CED:** which distinctions finite evidence can legitimately resolve and report.
+- **CCOC / future sufficiency:** which distinctions can matter under future composition / action;
+- **MLTR / semantic coherence:** which distinctions must preserve inherited meaning across structural change;
+- **MRM / mechanism robustness:** which distinctions must remain because retained mechanisms disagree about future response;
+- **CED / evidential licensing:** which distinctions finite evidence can legitimately resolve and report.
 
 CREST is a program-level architecture, not a claim that the four repositories share
-one quotient theorem or should be merged. In particular, MRM remains responsible
-for mechanism-robust reporting and candidate-safe state. Its observation-update
-and VOI modules are conditional adapters around that target; they do not replace
-CED's broader finite-evidence and risk-contract theory.
+one quotient theorem or should be merged. The audits are logically distinct and no
+universal order or commutation theorem is currently claimed.
+
+A shared finite refinement lemma can appear in more than one repository without
+becoming duplicate novelty. In particular, CED's target-safe refinement begins from
+an evidence-induced class, while MRM's candidate-safe quotient specializes the
+latent worlds to observable-state × response-type worlds. The neutral refinement
+machinery is common substrate; the indexed uncertainty and scientific output are
+different.
+
+MRM remains responsible for mechanism-robust reporting and candidate-safe state.
+Its observation-update and VOI modules are conditional adapters around that target;
+they do not replace CED's broader finite-evidence and risk-contract theory.
 
 ## Provenance
 
-The initial standalone core is reconstructed from the frozen CCOC legacy source
-at `zuizui0223/ccoc`, especially:
+The initial standalone core is reconstructed from the historical CCOC source at
+`zuizui0223/ccoc`, especially:
 
 - `docs/candidate_safe_universal_laws.md`; and
 - `docs/joint_open_candidate_laws.md`.
@@ -98,8 +115,11 @@ paper and from MLTR's non-nested replacement theory.
 ## Verification and manuscript planning
 
 - [Contract-relative ecological state synthesis](docs/contract_relative_ecological_state_theory.md)
-  — program-level relation among CCOC, MLTR, MRM, and CED, with explicit claim
-  firewalls and future synthesis questions.
+  — canonical program-level relation among CCOC, MLTR, MRM, and CED, with explicit
+  claim firewalls and future synthesis questions.
+- [CREST final cross-repository validation](docs/crest_final_validation_2026-08-17.md)
+  — dated integration audit across the four repository baselines and the shared
+  substrate/ownership checks.
 - [Manuscript skeleton](docs/manuscript_skeleton.md) — paper title, abstract
   skeleton, theorem placement, figure plan, supplement structure, and submission
   checklist.
