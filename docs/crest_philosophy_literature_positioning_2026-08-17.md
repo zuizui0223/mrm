@@ -4,320 +4,293 @@
 
 ## 1. Immediate conclusion
 
-Six broad novelty claims are now excluded.
+Seven broad novelty claims are now excluded.
 
 ### Not novel 1 — purpose/context relativity
 
-The general idea that scientific representations are purpose-, perspective-, context-, or boundary-relative is already well developed in philosophy of science and philosophy of ecology.
-
-Relevant traditions include pragmatic scientific representation, scientific perspectivism / perspectival realism, model pluralism, adequacy-for-purpose, and open-system/boundary-choice arguments.
-
-CREST must not claim that it discovered purpose- or context-relative representation.
+Scientific representation is already widely treated as purpose-, perspective-, context-, or boundary-relative in pragmatic representation, perspectivism, model pluralism, adequacy-for-purpose, and philosophy of modelling.
 
 ### Not novel 2 — ecological identity as a philosophical problem
 
-Ecological and complex-system identity has a direct literature.
+Cumming & Collier, Collier & Cumming, and Delettre directly analyze ecological/complex-system identity, dynamical continuity, boundaries, resilience-linked identity, and multiple kinds of ecological identity.
 
-- Cumming & Collier (2005) analyze identity through system change, boundaries, and spatiotemporal continuity.
-- Collier & Cumming (2011) argue for a dynamical approach to ecosystem identity because measurement, interaction, and intervention are themselves dynamic.
-- Delettre (2021) explicitly distinguishes typological, numerical, global-state, and local-state ecological identity and notes that key-variable choice partly reflects scale, objectives, and researcher judgement.
+CREST is not the first ecological-identity framework and not the first four-way identity taxonomy.
 
-CREST must not claim to be the first ecological-identity framework or the first four-way identity decomposition.
+### Not novel 3 — ecological model adequacy
 
-### Not novel 3 — ecological model adequacy as an explicit program
+Getz et al. (2018), *Making ecological models adequate*, explicitly organize adequacy around state variables, control variables, data determinacy, sensitivity, validity, and coarse graining.
 
-Getz et al. (2018), *Making ecological models adequate*, explicitly organize ecological model adequacy around state variables, control variables, data determinacy, sensitivity, validity, and coarse graining. They warn both against unsupported detail and against omitting mechanistic detail required to predict management response.
-
-CREST must not claim that ecology lacked a model-adequacy framework.
+CREST is not the first ecological model-adequacy framework.
 
 ### Not novel 4 — intervention-sensitive ecological state definitions
 
-State-and-Transition Models already organize ecological states in relation to dynamics, reversibility, thresholds, and management intervention. In rangeland practice, community phases can be assigned to the same ecological state when reversible transitions remain possible without major restoration intervention and to different states when recovery requires stronger intervention or is not reversible.
+State-and-Transition Models already define ecological states in relation to dynamics, reversibility, thresholds, and management intervention. State classifications can depend on whether transitions are reversible without major restoration or require stronger interventions.
 
-Thus CREST must not claim that it first made ecological state classification dependent on intervention or future response.
+CREST is not the first account in which intervention possibilities matter to ecological state classification.
 
-### Not novel 5 — joint action, model uncertainty, and partial observability
+### Not novel 5 — action + model uncertainty + partial observability
 
-Adaptive-management / MDP / POMDP ecology already integrates several ingredients that superficially resemble CREST:
+Adaptive-management / MDP / POMDP ecology already combines management actions, latent states, observation error, model/structural uncertainty, belief updating, learning, and policy optimization.
 
-- future management actions;
-- uncertainty in ecological state;
-- observation error / partial observability;
-- structural or model uncertainty;
-- learning from new observations;
-- policy optimization under those uncertainties.
+Fackler & Pacifici unify structural and observational uncertainty. Memarzadeh & Boettiger treat both model and state uncertainty in adaptive management. POMDP reviews in ecology formalize belief states and decisions under imperfect observation.
 
-Fackler & Pacifici (2014) explicitly unify structural and observational uncertainty in resource management. Memarzadeh & Boettiger (2018) address ecological adaptive management under both model and state uncertainty. POMDP reviews in ecology treat belief states, observation models, management actions, and model uncertainty directly.
+Nicol & Chadès (2012), *Which States Matter?*, retain only the discretized states needed to preserve an optimal management policy.
 
-Nicol & Chadès (2012), *Which States Matter?*, go further toward state representation: they discretize a continuous ecological state space by retaining the states necessary to preserve an optimal management policy.
-
-Therefore CREST must not claim that it first unifies action, mechanism/model uncertainty, observation, or task-relevant state compression.
+CREST is not the first integration of actions, model uncertainty, observations, or task-relevant state compression.
 
 ### Not novel 6 — ecological model transferability/reuse
 
-Ecological model transferability has a substantial literature. Existing work asks when pre-existing ecological models can be applied to new sites, times, or environmental conditions, how contextual differences affect generalizability, and how models should be adapted when transferred.
+Ecological model-transfer literature already studies when models can be reused across sites/times/novel conditions, how environmental dissimilarity and nonstationarity reduce performance, and how transferred models should be adapted.
 
-Examples include model application niche analysis, broad reviews of transferability challenges, and practical guidelines for adapting ecosystem models to new locations.
+MLTR therefore cannot be sold as the discovery that ecological models or categories can fail to transfer.
 
-Therefore MLTR must not be philosophically sold as the discovery that ecological models or categories may fail to transfer.
+### Not novel 7 — minimal predictive/behavioral state abstraction
 
-Its narrower formal object is inherited state semantics under a declared source-target relation and the unique coarsest exact **source-relative** repair.
+The formal substrate of coarse state equivalence is also mature.
+
+- Computational mechanics defines **causal states** as equivalence classes of histories with the same predictive future distribution and proves a unique minimal predictive representation.
+- Bisimulation / MDP model-minimization theory groups states when all actions preserve the relevant reward/output and transition behavior and studies coarsest reduced models.
+- Predictive/causal state representations under partial observability learn or characterize coarsest action-observation history partitions.
+- State aggregation and approximate abstraction have extensive literatures in decision theory and reinforcement learning.
+
+Therefore CREST must not claim novelty for:
+
+- defining states by future behavior;
+- constructing a coarsest future-preserving quotient;
+- using partition refinement;
+- using action-conditioned behavioral equivalence;
+- deriving generic state-abstraction minimality.
+
+These are formal substrates used by individual CREST axes.
 
 ---
 
 ## 2. What remains distinctive enough to test
 
-After the direct identity, adequacy, POMDP, state-abstraction, and transferability audits, the CREST novelty target is narrow.
+After the identity, adequacy, intervention, POMDP, transferability, and state-abstraction audits, CREST's novelty target is narrow and explicitly **metatheoretical**.
 
-CREST is **not**:
-
-- a new metaphysics of ecosystem identity;
-- a generic model-adequacy checklist;
-- a new adaptive-management framework;
-- a new POMDP/state-abstraction method;
-- a generic transferability framework;
-- a new statement that context, history, uncertainty, or evidence matter.
-
-The remaining object is a **failure-oriented metatheory of one proposed coarse state equivalence**.
-
-Given a proposed relation
+Take one proposed coarse ecological equivalence
 
 \[
-x\sim y
+x\sim y,
 \]
 
-meaning that two ecological configurations are to be treated as the same scientific state, CREST asks four logically different questions:
+meaning that two configurations are to count as one scientific state.
 
-1. **future sufficiency:** can some declared future operation distinguish the merged configurations?
-2. **semantic coherence:** after declared structural change, can inherited state meaning still be carried without additional splits?
-3. **mechanism robustness:** do all retained response mechanisms agree on the requested future behavior at that state?
-4. **evidential licensing:** has the evidence actually resolved the distinction needed for the requested deterministic report?
+CREST does not ask only whether this is a good predictive abstraction. It separates four different adequacy obligations:
 
-The important feature is the **diagnostic separation**:
+1. **future sufficiency** — can a declared future operation expose a distinction erased by the equivalence?
+2. **semantic coherence** — after structural replacement, does an inherited state meaning survive, and if not what is the least source-relative repair?
+3. **mechanism robustness** — do all retained response mechanisms agree on the requested future prediction, or must mechanism ambiguity remain explicit?
+4. **evidential licensing** — has the evidence licensed the distinction needed for the requested deterministic report?
+
+The candidate contribution is the **failure diagnosis**:
 
 ```text
-one proposed equivalence
+one proposed coarse equivalence
         |
-        +-- future failure      -> remember more / interface lower bound
-        +-- semantic failure    -> source-relative repair / defect / history
-        +-- mechanism failure   -> typed or set-valued prediction / candidate-safe state
-        +-- evidence failure    -> ambiguity-retaining report / additional evidence requirement
+        +-- future failure
+        |      -> interface obstruction / lower bound
+        |
+        +-- inherited-semantic failure
+        |      -> source-relative repair / defect / history context
+        |
+        +-- mechanism failure
+        |      -> typed or set-valued report / candidate-safe state
+        |
+        +-- evidence failure
+               -> ambiguity-retaining report / required additional resolution
 ```
 
-POMDPs can combine actions, hidden states, model uncertainty, and observations in one decision process. CREST's claim is different: it asks **which adequacy obligation failed before or alongside policy optimization**, and it keeps inherited semantics as a separate contract rather than simply another latent variable.
+Existing state abstraction usually specifies one behavioral/task criterion and constructs a representation adequate for that criterion. CREST's remaining claim is that **different scientific inadequacies should not be collapsed into one abstraction objective merely because they can all be encoded in a large decision model**.
 
 ---
 
 ## 3. Direct comparison with the closest prior frameworks
 
-### 3.1 Cumming & Collier / Collier & Cumming — identity of the ecological system
+### 3.1 Ecological-system identity — Cumming/Collier and Delettre
 
-Their target is system identity through change: what constitutes one system, how its boundaries and continuities are defined, and why ecosystem identity should be dynamic.
+Their primary object is the identity/persistence of an ecological or complex system.
 
-CREST's target is a state representation *within* a declared system/model:
-
-> under which scientific contracts may two configurations safely share one state label?
+CREST's object is the adequacy of a **coarse state equivalence used within a declared model/system**.
 
 ```text
-identity of the ecological system
+system identity
     ≠
-adequacy of a state equivalence used inside the system
+scientific adequacy of a chosen state equivalence
 ```
 
-### 3.2 Delettre — kinds of ecological identity
+Delettre's typological/numerical/global/local identities are identity types; CREST's future/semantic/mechanism/evidence axes are adequacy audits. They can cross-classify.
 
-Delettre distinguishes typological, numerical, global-state, and local-state identity.
+### 3.2 Ecological model adequacy — Getz et al.
 
-CREST distinguishes future sufficiency, semantic coherence, mechanism robustness, and evidential licensing.
+Getz et al. already ask whether a whole ecological model contains suitable state/control variables, is data-determined, and is sufficiently valid/sensitive for its task.
 
-The former are kinds/levels of ecological identity or persistence. The latter are failure tests for a chosen scientific equivalence relation. They can cross-classify rather than compete.
+CREST is narrower: it takes one equivalence relation among configurations as its object and separates four mathematically different ways that equivalence can become scientifically inadequate.
 
-### 3.3 Getz et al. — ecological model adequacy
+### 3.3 State-and-Transition Models
 
-Getz et al. are the closest general adequacy precursor. Their protocol asks whether the whole model includes suitable state/control variables, is supported by data, and behaves validly/sensitively for its purpose.
+STMs already tie ecological state categories to disturbance, reversibility, thresholds, and restoration pathways.
 
-CREST is narrower and more formal:
+CCOC does not originate intervention-relative state classification. Its formal addition is a cross-grammar lower-bound question: how much exact state information can become necessary when the allowed future operations are enlarged?
 
-> take one coarse state equivalence as the object and ask which contract invalidates it.
+### 3.4 Adaptive management and POMDPs
 
-Its theorem programs return different objects rather than one generic adequacy score.
+POMDP/adaptive-management frameworks can jointly encode actions, hidden states, model uncertainty, observation models, and learning.
 
-### 3.4 State-and-Transition Models — intervention-sensitive states
+This is a serious neighbor, not a minor analogy.
 
-STMs already connect ecological state classification to reversibility, disturbance, thresholds, and management pathways. This directly precedes any philosophical claim that state labels are related to intervention possibilities.
+CREST differs by **diagnostic target**:
 
-CCOC differs in formal question:
+- POMDPs primarily define a decision problem and optimize a policy under uncertainty;
+- CREST asks which scientific obligation of a proposed state equivalence has failed.
 
-> if the admissible future grammar is enlarged, how much additional exact interface information can become necessary even when each closed future is individually compressible?
+CREST also makes inherited semantics after structural replacement a separate contract rather than simply another latent variable or model parameter.
 
-Thus CCOC is a lower-bound/representation theorem, not a first definition of intervention-relative ecological states.
+### 3.5 Policy-relevant state abstraction — Nicol & Chadès
 
-### 3.5 POMDP / adaptive management — actions, uncertainty, and observations
+Their work shows that not every ecological detail needs to be preserved: a compact discretization can retain only the states needed for an optimal management policy.
 
-Ecological POMDPs already represent:
+CREST therefore cannot claim “retain only task-relevant distinctions” as new.
 
-- latent system states;
-- actions;
-- observation processes;
-- belief states;
-- model/structural uncertainty;
-- adaptive learning and policy optimization.
+Its narrower question is whether the failure comes from future sufficiency, semantic reuse, mechanism disagreement, or evidence licensing, because the remedy differs.
 
-This creates substantial overlap with the **ingredients** of CCOC, MRM, and CED.
+### 3.6 Model transferability
 
-The CREST distinction is architectural rather than ingredient-based:
+Application-niche and transferability frameworks already ask whether a model developed under one context remains defensible in another.
 
-- CCOC audits future-sufficiency of a proposed equivalence;
-- MRM audits whether retained response alternatives license deterministic prediction;
-- CED audits what evidence licenses reporting;
-- MLTR audits inherited semantics after structural replacement.
+MLTR's narrower object is one accepted source macro-law carried by a declared source-target relation. Its unique coarsest **source-relative** exact repair preserves inherited merges whenever target exactness permits them.
 
-CREST does not claim these must be modeled separately in every applied problem. It claims they are **logically distinct adequacy obligations** and should not be silently conflated because one decision framework can numerically encode all of them.
+### 3.7 Causal states / bisimulation / predictive state representations
 
-### 3.6 Nicol & Chadès — task-relevant state abstraction
+These formal theories are the closest neighbors to the quotient language used in CCOC/MRM/CED.
 
-Their CU-Tree/POMDP work explicitly asks which ecological states are necessary to preserve a management policy. This means task-relevant state compression is established practice.
+They already own generic future-predictive or action-conditioned minimal-state representation.
 
-CREST differs by asking why a proposed compression fails and by returning different remedies depending on the failure contract. It should not claim priority for “only retain task-relevant state.”
+CREST should therefore say:
 
-### 3.7 Ecological model transferability
+> the quotient/refinement machinery is inherited substrate; the philosophical issue is which contract supplies the relevant equivalence criterion and what kind of failure is being diagnosed.
 
-Application-niche and transferability literatures already recognize that a model defensible in one context can be misapplied in another because of environmental novelty, nonstationarity, interactions, data bias, or changed conditions.
-
-MLTR's formal distinction is that it fixes one inherited source macro-law and asks for exact transport relative to a declared relation. If the carried partition fails, it constructs the unique coarsest exact target refinement that preserves every inherited merge still compatible with target dynamics.
-
-This is a semantics-preserving repair problem, not a general claim about transferability.
+This is exactly why CREST keeps the four theorem programs separate rather than calling one generic behavioral quotient a new ecological theory.
 
 ---
 
-## 4. Claim matrix after the expanded prior-art audit
+## 4. Expanded claim matrix
 
-| Existing claim/framework | Already owns | CREST formal addition | Safe manuscript language |
+| Existing framework | Already owns | CREST addition under test | Safe language |
 |---|---|---|---|
-| Pragmatic representation / perspectivism | purpose- and perspective-relative representation | four logically distinct contracts are attached to one coarse equivalence | “CREST decomposes one state-equivalence adequacy problem into four audits.” |
-| Ecological identity literature | dynamic/system identity; multiple identity types | focuses on scientific state-equivalence adequacy rather than system identity | “CREST complements ecological identity theory with representation-level audits.” |
-| Getz model adequacy | state/control/data/sensitivity/validity checks | theorem-backed failure objects for one state equivalence | “CREST is a formal specialization of state-representation adequacy.” |
-| State-and-Transition Models | state classification tied to reversibility/intervention | exact future-grammar interface lower bounds | “CCOC quantifies one consequence of widening the future contract.” |
-| POMDP/adaptive management | actions + latent state + observation + model uncertainty + policy optimization | separates adequacy obligations before/alongside optimization and adds inherited-semantic audit | “CREST is diagnostic, not another decision-process formalism.” |
-| State abstraction in conservation | retain states relevant to optimal policy | distinguishes why a compression fails and which remedy follows | “CREST does not claim task-relevant abstraction as new.” |
-| Model transferability | context-dependent model reuse/adaptation/generalization | unique source-relative exact repair of inherited macrostate semantics | “MLTR formalizes one constrained transfer problem, not transferability in general.” |
-| Robustness/model pluralism | model convergence and robust conclusions | exact deterministic/typed/set-valued report under retained response disagreement | “MRM treats disagreement as a reporting/state problem.” |
-| Partial observability / hidden states | belief-state inference and decision under imperfect observation | exact evidence-class reportability and required target-safe refinement | “CED is a report-licensing audit, not a replacement for POMDP inference.” |
-| Historical contingency | legacies/path dependence | minimum context needed to preserve incompatible inherited semantic maps | “MLTR supplies one semantics-of-state history theorem.” |
+| Pragmatic representation / perspectivism | purpose-sensitive representation | four distinct adequacy obligations on one equivalence | “CREST decomposes one state-equivalence adequacy question.” |
+| Ecological identity theory | system identity, continuity, multiple identity types | state-representation rather than system-identity object | “CREST complements ecological identity theory.” |
+| Getz model adequacy | state/control/data/sensitivity/validity adequacy | theorem-backed failure outputs for one coarse equivalence | “CREST is a formal specialization of state-representation adequacy.” |
+| State-and-Transition Models | intervention/reversibility-sensitive states | cross-grammar information lower bound | “CCOC quantifies a future-sufficiency failure.” |
+| POMDP/adaptive management | action + hidden state + model uncertainty + observation + policy | separates adequacy failures rather than optimizing one encoded decision process | “CREST is diagnostic, not another POMDP.” |
+| Conservation state abstraction | policy-relevant state compression | distinguishes four reasons a proposed compression may be inadequate | “Task relevance itself is not a CREST novelty.” |
+| Model transferability | contextual model reuse/adaptation | source-relative semantic repair of inherited state labels | “MLTR formalizes one constrained transfer problem.” |
+| Causal states / bisimulation / MDP abstraction | minimal future-/action-preserving state representations | asks which scientific contract defines the equivalence and what remedy follows failure | “Generic quotient minimality is substrate.” |
+| Robustness/model pluralism | robust conclusions across models | mechanism disagreement as exact report/state problem | “MRM returns ambiguity-explicit alternatives.” |
+| Partial observability / HMM/POMDP | hidden-state inference under observation error | reportability criterion + required target resolution | “CED is an evidential-licensing audit.” |
+| Historical contingency | legacies/path dependence | inherited-semantic history requirement | “MLTR supplies a semantics-of-state history theorem.” |
 
 ---
 
 ## 5. Revised philosophical contribution
 
-### Reject
+### Explicitly reject
 
-> CREST discovers that ecological states are context-relative.
+> CREST discovers context-relative ecological states.
 
-### Reject
-
-> CREST is the first ecological identity, model adequacy, adaptive-management, state-abstraction, or transferability framework.
+> CREST invents ecological identity, model adequacy, task-relevant state compression, behavioral state abstraction, adaptive uncertainty integration, or model transferability.
 
 ### Current safe working formulation
 
-> Existing ecological and philosophical frameworks already address ecosystem identity, purpose-relative representation, model adequacy, intervention-sensitive states, adaptive management under model and observation uncertainty, state abstraction, model transferability, robustness, and historical contingency. CREST addresses a narrower logical problem. Given one proposed coarse equivalence among ecological configurations, four different scientific contracts can invalidate that equivalence in different ways, and the four associated theorem programs return different failure certificates and remedies.
+> Existing ecology, philosophy, and decision theory already provide accounts of ecological-system identity, model adequacy, intervention-sensitive states, adaptive management under uncertainty, task-relevant state abstraction, model transferability, predictive causal states, bisimulation, robustness, and partial observability. CREST addresses a narrower representational question: given one proposed coarse equivalence among ecological configurations, which scientific obligation has been violated when that equivalence ceases to support prediction or reporting? It separates future sufficiency, inherited-semantic coherence, mechanism robustness, and evidential licensing because the formal failure objects and remedies differ.
 
 ### Strongest novelty hypothesis still worth testing
 
-> **CREST may provide a new theorem-backed, failure-oriented decomposition of coarse ecological state-equivalence adequacy into future-sufficiency, inherited-semantic, mechanism-robustness, and evidential-licensing audits.**
+> **CREST may provide a new theorem-backed, failure-oriented metatheoretical decomposition of coarse ecological state-equivalence adequacy into future-sufficiency, inherited-semantic, mechanism-robustness, and evidential-licensing audits.**
 
-The qualifiers **may**, **failure-oriented**, **coarse state-equivalence**, and **theorem-backed** are essential.
-
-The novelty target is now the *decomposition and diagnostic architecture*, not any individual ingredient.
+The novelty target is the **cross-contract diagnostic architecture**. No individual mathematical minimization principle is claimed as new merely by appearing inside CREST.
 
 ---
 
 ## 6. Why the mathematics still matters
 
-The closest existing frameworks could otherwise make CREST look like a verbal relabeling. The mathematical anchors prevent that.
-
 ### CCOC
 
-Not merely “interventions matter.”
-
-It gives an exact future-word injection showing that a wider future grammar can force a larger exact interface, including families with constant-size closed interfaces and growing open-interface memory.
+Uses existing behavioral/state-abstraction substrate but asks a different comparative question: independently small closed-context interfaces can require a sharply larger interface when future grammars are jointly opened.
 
 ### MLTR
 
-Not merely “transfer can fail.”
-
-It fixes inherited source semantics and constructs the unique coarsest exact source-relative repair, with a precise history-context lower/upper bound when incompatible carried maps must be preserved.
+Uses refinement substrate but constrains repair to preserve one inherited source semantics. The object is not a fresh target abstraction but the least exact **repair of an inherited law**.
 
 ### MRM
 
-Not merely “model uncertainty matters.”
-
-It asks when retained response laws license one deterministic report, when typed/set-valued reporting is exact, and what minimum mechanism-relative state must remain.
+Uses behavioral equivalence substrate but indexes hidden variation by retained response types and distinguishes unsupported determinism from exact typed/set-valued reporting.
 
 ### CED
 
-Not merely “states are partially observed.”
+Uses partition/refinement substrate but separates what current evidence identifies from what additional target-safe resolution would be sufficient for a deterministic report.
 
-It asks what may be **reported** from a compatible evidence class, distinguishes current evidence from required target-safe resolution, and ties trusted refinement to explicit failure/risk contracts.
-
----
-
-## 7. Revised opening for the manuscript
-
-> Ecology already has mature ways to define ecosystem states, assess model adequacy, optimize decisions under partial observability and model uncertainty, aggregate states for management, and test model transferability. These frameworks solve different scientific problems. A more specific logical question remains implicit across them: when several ecological configurations are assigned the same coarse state label, what exactly is being assumed about their future behavior, inherited meaning, mechanism dependence, and evidential distinguishability? CREST treats these as four distinct adequacy obligations of one proposed state equivalence.
-
-This opening makes the paper cumulative rather than priority-seeking.
+The philosophy paper should make these differences in quantifier order and starting objects visible, rather than present four copies of state minimization.
 
 ---
 
-## 8. Remaining exact search question
+## 7. Revised opening
 
-The search has now become very narrow:
-
-> **Is there already a philosophy/ecology/decision-theory framework that explicitly takes one coarse ecological state equivalence as its object and separately audits (i) future-action sufficiency, (ii) semantic portability across structural replacement, (iii) robustness to retained response mechanisms, and (iv) evidence-licensed reportability, with distinct failure outputs?**
-
-The targeted searches so far have found frameworks that combine several of these ingredients, especially POMDP/adaptive management, but not one that gives this same four-way adequacy decomposition. This remains a provisional negative search result, not proof of novelty.
+> Ecology already has mature accounts of ecosystem identity, model adequacy, intervention-sensitive states, adaptive decision-making under partial observability and model uncertainty, state aggregation, model transferability, and predictive state abstraction. These frameworks answer different questions. A narrower representational issue remains easy to hide: when several ecological configurations are assigned the same coarse state label, which scientific obligation is that sameness supposed to satisfy? CREST separates four obligations—future sufficiency, inherited-semantic coherence, mechanism robustness, and evidential licensing—and uses distinct mathematical results to diagnose their failure.
 
 ---
 
-## 9. Bibliographic anchors for citation chaining
+## 8. Remaining exact prior-art question
 
-Priority anchors now include:
+The remaining search question is now deliberately difficult to satisfy accidentally:
 
-- Cumming & Collier (2005), *Change and Identity in Complex Systems*;
-- Collier & Cumming (2011), *A Dynamical Approach to Ecosystem Identity*;
-- Delettre (2021), *Identity of Ecological Systems and the Meaning of Resilience*;
-- Getz et al. (2018), *Making Ecological Models Adequate*;
+> **Is there already a framework that takes one coarse ecological state equivalence as its object, explicitly separates future-action sufficiency, inherited semantic portability, retained-mechanism robustness, and evidence-licensed reportability, and treats failures as requiring distinct formal remedies rather than one unified policy/abstraction objective?**
+
+Targeted searches have found frameworks combining multiple ingredients, especially POMDP/adaptive management and behavioral state abstraction, but not this exact four-contract failure architecture. This is a provisional negative search result, not proof of novelty.
+
+---
+
+## 9. Citation-chain anchors
+
+Priority anchors:
+
+- Cumming & Collier (2005); Collier & Cumming (2011); Delettre (2021);
+- Getz et al. (2018);
+- State-and-Transition Model literature;
 - Nicol & Chadès (2012), *Which States Matter?*;
-- Fackler & Pacifici (2014), structural + observational uncertainty in resource management;
-- Memarzadeh & Boettiger (2018), adaptive management under partial observability/model uncertainty;
-- Williams & Brown / Chadès POMDP ecology reviews;
-- state-and-transition model literature;
-- Moon et al. model application niche / transferability literature;
-- Yates et al. transferability challenges;
+- Fackler & Pacifici (2014);
+- Memarzadeh & Boettiger (2018);
+- ecological POMDP reviews;
+- Moon et al. model application niche / transferability work;
+- Yates et al. model-transferability review;
+- Shalizi & Crutchfield on causal states;
+- bisimulation/MDP model-minimization and state-abstraction literature;
+- predictive/causal state representations under partial observability;
 - Giere; Massimi; Bokulich & Parker;
 - Odenbaugh; Justus; Plutynski;
 - Levins / Wimsatt / Weisberg;
-- historical contingency and ecological memory literature.
+- historical contingency/ecological memory literature.
 
 ---
 
 ## 10. Current decision
 
-Proceed under this hierarchy:
+Proceed only with this hierarchy:
 
 ```text
-existing ecology/philosophy/decision theory:
+existing theory:
   system identity
   + model adequacy
   + intervention-sensitive states
   + POMDP/adaptive management
-  + state abstraction
-  + transferability
-  + robustness/history/evidence
+  + state aggregation / causal states / bisimulation
+  + model transferability
+  + robustness / history / evidence
         ↓
 CREST contribution under test:
-  theorem-backed failure diagnosis for one coarse state equivalence
-  across future / semantics / mechanism / evidence contracts
+  failure-oriented metatheory for one coarse ecological state equivalence
+  across future / inherited semantics / mechanisms / evidence
         ↓
 formal anchors:
   CCOC / MLTR / MRM / CED
