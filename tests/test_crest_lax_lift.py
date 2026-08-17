@@ -221,11 +221,19 @@ def test_direction_rejects_action_inclusion_reversal() -> None:
             direction="source_stronger",
         )
 
+    extra_action_source = _contract(
+        ("z", "a", "r"),
+        ("terminal", "live", "live"),
+        ("z", "a", "r"),
+        ("stop", "continue", "continue"),
+        future_actions=("open", "extra"),
+        future_successors=((0, 0), (0, 1), (2, 2)),
+    )
     with pytest.raises(ValueError, match="weaker source may not add"):
         OneSidedContractProjection(
-            source=_strong_duplicate_contract(),
+            source=extra_action_source,
             target=_reduced_contract(),
-            source_to_target=(0, 1, 2, 2),
+            source_to_target=(0, 1, 2),
             direction="source_weaker",
         )
 
