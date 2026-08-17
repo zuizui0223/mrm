@@ -44,7 +44,7 @@ and when declared interventions can resolve it.
 Canonical synthesis:
 
 - [Contract-Relative Ecological State Theory](docs/contract_relative_ecological_state_theory.md)
-- [CREST J1/J2/J3/J4 synthesis proof ledger](docs/crest_synthesis_proof_ledger_2026-08-17.md)
+- [CREST J1/J2/J3/J4/J5 synthesis proof ledger](docs/crest_synthesis_proof_ledger_2026-08-17.md)
 
 The four companion audits are:
 
@@ -59,7 +59,7 @@ The four companion audits are:
 
 ### Proved synthesis chain
 
-CREST now has four conditional finite synthesis theorems:
+CREST now has five conditional finite synthesis theorems:
 
 1. **CREST-J3 — maximal synchronized common carrier.** From a declared finite
    ambient component synchronization, compute the unique greatest compatible
@@ -82,6 +82,13 @@ CREST now has four conditional finite synthesis theorems:
    structure, then `J_U = pi^* J_V` and the quotient states are isomorphic. Raw
    latent detail invisible to every declared contract cannot change the scientific
    state.
+5. **CREST-J5 — one-sided lift refinement bounds.** When evidence and target are
+   exact pullbacks and shared actions keep their legality and projected successors,
+   a source contract that adds preserved audit obligations can only refine the
+   pulled target joint state; a source contract that forgets obligations can only
+   coarsen it. Exact J2 faithfulness is the equality case. Target-only licensing is
+   preserved, while full-state licensing obeys the corresponding one-sided
+   implication.
 
 ```text
 declared ambient synchronization
@@ -89,33 +96,39 @@ declared ambient synchronization
   -> if no-go: J4 exact least-cost declared contract relaxation
   -> repaired J3 carrier
   -> J1 unique coarsest four-audit state J + evidence gate
-  -> J2 invariance across faithfully redundant lifts
+  -> compare alternate lifts/contracts:
+       J2 exact faithful equality
+       J5 one-sided refinement bounds when obligations are added or forgotten
 ```
 
 This is a conditional theorem ladder, not a claim that nature supplies one universal
 state partition or one objectively correct repair cost. Uniqueness is within one
-declared finite contract and across faithfully equivalent lifts—not across different
-grammars, inherited meanings, mechanism families, evidence contracts, targets,
-ambient alignments, or cost schedules.
+declared finite contract; equality is across faithfully equivalent lifts; J5 gives
+bounds rather than equality when the declared obligations differ.
 
 ## Claim firewall
 
-Shared refinement/fixed-point/repair machinery is established substrate.
+Shared refinement, fixed-point, repair, simulation, and abstraction machinery is
+established substrate.
 
 - independently optimized closed-vs-open interface lower bounds belong to CCOC;
 - inherited-law transport, repair, defect, and history belong to MLTR;
 - retained mechanism disagreement and candidate-safe state belong to MRM;
 - finite/noisy evidence, failure architecture, calibration, and risk-limited
   reportability belong to CED;
-- conditional carrier, contract-relaxation, joint-state, and lift synthesis is
-  maintained here as CREST.
+- conditional carrier, contract-relaxation, joint-state, and lift-comparison
+  synthesis is maintained here as CREST.
 
 CREST-J4 is not MLTR repair: it weakens a cross-component synchronization contract
 before a joint carrier exists, rather than repairing one inherited semantic law
 after structural replacement.
 
+CREST-J5 does not claim a new general simulation theorem. Its contribution is the
+explicit CREST interpretation of the two inequality directions and their evidence
+consequences.
+
 Do not add a theorem family merely because it can be described using `state`,
-`quotient`, `refinement`, `uncertainty`, `repair`, or `adequacy`.
+`quotient`, `refinement`, `simulation`, `uncertainty`, `repair`, or `adequacy`.
 
 ## Proof and verification map
 
@@ -140,6 +153,8 @@ Do not add a theorem family merely because it can be described using `state`,
   — `mrm/crest_joint_state.py`, `tests/test_crest_joint_state.py`
 - [J2 faithful-lift invariance](docs/crest_lift_invariance_theorem_2026-08-17.md)
   — `mrm/crest_lift_invariance.py`, `tests/test_crest_lift_invariance.py`
+- [J5 one-sided lift bounds](docs/crest_lax_lift_bounds_theorem_2026-08-18.md)
+  — `mrm/crest_lax_lift.py`, `tests/test_crest_lax_lift.py`
 - [Synthesis proof ledger](docs/crest_synthesis_proof_ledger_2026-08-17.md)
 - [Companion proof-recovery ledger](docs/crest_proof_recovery_2026-08-17.md)
 - [Cross-repository validation](docs/crest_final_validation_2026-08-17.md)
@@ -151,7 +166,7 @@ Do not add a theorem family merely because it can be described using `state`,
 - `docs/crest_biology_philosophy_submission_audit_2026-08-17.md`
 
 The current journal manuscript retains the safe claim that no **unconditional
-universal** ecological state has been proved. J1–J4 may be integrated only after a
+universal** ecological state has been proved. J1–J5 may be integrated only after a
 fresh manuscript claim/prior-art audit.
 
 ## Run
@@ -173,6 +188,8 @@ The current mathematics is finite and declared-model relative. It does not infer
 future grammars, source-target relations, mechanism families, synchronization
 relations, observation-error contracts, priors, action costs, ecological targets,
 or empirical validity from data. J4 costs encode declared scientific or normative
-preferences; the theorem does not infer or endorse them. Stochastic, approximate,
-infinite, controlled-viability, richer repair-language, and empirical common-lift
-inference remain open extensions.
+preferences; the theorem does not infer or endorse them. J5 requires exact shared
+action semantics and exact evidence/target pullback; weaker simulations and changing
+evidence remain open. Stochastic, approximate, infinite, controlled-viability,
+richer repair-language, weakest-morphism, and empirical common-lift inference remain
+open extensions.
