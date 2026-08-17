@@ -1,24 +1,24 @@
 # CREST philosophy-of-ecology paper architecture — 信・達・雅 protocol
 
-> **Status:** manuscript architecture only. This document does not add a theorem, claim philosophical priority, or promote CREST into a proved joint theory. It is the bridge from the recovered mathematics to a philosophy-of-ecology paper.
+> **Status:** manuscript architecture only. This document does not add a theorem, claim philosophical priority, or promote CREST into a proved joint theory. It defines how the recovered mathematics may be translated into a philosophy-of-ecology argument.
 
-## 1. Paper identity
+## 1. Object of the paper
 
-### Working title/question
+### Working title
 
-> **What Counts as the Same Ecological State?**
+> **What Counts as the Same Ecological State? A Contract-Relative Account of State-Representation Adequacy**
 
-The title is deliberately broad, but the paper's actual object is narrower:
+The title is intentionally broad. The actual object is narrower:
 
-> **When may different ecological configurations safely be treated as the same coarse state representation for prediction and reporting?**
+> **When may different ecological configurations safely be treated as the same coarse scientific state for prediction and reporting?**
 
-This distinction matters because philosophy of ecology already contains direct accounts of ecosystem identity, dynamical identity, resilience-linked identity, system boundaries, and model adequacy. CREST should complement those literatures, not redescribe them as absent.
+This is a question about **state-representation adequacy**, not a complete metaphysics of ecological-system identity.
 
-### Working thesis
+The working thesis is:
 
-> The adequacy conditions of a usable coarse ecological state representation are contract-relative. A proposed state equivalence may be adequate for one scientific contract and fail another because of future operations, inherited semantics, retained mechanisms, or finite evidence.
+> A proposed coarse ecological state equivalence can be adequate under one scientific contract and inadequate under another. Four contracts are distinguished here: future operations, inherited semantics, retained mechanisms, and evidence.
 
-A compact form is
+Compact form:
 
 \[
 \boxed{
@@ -26,187 +26,216 @@ A compact form is
 }
 \]
 
-The older phrase
+The older slogan
 
 \[
 \text{“ecological state identity is contract-relative”}
 \]
 
-may still be used as an interpretive slogan, but the paper must immediately clarify that it concerns **scientific state-representation adequacy**, not a claim that CREST supplies the first or exhaustive metaphysics of ecological-system identity.
+may be used only as shorthand and must immediately be narrowed to **scientific coarse-state representation adequacy**.
 
-### Intended field position
+CREST is therefore positioned as **philosophy of ecology grounded in mathematical ecology**:
 
-The paper is **philosophy of ecology grounded in mathematical ecology**:
-
-- philosophy asks what sameness, representation, adequacy, and warranted assertion mean in ecological practice;
-- mathematics supplies counterexamples, impossibility results, minimality results, and explicit scope boundaries;
+- philosophy supplies the questions of sameness, representation, adequacy, and warranted assertion;
+- mathematics supplies counterexamples, impossibility results, minimality results, and exact scope boundaries;
 - ecology supplies the practice of using functional groups, community states, resilience classes, occupancy categories, ecosystem-condition states, and management states.
 
-The paper should be presented as a formal sharpening of existing ecological-identity and model-adequacy discussions.
-
-Direct predecessors include work on dynamic ecosystem identity (Cumming & Collier; Collier & Cumming), multiple notions of ecological identity (Delettre), and explicit ecological model-adequacy protocols (Getz et al.). Broader conceptual neighbors include pragmatic representation, perspectivism, adequacy-for-purpose, model pluralism, robustness analysis, open-system ecology, historical contingency, and partial observability.
-
-The paper's target is therefore not “four new quotient theories.” It is one representational question with four theorem-backed ways to fail.
+The canonical mathematical boundary is `docs/crest_proof_recovery_2026-08-17.md`.
+The canonical prior-art boundary is `docs/crest_philosophy_literature_positioning_2026-08-17.md`.
+The sentence-level firewall is `docs/crest_philosophy_claim_ledger_2026-08-17.md`.
 
 ---
 
-## 2. 信・達・雅 as the writing protocol
+## 2. Prior-art boundary
 
-The classical translation triad is used as an **editorial discipline**, not as a scientific novelty claim.
+The paper must begin cumulatively rather than by claiming an empty field.
 
-### 信 — fidelity
+Existing work already owns major neighboring claims:
 
-Every philosophically important sentence must have one label during drafting:
+- ecosystem/system identity and dynamical continuity;
+- multiple notions of ecological identity;
+- ecological model adequacy and coarse graining;
+- intervention-sensitive ecological states;
+- pragmatic and perspectival representation;
+- POMDP/adaptive management under state, model, and observation uncertainty;
+- policy-relevant state abstraction;
+- causal states, bisimulation, MDP abstraction, and causal abstraction;
+- ecological model transferability;
+- robustness/model pluralism;
+- historical contingency and ecological memory;
+- partial observability and evidence underdetermination.
+
+Accordingly, CREST does **not** claim to invent ecological identity, model adequacy, intervention-relative state definition, task-relevant abstraction, causal abstraction, transferability, or uncertainty-aware decision theory.
+
+Its remaining novelty hypothesis is deliberately narrower and remains **OPEN**:
+
+> **CREST may provide a theorem-backed, failure-oriented metatheoretical decomposition of one coarse ecological state-equivalence adequacy problem into future-sufficiency, inherited-semantic, mechanism-robustness, and evidential-licensing audits.**
+
+The novelty target is the **cross-contract diagnostic architecture**, not any individual quotient/minimization method.
+
+---
+
+## 3. 信 — fidelity protocol
+
+Every philosophically important manuscript sentence must be tagged during drafting:
 
 1. **FORMAL** — directly proved in CCOC, MLTR, MRM, or CED;
-2. **INTERPRETIVE** — an ecological/philosophical reading of a proved result;
-3. **OPEN** — a metatheoretical proposal or conjecture not established by the current mathematics.
+2. **INTERPRETIVE** — an ecological/philosophical reading of a formal result;
+3. **OPEN** — a metatheoretical proposal, novelty hypothesis, or unproved extension;
+4. **REJECT** — known overclaim or rediscovery of established prior art.
 
-Rules:
+Hard rules:
 
-- never turn a sufficient condition into an iff claim;
-- never treat finite replay/CI as proof of a quantified theorem;
+- never turn a sufficient condition into an iff statement;
+- never treat finite replay or CI as proof of a quantified theorem;
 - never treat a required state distinction as one already observed;
-- never add complexity/defect/risk quantities from different axes without a joint theorem;
-- never say the four CREST audits exhaust all legitimate ecological state criteria;
-- never say the four audits commute or yield one globally minimal state unless separately proved;
-- never claim that purpose-relative representation, ecological identity, ecosystem openness, or model adequacy began with CREST.
+- never add CCOC/MLTR/MRM/CED complexity quantities without a joint theorem;
+- never claim that the four audits are exhaustive;
+- never claim general audit independence or commutation;
+- never claim one globally minimal simultaneous CREST state;
+- never introduce a fifth “CREST theorem” merely by composing the four proof packages.
 
-Canonical proof boundary: `docs/crest_proof_recovery_2026-08-17.md`.
+The claim ledger, not rhetorical convenience, decides what wording is admissible.
 
-Canonical literature boundary: `docs/crest_philosophy_literature_positioning_2026-08-17.md`.
+---
 
-### 達 — intelligibility without dilution
+## 4. 達 — the argument spine
 
-Each axis begins with an ecological question before notation.
+The manuscript should not read as four theories placed side by side. It should make one argument in six moves.
 
-- **Future sufficiency / CCOC:** Could a distinction irrelevant in every presently closed context become necessary after a future connection or intervention becomes legal?
-- **Semantic coherence / MLTR:** Does an inherited ecological category retain its operational meaning after turnover, replacement, or rewiring?
-- **Mechanism robustness / MRM:** Can one deterministic prediction be reported when several retained response mechanisms imply different intervention outcomes?
-- **Evidential licensing / CED:** Has the evidence actually resolved the distinction that the requested prediction requires?
+### Move 1 — Ecology already relies on coarse sameness
 
-Each section follows:
+**Status:** INTERPRETIVE / established practice.
+
+Ecological modelling routinely maps heterogeneous configurations to one state label:
+
+\[
+q:X\to Q.
+\]
+
+A label such as `pollination maintained`, `degraded state`, `occupied`, `resilient`, or `functional guild A` is therefore not only a description. It asserts that distinctions erased by `q` are irrelevant for the scientific work assigned to that state representation.
+
+**Reader question:**
+
+> Irrelevant for what?
+
+This is the paper's entry point.
+
+### Move 2 — “Adequate state” hides more than one obligation
+
+**Status:** INTERPRETIVE / CREST architecture.
+
+A single phrase such as “this is an adequate state variable” can hide several different claims. CREST isolates four that arise in the current theorem program:
+
+1. the merge remains sufficient under the declared future operations;
+2. the merge preserves inherited meaning after structural change;
+3. the merge does not hide retained mechanism disagreement relevant to the requested future;
+4. the distinction claimed in the report is licensed by the available evidence.
+
+Do **not** call these four obligations exhaustive or mutually independent in general. The claim is only that they are **distinct in the present formalization**: they begin from different objects, use different quantifier orders, and have different failure outputs.
+
+**Transition sentence:**
+
+> The crucial issue is therefore not whether ecological states are “relative” in some generic sense, but which adequacy obligation a proposed equivalence is expected to satisfy.
+
+### Move 3 — The four obligations can fail in mathematically different ways
+
+**Status:** FORMAL anchors + INTERPRETIVE synthesis.
+
+#### Future sufficiency
+
+CCOC shows that small exact interfaces in each supplied closed future do not imply one comparably small exact interface for a jointly open future grammar.
+
+Failure object:
+
+> a future legal word or family of addressable futures that separates configurations previously merged.
+
+Remedy / consequence:
+
+> retain more interface information, or accept an open-future obstruction/lower bound.
+
+#### Semantic coherence
+
+MLTR fixes one inherited source law and asks whether its carried target partition remains exact. If not, it constructs the unique coarsest exact **source-relative** repair.
+
+Failure object:
+
+> inherited labels that no longer support well-defined target outputs/legal actions/successors.
+
+Remedy / consequence:
+
+> split only what target exactness forces while preserving inherited merges that remain valid; retain history context when incompatible inherited maps themselves must be preserved.
+
+#### Mechanism robustness
+
+MRM asks whether retained response types agree on the requested future behavior. Unsupported determinism is replaced by exact typed or set-valued reporting, and the candidate-safe quotient keeps only response distinctions that matter.
+
+Failure object:
+
+> retained response types with different declared future successors.
+
+Remedy / consequence:
+
+> retain target-relevant mechanism information or report ambiguity explicitly.
+
+#### Evidential licensing
+
+CED asks what a finite experiment/observation contract licenses. If one compatible evidence class contains multiple target values, one deterministic report is not justified. Its target-safe quotient is a **required resolution**, not an already observed state.
+
+Failure object:
+
+> an evidence-compatible class spanning multiple target values or target-safe blocks.
+
+Remedy / consequence:
+
+> retain ambiguity, strengthen the evidence contract, or choose a risk-limited experiment within the declared policy family.
+
+**Transition sentence:**
+
+> These are not four names for one failed abstraction: they diagnose different reasons why the same coarse state label can cease to do the scientific work expected of it.
+
+This is an INTERPRETIVE synthesis, not a theorem of logical independence.
+
+### Move 4 — Different failures require different remedies
+
+**Status:** INTERPRETIVE, grounded in the four formal outputs.
+
+The manuscript's strongest explanatory move is the remedy contrast:
 
 ```text
-ordinary ecological practice
-  -> proposed state equivalence
-  -> hidden adequacy assumption
-  -> formal failure mode
-  -> theorem/counterexample
-  -> philosophical consequence
-  -> explicit non-claim
+same proposed state equivalence
+        |
+        +-- future insufficiency
+        |      -> remember more / interface lower bound
+        |
+        +-- semantic non-portability
+        |      -> source-relative repair / defect / history
+        |
+        +-- mechanism non-robustness
+        |      -> typed or set-valued report / candidate-safe state
+        |
+        +-- evidential non-resolvability
+               -> ambiguity-retaining report / required additional evidence
 ```
 
-The main text should minimize repository names. Use the four audit names in the philosophical flow and introduce CCOC/MLTR/MRM/CED once as mathematical anchors.
+A generic instruction to “use a better state abstraction” loses this diagnosis. A state may require more information because future operations expose hidden differences, because an inherited category changed meaning, because mechanism alternatives disagree, or because the evidence has not earned the distinction. Those are scientifically different problems even when all can be encoded inside one sufficiently rich decision model.
 
-### 雅 — conceptual economy
+**Boundary:** CREST does not prove that a combined decision model cannot encode all four. The philosophical claim is diagnostic: encoding ingredients together does not erase the difference between the adequacy obligations.
 
-The paper has **one object, four audits, one recurring example**.
+### Move 5 — Contract-relative does not mean arbitrary
 
-One object:
+**Status:** INTERPRETIVE.
 
-> a proposed coarse equivalence relation saying which ecological configurations count as the same scientific state.
+CREST need not choose between naive realism and unrestricted constructivism.
 
-Four audits:
+Whatever ontology one adopts for ecological systems, a **scientific coarse-state representation** can still be tested against explicit obligations. Once a contract is declared:
 
-1. future sufficiency;
-2. semantic coherence;
-3. mechanism robustness;
-4. evidential licensing.
+- a legal future can refute a proposed merge;
+- a structural replacement can invalidate inherited semantics;
+- retained mechanisms can disagree on a successor;
+- an evidence class can contain incompatible target values.
 
-One recurring example:
-
-> **pollination maintained**.
-
-Avoid theorem catalogues, repository history, multiple umbrella metaphors, CI/code detail, and a fifth “CREST theorem.”
-
-Preferred recurring sentence:
-
-> A coarse state equivalence can be adequate under one contract and inadequate under another.
-
----
-
-## 3. Relation to existing ecological identity and adequacy frameworks
-
-This section is mandatory because the nearest prior art is direct.
-
-### System identity is not the same problem as state-representation adequacy
-
-Cumming & Collier and Collier & Cumming ask how an ecological/complex system retains identity through change and why ecosystem identity should be understood dynamically.
-
-CREST asks a different question *inside a declared system/model*:
-
-> When may two configurations share one coarse scientific state label?
-
-So the manuscript must preserve:
-
-```text
-identity of the ecological system
-    ≠
-adequacy of a coarse state representation within that system
-```
-
-### Identity types are not CREST audits
-
-Delettre distinguishes typological, numerical, global-state, and local-state ecological identity.
-
-CREST does not propose four competing identity types. It asks whether a chosen state equivalence survives four scientific contracts.
-
-The two decompositions can cross-classify each other.
-
-### Model adequacy is not new with CREST
-
-Getz et al. explicitly evaluate ecological model adequacy through state variables, control variables, data determinacy, sensitivity, validity, and coarse graining.
-
-CREST should be presented as a **formal specialization of the state-representation part of adequacy**. Its distinctive move under test is to turn four different sources of inadequacy into four different mathematical problems and outputs.
-
----
-
-## 4. Formal-to-philosophical claim ladder
-
-### F1. Future sufficiency — CCOC
-
-**FORMAL:** Exact compression under separately closed future grammars need not imply comparably small exact compression under a jointly open future grammar. Concrete future words can force an interface lower bound, with sharp bounded-local witnesses. Constrained-codebook and Fano results are supporting strengthenings.
-
-**INTERPRETIVE:** Present functional equivalence need not be predictive equivalence under an enlarged future repertoire.
-
-**UNSAFE:** Ecosystems cannot possess stable macro-laws.
-
-### F2. Semantic coherence — MLTR
-
-**FORMAL:** For a fixed inherited source law, the carried target partition can be tested for exactness. If it fails, finite refinement yields the unique coarsest exact source-relative repair. Equal carried terminal maps are sufficient for route-independent inherited semantics/repair; unequal maps rule out one route-free carried label map preserving all inherited assignments. One history mode per distinct carried map is necessary and sufficient when those inherited path-specific meanings must be retained.
-
-**INTERPRETIVE:** An ecological category can keep its name while losing enough operational meaning to support the same intervention or prediction after structural change.
-
-**UNSAFE:** Different histories always produce different final unlabeled state partitions.
-
-### F3. Mechanism robustness — MRM
-
-**FORMAL:** A universal deterministic law exists exactly when retained response types agree everywhere. Typed/set-valued reports are exact alternatives under disagreement. The candidate-safe quotient is the unique coarsest observation-preserving deterministic quotient on the declared typed system. Active/cost-aware discrimination is conditional on the declared finite response family, actions, and costs.
-
-**INTERPRETIVE:** Presently identical configurations need not constitute one predictive state when retained mechanisms disagree about the requested future response.
-
-**UNSAFE:** Full mechanism identity must always be retained.
-
-### F4. Evidential licensing — CED
-
-**FORMAL:** Deterministic target reporting is licensed exactly when the target is constant on the compatible evidence class. Otherwise the sharp report remains ambiguity-explicit. The target-safe quotient is the unique coarsest **required refinement** preserving records, targets, and declared successors; it is not automatically a state identified by the current evidence. Failure architecture constrains which nominal distinctions can be credited, and finite policy optimality is relative to the declared finite policy family.
-
-**INTERPRETIVE:** A distinction may be real and prediction-relevant without yet being one that available evidence licenses us to report.
-
-**UNSAFE:** The target-safe quotient is what the current experiment has already observed.
-
----
-
-## 5. The central philosophical move
-
-CREST should distinguish **ontological identity** from **representational adequacy**.
-
-It does not need to decide whether ecological states are fundamentally real, conventional, processual, individual, or perspectival. The stronger and safer claim is:
-
-> Whatever ontological account of ecological systems one adopts, a coarse scientific state representation has identity conditions determined by what it is required to preserve, predict, distinguish, and justify.
-
-This permits a realist reading:
+Thus:
 
 \[
 \boxed{
@@ -214,20 +243,31 @@ This permits a realist reading:
 }
 \]
 
-Contracts are declared by scientific practice, but their consequences are not arbitrary:
+The contract is a modelling commitment; the consequences under that contract are constrained.
 
-- a future legal operation can refute a proposed merge;
-- a replacement can invalidate inherited semantics;
-- retained mechanisms can disagree on a successor;
-- an evidence class can contain multiple target values.
+### Move 6 — Philosophical conclusion
 
-Thus CREST does not infer “anything can be a state.” It says that scientific sameness claims have explicit adequacy obligations.
+**Status:** INTERPRETIVE / preferred thesis.
+
+Do not conclude that CREST has discovered the true ontology of ecological states.
+
+Conclude instead:
+
+> **Ecological state equivalence should be treated as an explicit scientific commitment rather than an invisible modelling default.**
+
+To say that two configurations are “the same state” is to make commitments about what futures, meanings, mechanism alternatives, and evidence are relevant to that sameness.
+
+The four CREST audits provide one theorem-backed way to make those commitments inspectable.
 
 ---
 
-## 6. One recurring example — “pollination maintained”
+## 5. One recurring example — `pollination maintained`
 
-Two ecological configurations currently receive the same coarse label: **pollination maintained**.
+The entire manuscript should use one ecological label rather than four unrelated examples.
+
+Two configurations currently receive the same coarse label:
+
+> **pollination maintained**.
 
 ### Future-sufficiency audit
 
@@ -239,11 +279,11 @@ Question:
 
 ### Semantic-coherence audit
 
-After pollinator turnover, the inherited functional class may need to split according to substitute-response capacity.
+After pollinator turnover, the inherited class may need to split according to substitute-response capacity.
 
 Question:
 
-> Does the old category preserve enough of its inherited meaning to support the same management semantics?
+> Does the old category preserve enough inherited operational meaning to support the same management semantics?
 
 ### Mechanism-robustness audit
 
@@ -251,7 +291,7 @@ Several retained mechanisms agree on current pollination but disagree about comp
 
 Question:
 
-> Is one deterministic prediction warranted before the mechanism ambiguity is resolved?
+> Is one deterministic prediction warranted while those response alternatives remain possible?
 
 ### Evidential-licensing audit
 
@@ -261,120 +301,158 @@ Question:
 
 > Even if the distinction matters, has the evidence earned the right to report it?
 
-The point is not that “pollination maintained” is false. It is that the **adequacy of treating configurations as equivalent under that label** depends on the contract.
+The point is not that `pollination maintained` is false. It is that the **adequacy of treating configurations as equivalent under that label** depends on the contract.
 
 ---
 
-## 7. Proposed manuscript structure
+## 6. Formal anchors — minimum mathematics in the philosophy paper
 
-### Title
+The philosophy paper needs only one formal anchor per audit.
 
-Preferred working title:
+### CCOC
 
-> **What Counts as the Same Ecological State? A Contract-Relative Account of State-Representation Adequacy**
+Show the contrast
 
-This keeps the broad philosophical hook while making the technical object explicit.
+\[
+\max_j K_{\mathrm{closed},j}=O(1),
+\qquad
+K_{\mathrm{open}}=\Omega(m)
+\]
 
-### Section 1 — From ecosystem identity to state-representation adequacy
+through the concrete future-addressability idea. Do not reproduce the full theorem family.
 
-Acknowledge direct predecessors immediately:
+Philosophical payload:
 
-- ecosystem/system identity and dynamic continuity;
-- plural kinds of ecological identity;
-- model adequacy and coarse graining;
-- perspectival/purpose-relative representation.
+> future repertoire can change minimum state requirements.
 
-Then isolate the remaining question:
+### MLTR
 
-> Given a coarse ecological state equivalence, what must it survive to support prediction and reporting?
+Show one inherited fiber that becomes invalid and the source-relative refinement idea.
 
-### Section 2 — Four independent adequacy audits
+Philosophical payload:
 
-Introduce future sufficiency, semantic coherence, mechanism robustness, and evidential licensing conceptually.
+> state meaning can fail to transport even when a label remains syntactically available.
 
-### Section 3 — Formal anchors
+### MRM
 
-Use one theorem/counterexample per axis, only enough mathematics to establish that the audits differ in quantifier order, starting object, minimization constraint, and honest failure output.
+Show one current observed state with two retained response types giving different successors.
 
-### Section 4 — Contract-relative does not mean arbitrary
+Philosophical payload:
 
-Explain the realism-compatible position and why a declared contract can generate objective failure certificates.
+> current sameness does not license one predictive state when retained response laws disagree.
 
-### Section 5 — Consequences for ecological explanation, transfer, and measurement
+### CED
 
-Keep conceptual:
+Show one evidence-compatible class containing two different target values.
 
-- state variables should be indexed to future/action context;
-- transferring categories requires semantic audit;
-- mechanism disagreement should not be hidden if it changes the target future;
-- measurement should earn target-relevant distinctions rather than maximize latent resolution indiscriminately.
+Philosophical payload:
 
-### Section 6 — Limits
+> a distinction can be required for prediction without being licensed by current evidence.
 
-State explicitly:
-
-- the four audits are not proved exhaustive;
-- no universal audit order is proved;
-- no commutation theorem is proved;
-- no globally minimal simultaneous CREST state is proved;
-- CREST does not infer the contracts from ecological data;
-- exact finite results are conceptual benchmarks, not automatic empirical laws.
-
-End with:
-
-> Ecological state equivalence should be treated as an explicit scientific commitment rather than an invisible modelling default.
+The mathematical goal of the philosophy paper is not proof reproduction. It is to make the four quantifier structures visibly non-identical.
 
 ---
 
-## 8. Abstract skeleton under 信・達・雅
+## 7. Paragraph-level manuscript flow
 
-Do not finalize until the remaining exact-prior-art search is complete.
+### Introduction
 
-### 信
+**Paragraph 1 — established background.**
+Acknowledge ecosystem identity, model adequacy, intervention-sensitive states, POMDP/state abstraction, causal abstraction, and transferability as existing literatures.
 
-Ecology routinely compresses heterogeneous configurations into shared states used for prediction and management. Previous work has shown that ecosystem identity, model boundaries, and model adequacy are dynamic and purpose-sensitive. We ask a narrower question: when is a proposed coarse ecological state equivalence adequate for the scientific work assigned to it?
+**Paragraph 2 — isolate the hidden commitment.**
+Ecologists still routinely assign multiple configurations one coarse state label. Ask what that equivalence is required to preserve.
 
-### 達
+**Paragraph 3 — state the gap.**
+Existing frameworks often optimize or assess a model under a chosen task; CREST instead separates four reasons why one proposed equivalence can fail.
 
-We distinguish four ways such equivalence can fail: future operations can expose erased distinctions; structural change can alter inherited state meaning; retained mechanisms can agree on the present yet disagree on future response; and finite evidence can fail to license a distinction required by the target prediction.
+**Paragraph 4 — thesis and non-claim.**
+Introduce the four audits. State explicitly that the decomposition is not claimed exhaustive and CREST is not a fifth theorem.
 
-### 雅
+### Main conceptual section
 
-These results motivate a contract-relative account of state-representation adequacy. A state equivalence is indexed to future, semantic, mechanism, and evidence contracts rather than treated as unconditionally sufficient. This is not unrestricted relativism: each contract supports explicit mathematical failure tests, while no claim is made that the four audits are exhaustive or jointly minimal.
+Use the `pollination maintained` example to pass through the four audits in the same order every time:
+
+```text
+future -> inherited meaning -> mechanism alternatives -> evidence
+```
+
+This order is explanatory only. It is **not** claimed to be a universal computational or causal order.
+
+### Formal section
+
+For each audit:
+
+1. one setup sentence;
+2. one minimal mathematical statement;
+3. one failure witness;
+4. one remedy;
+5. one explicit non-claim.
+
+### Synthesis section
+
+Make the remedy contrast the center. Do not say “there are four kinds of ecological identity.” Say:
+
+> there are at least four distinct adequacy questions that can be asked of the same coarse state equivalence in the current program.
+
+### Discussion
+
+Connect to existing philosophy as a diagnostic refinement of model adequacy/perspectivism rather than an alternative metaphysics.
+
+### Conclusion
+
+Return to the modelling commitment:
+
+> when a state label merges configurations, the burden is to state what that merge is supposed to preserve.
 
 ---
 
-## 9. Remaining literature gate
+## 8. 雅 — economy rules
 
-The broad literature gate has already ruled out novelty claims for:
+The full manuscript must preserve:
 
-- purpose/context relativity;
-- ecological identity as a philosophical problem;
-- four-way ecological identity taxonomies in general;
-- ecological model adequacy;
-- ecosystem openness and boundary choice;
-- model pluralism/robustness;
-- historical contingency;
-- evidence underdetermination.
+- **one object:** one proposed coarse state equivalence;
+- **one thesis:** its adequacy is contract-relative rather than unconditional;
+- **four audits:** future, semantics, mechanism, evidence;
+- **one recurring example:** `pollination maintained`;
+- **one conclusion:** ecological sameness is an explicit scientific commitment.
 
-The remaining search is extremely narrow:
+Cut anything that does not serve that line.
 
-> **Has an existing framework already treated one coarse ecological state equivalence as separately constrained by future operations, inherited semantics, retained mechanism alternatives, and evidence/reportability?**
+Do not include:
 
-Only if that search remains negative after citation chaining should the paper use language such as:
+- repository history;
+- CI or implementation detail;
+- a theorem catalogue;
+- multiple competing umbrella metaphors;
+- a survey of every abstraction framework;
+- an argument that ecology was previously unaware of context, uncertainty, or identity;
+- speculative fifth or sixth CREST axes in the main paper.
 
-> CREST may provide a new theorem-backed four-contract decomposition of coarse ecological state-representation adequacy.
+Literature belongs where it sharpens a boundary, not as a defensive bibliography dump.
 
 ---
 
-## 10. Stop rule
+## 9. Abstract skeleton
 
-Do not write the full paper until:
+Do not finalize until the remaining exact prior-art question is sufficiently citation-chained.
 
-1. direct citation chains from Cumming & Collier, Delettre, Getz et al., Giere, Massimi, Bokulich & Parker, and robustness/model-pluralism work have been checked;
-2. every central sentence can be tagged FORMAL / INTERPRETIVE / OPEN;
-3. no sentence exceeds the final proof ledger;
-4. one pollination example carries the whole argument;
-5. there is no fifth theorem called “CREST theorem.”
+**信:** Ecology routinely compresses heterogeneous configurations into shared states used for prediction and management. Existing work already treats ecosystem identity, model adequacy, intervention-sensitive states, and scientific representation as dynamic or purpose-sensitive. We ask a narrower question: when is one proposed coarse ecological state equivalence adequate for the scientific work assigned to it?
 
-The next task remains literature positioning, not theorem generation.
+**達:** We distinguish four ways that equivalence can fail: future operations can expose erased distinctions; structural change can disrupt inherited state meaning; retained response mechanisms can agree on the present while disagreeing on future response; and finite evidence can fail to license a distinction required by the target prediction.
+
+**雅:** These results motivate a contract-relative account of state-representation adequacy. The point is not that ecological states are arbitrary, but that a sameness claim should specify what it is expected to preserve. The four audits provide distinct formal failure tests while no claim is made that they are exhaustive, mutually independent, commuting, or jointly minimal.
+
+---
+
+## 10. Stop rule before full prose drafting
+
+Full manuscript prose starts only when:
+
+1. the exact four-contract novelty hypothesis has undergone the remaining citation-chain check;
+2. every central sentence is admissible under the 信 claim ledger;
+3. the argument can be stated without calling the audits independent or exhaustive;
+4. one pollination example carries all four audits;
+5. the manuscript contains no fifth theorem called “CREST theorem.”
+
+At that point, drafting should proceed paragraph-by-paragraph from the argument spine above rather than from the repository histories.
