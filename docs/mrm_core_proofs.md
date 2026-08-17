@@ -186,29 +186,40 @@ T_a(q,r)=(G_a^r(q),r),
 o(q,r)=q.
 \]
 
-Let `P_0` partition `X` by the observable state `q`. For a partition `P`, define `F(P)` by splitting each block according to the tuple
+Let `P_0` partition `X` by the observable state `q`. Recursively define `P_{n+1}` by equality of the signatures
 
 \[
-\left(o(x),([T_a(x)]_P)_{a\in A}\right).
+\sigma_{n+1}(x)=
+\left(o(x),([T_a(x)]_{P_n})_{a\in A}\right).
 \]
 
-Starting from `P_0`, iterate `P_{n+1}=F(P_n)` until stabilization.
+This is the refinement implemented in `mrm/quotient.py`: the signature contains the current observable state and the vector of successor `P_n`-blocks. It does **not** explicitly carry the old `P_n` block identifier as an extra component.
 
 ### Theorem 5
 
-The fixed point `P_*` is the unique coarsest observation-preserving deterministic quotient of the typed product. Equivalently, it has the fewest states among exact candidate-safe deterministic interfaces that retain the current macrostate.
+The stabilized partition `P_*` is the unique coarsest observation-preserving deterministic quotient of the typed product. Equivalently, it has the fewest states among exact candidate-safe deterministic interfaces that retain the current macrostate.
 
 ### Proof
 
-`F(P)` refines `P`, because the old block identity is retained in the signature. Since `X` is finite, only finitely many strict refinements are possible, so the sequence stabilizes.
+First we show that the recursively generated sequence is monotone even though the previous block label is not written explicitly in the next signature.
 
-At a fixed point, states in one block have the same observable state and, for every action, successors in one common fixed-point block. Therefore output and every declared successor factor through the quotient; `P_*` is candidate-safe and deterministic.
+`P_1` refines `P_0` because equality of `\sigma_1` implies equality of the first component `o(x)`.
 
-For coarseness, let `Qhat` be any observation-preserving deterministic quotient refining `P_0`. We prove by induction that `Qhat` refines every `P_n`. The base case is the observation-preserving requirement. Assume it refines `P_n`. If two typed states share a `Qhat`-class, determinism of `Qhat` sends them under every action to one common successor `Qhat`-class; by the induction hypothesis those successor states also share their `P_n`-blocks. Their refinement signatures are therefore equal, so they are not split in `P_{n+1}`. Thus `Qhat` refines `P_{n+1}`.
+Assume inductively that `P_n` refines `P_{n-1}`. Suppose `x` and `y` lie in the same `P_{n+1}` block. Then they have the same current observation and, for every action `a`, the successors `T_a(x)` and `T_a(y)` lie in the same `P_n` block. Since `P_n` refines `P_{n-1}`, those successors also lie in the same `P_{n-1}` block. Hence `x` and `y` have equal `\sigma_n` signatures and therefore lie in the same `P_n` block. Thus
 
-At stabilization every candidate-safe quotient refines `P_*`, proving that `P_*` is coarsest. Two coarsest partitions must refine one another and therefore coincide. \(\square\)
+\[
+P_{n+1}\preceq P_n
+\]
 
-This is the MRM specialization of the neutral finite refinement proof in `docs/neutral_latent_world_quotient.md`. The common partition-refinement machinery is classical substrate; the MRM specialization fixes the latent worlds to observable-state × response-type pairs.
+for every `n`. Because `X` is finite, only finitely many strict refinements are possible, so the sequence stabilizes at some `P_*`.
+
+At a fixed point, states in one block have the same observable state and, for every action, successors in one common fixed-point block. Therefore observation and every declared successor factor through the quotient; `P_*` is candidate-safe and deterministic.
+
+For coarseness, let `Qhat` be any observation-preserving deterministic quotient. We prove by induction that `Qhat` refines every `P_n`. The base case holds because `Qhat` preserves the current observable state and therefore refines `P_0`. Assume `Qhat` refines `P_n`. If two typed states share a `Qhat`-class, determinism of `Qhat` sends them under every action to one common successor `Qhat`-class; by the induction hypothesis those successor states also share their `P_n`-blocks. The two source states also have the same current observation. Hence their `\sigma_{n+1}` signatures are equal, so they lie in the same `P_{n+1}` block. Therefore `Qhat` refines `P_{n+1}`.
+
+At stabilization every observation-preserving deterministic candidate-safe quotient refines `P_*`, proving that `P_*` is coarsest. Two coarsest partitions refine one another and therefore coincide. \(\square\)
+
+This proof now matches the actual signature recurrence in `minimal_candidate_safe_quotient`; it does not rely on a nonexistent explicit old-block component. It is the MRM specialization of the neutral finite refinement argument in `docs/neutral_latent_world_quotient.md`. The common partition-refinement machinery is classical substrate; the MRM specialization fixes the latent worlds to observable-state × response-type pairs.
 
 ### Corollary 5.1 — future-trajectory characterization
 
@@ -218,7 +229,7 @@ Two typed states lie in the same `P_*` block if and only if they have the same o
 
 If they share a fixed-point block, action stability preserves block equality after each symbol, and observation preservation gives identical observed trajectories by induction on word length.
 
-Conversely, suppose two typed states have identical observed trajectories for every finite action word. They begin in the same `P_0` block. Inductively, if they remain together in `P_n`, then the successor pair under each action also has identical future observed trajectories and therefore, by the induction hypothesis applied to the one-symbol-shifted trajectories, lies in the same `P_n` block. Hence their refinement signatures agree and they remain together in `P_{n+1}`. They are never separated and therefore share a `P_*` block. \(\square\)
+Conversely, suppose two typed states have identical observed trajectories for every finite action word. They begin in the same `P_0` block. Inductively, if they remain together in `P_n`, then for every action their successor pair has identical observed trajectories for every finite continuation word. By the same induction hypothesis, applied to those successor pairs, the successors lie in the same `P_n` block. Hence the two source states have equal `\sigma_{n+1}` signatures and remain together in `P_{n+1}`. They are never separated and therefore share a `P_*` block. \(\square\)
 
 ---
 
