@@ -100,15 +100,15 @@ def test_equal_cost_cut_and_fallback_produce_two_optimal_repairs() -> None:
     assert result.minimum_cost == 2
     assert not result.unique
     assert tuple(plan.retained_worlds for plan in result.optimal_plans) == (
-        ("safe", "choice", "trapped"),
         ("safe", "choice", "hazard", "trapped"),
+        ("safe", "choice", "trapped"),
     )
 
-    fallback_plan, cut_plan = result.optimal_plans
-    assert fallback_plan.installed_fallbacks == (3,)
-    assert fallback_plan.disabled_uncontrollable == ()
+    cut_plan, fallback_plan = result.optimal_plans
     assert cut_plan.installed_fallbacks == ()
     assert cut_plan.disabled_uncontrollable == ((2, 0),)
+    assert fallback_plan.installed_fallbacks == (3,)
+    assert fallback_plan.disabled_uncontrollable == ()
     assert all(plan.verified_kernel().admissible for plan in result.optimal_plans)
 
 
