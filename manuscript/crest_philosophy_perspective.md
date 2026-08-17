@@ -9,7 +9,7 @@
 Ecology routinely compresses heterogeneous configurations into shared states used for prediction, comparison, and management.
 
 <!-- PRIOR ART BOUNDARY: C33–C35 -->
-Existing work already treats ecosystem identity, model adequacy, intervention-sensitive states, predictive state abstraction, partial observability, causal abstraction, and scientific representation as dynamic, task-relative, or purpose-sensitive.
+Existing work already provides mature accounts of ecosystem identity, ecological model adequacy, intervention-sensitive states, predictive state abstraction, partial observability, causal abstraction, and purpose-sensitive scientific representation.
 
 <!-- INTERPRETIVE: C1 -->
 We ask a narrower question: when several ecological configurations are assigned the same coarse state, what scientific commitments are being made by that equivalence?
@@ -64,7 +64,7 @@ After pollinator turnover, the inherited label `pollination maintained` may stil
 ### 2.3 Mechanism robustness
 
 <!-- FORMAL anchor: C15/C16/C18; reject C17/C20 -->
-The same visible pollination state can also be compatible with several retained response mechanisms. If those response types disagree about competitor removal, habitat restoration, or another declared intervention, a single deterministic forecast is not uniformly supported. MRM does not require full mechanism identity to remain in the state. It retains only response distinctions that can change the declared future behavior, and otherwise permits exact typed or set-valued reporting. **Mechanism ambiguity is therefore a predictive-state problem only where the retained alternatives make different predictions.**
+The same visible pollination state can also be compatible with several retained response mechanisms. If those response types disagree about competitor removal, habitat restoration, or another declared intervention, a single deterministic forecast is not uniformly supported. MRM does not require full mechanism identity to remain in the state. It retains only response distinctions that can change the declared future behavior, and otherwise permits exact typed or set-valued reporting. **Mechanism ambiguity is therefore a predictive-state issue only where retained alternatives make different predictions under the declared action and target contract.**
 
 ### 2.4 Evidential licensing
 
@@ -112,7 +112,7 @@ This allows CREST to remain compatible with realist approaches to ecological sys
 The account is intentionally cumulative. Ecological identity theory already analyzes what makes a system the same through change. Ecological model-adequacy work already asks whether state variables, controls, data, and validation are sufficient for a modelling purpose. State-and-Transition Models already connect ecological states to thresholds and intervention. POMDP and adaptive-management theory already combine hidden state, observations, actions, and model uncertainty. Causal states, bisimulation, and causal abstraction already formalize predictive or interventional coarse graining. Recent general theories of representational adequacy additionally study minimal adequate representations, certification, regime-dependent obsolescence, and repair.
 
 <!-- POSITIONING: C35 OPEN -->
-CREST should therefore not be judged by whether any one of these ingredients is new. Its potential contribution is narrower: an ecology-specific synthesis in which one proposed coarse state equivalence is subjected to four differently structured adequacy questions, each linked to an independently recovered theorem program and a different response to failure. Whether this exact four-contract mapping warrants a priority claim remains open; the argument does not depend on that priority.
+CREST should therefore not be judged by whether any one of these ingredients is new. Its potential contribution is narrower: an ecology-specific synthesis in which one proposed coarse state equivalence is subjected to four differently structured adequacy questions, each linked to a **separate recovered theorem program** and a different response to failure. Whether this exact four-contract mapping warrants a priority claim remains open; the argument does not depend on that priority.
 
 ---
 
