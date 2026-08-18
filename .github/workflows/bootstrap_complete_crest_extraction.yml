@@ -1,0 +1,183 @@
+name: Complete CREST extraction from MRM
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - .github/workflows/bootstrap_complete_crest_extraction.yml
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  extract:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: agent/complete-crest-extraction
+          fetch-depth: 0
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Remove temporary CREST hosting and restore the MRM boundary
+        run: |
+          set -euo pipefail
+
+          git rm -f mrm/crest_*.py
+          git rm -f tests/test_crest_*.py
+          git rm -f docs/crest_*.md docs/contract_relative_ecological_state_theory.md
+          git rm -f manuscript/crest_philosophy*.md manuscript/biology_philosophy_submission_handoff.md
+          git rm -f scripts/verify_crest_philosophy_submission.py
+          git rm -f artifacts/crest_philosophy_submission_report.json
+          git rm -rf crest_synthesis
+
+          cat > README.md <<'MD'
+          # MRM — Mechanism-Robust Macro-Laws
+
+          MRM is a theorem-first mathematical-ecology repository for one uncertainty question:
+
+          > When retained mechanisms agree on the visible state but disagree about future interventions, what is the strongest deterministic, typed, or set-valued law that can be reported honestly?
+
+          ## Publication core
+
+          1. a candidate-independent deterministic law exists exactly when retained response types agree on the declared transition maps;
+          2. otherwise typed deterministic and candidate-forgetting set-valued reports preserve the unresolved mechanism ambiguity;
+          3. the unique coarsest observation-preserving candidate-safe quotient retains only response-type distinctions that can affect declared future behavior;
+          4. the mechanism-ambiguity frontier gives sharp state-memory and intervention-depth witnesses; and
+          5. finite active and positive-cost discrimination identify response type when the declared action grammar permits it.
+
+          Observation updates, posterior summaries, and one-step value-of-information calculations are conditional adapters around the mechanism-report target. They do not transfer CED's evidence, failure, calibration, or risk-contract layer to MRM.
+
+          ## CREST companion program
+
+          The cross-contract **Contract-Relative Ecological State Theory (CREST)** synthesis now lives in its dedicated repository:
+
+          - https://github.com/zuizui0223/crest
+
+          CREST combines future sufficiency (CCOC), semantic coherence (MLTR), mechanism robustness (MRM), and evidential licensing (CED). Its J1–J7/O1 implementations, proofs, philosophy manuscript, and submission controls are not part of the MRM publication API.
+
+          The audited extraction provenance is recorded in `docs/crest_extraction_provenance.md`.
+
+          ## Proof and verification map
+
+          - [Recovered MRM core proofs](docs/mrm_core_proofs.md)
+          - [Minimal quotient and active discrimination](docs/minimal_quotient_active_discrimination.md)
+          - [Mechanism-ambiguity frontier](docs/mechanism_ambiguity_frontier.md)
+          - [Cost-aware discrimination](docs/cost_aware_active_discrimination.md)
+          - [Robust observation update](docs/robust_observation_update.md)
+          - [Probabilistic observation update](docs/probabilistic_observation_update.md)
+          - [Value-of-information design](docs/value_of_information_design.md)
+
+          ## Run
+
+          ```bash
+          python -m pip install -e '.[dev]'
+          pytest
+          python scripts/verify_mrm_core.py
+          ```
+
+          CI runs the theorem suite on Python 3.10, 3.11, and 3.12. Python 3.12 also writes the deterministic MRM replay artifact. Passing CI verifies the implementation surface; the analytic proofs remain the theorem basis.
+
+          ## Scope
+
+          MRM concerns declared finite candidate mechanism families on a common observable macrostate space. It does not infer candidate sets, mechanisms, response types, alignments, observation models, priors, likelihoods, action costs, or empirical validity from data. Cross-contract carrier, repair, joint-state, lift, and philosophy results belong to CREST rather than MRM.
+          MD
+
+          cat > docs/crest_extraction_provenance.md <<'MD'
+          # CREST extraction provenance — 2026-08-18
+
+          CREST was temporarily developed inside MRM and has been physically extracted to its independent repository.
+
+          - temporary host source: `zuizui0223/mrm`
+          - audited source SHA copied to CREST: `72550fa8335cbffb901785f8a171c647b3cf8cc6`
+          - dedicated CREST repository: `zuizui0223/crest`
+          - CREST migration merge SHA: `6cc54e3d47fba2bc978c1c52d9028dbe56b8ea37`
+
+          The dedicated repository independently reproduces J1–J7, O1, the J4/J7 complexity boundary, analytic proof/control documents, and the CREST philosophy submission verifier on Python 3.10, 3.11, and 3.12.
+
+          MRM retains only its mechanism-robust macro-law implementation, tests, proofs, replay, and conditional observation/design adapters. Pre-extraction history remains available in Git and is not rewritten.
+          MD
+
+          cat > .github/workflows/reproducibility.yml <<'YAML'
+          name: MRM reproducibility
+
+          on:
+            push:
+              branches: [main]
+            pull_request:
+            workflow_dispatch:
+
+          permissions:
+            contents: read
+
+          jobs:
+            test-and-replay:
+              runs-on: ubuntu-latest
+              strategy:
+                fail-fast: false
+                matrix:
+                  python-version: ['3.10', '3.11', '3.12']
+              steps:
+                - uses: actions/checkout@v4
+                - uses: actions/setup-python@v5
+                  with:
+                    python-version: ${{ matrix.python-version }}
+                - name: Install package and tests
+                  run: python -m pip install -e '.[dev]'
+                - name: Run MRM theorem tests
+                  run: pytest
+                - name: Write deterministic MRM replay report
+                  if: matrix.python-version == '3.12'
+                  run: python scripts/verify_mrm_core.py
+                - name: Check repository boundary and hygiene
+                  run: |
+                    git diff --check
+                    test -z "$(find mrm -maxdepth 1 -name 'crest_*.py' -print -quit)"
+                    test -z "$(find tests -maxdepth 1 -name 'test_crest_*.py' -print -quit)"
+                    if git ls-files | grep -E '(^|/)(__pycache__/|.*\.py[co]$|[^/]+\.egg-info/)'; then
+                      echo 'tracked Python build/runtime products detected' >&2
+                      exit 1
+                    fi
+                    test -z "$(git status --porcelain)"
+                - name: Upload MRM replay artifact
+                  if: matrix.python-version == '3.12'
+                  uses: actions/upload-artifact@v4
+                  with:
+                    name: mrm-core-reproducibility
+                    path: artifacts/mrm_core_report.json
+          YAML
+
+          if find mrm -maxdepth 1 -name 'crest_*.py' -print -quit | grep -q .; then
+            echo 'CREST implementation remains in the MRM package' >&2
+            exit 1
+          fi
+          if find tests -maxdepth 1 -name 'test_crest_*.py' -print -quit | grep -q .; then
+            echo 'CREST theorem tests remain in the MRM test surface' >&2
+            exit 1
+          fi
+          if grep -R -n -E 'verify_crest_philosophy|crest_philosophy_submission_report|mrm\.crest_' mrm tests scripts .github; then
+            echo 'temporary CREST host dependency remains' >&2
+            exit 1
+          fi
+
+      - name: Verify MRM independently
+        run: |
+          set -euo pipefail
+          python -m pip install -e '.[dev]'
+          pytest
+          python scripts/verify_mrm_core.py
+          git diff --check
+
+      - name: Commit the completed extraction
+        run: |
+          set -euo pipefail
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A
+          git commit -m "Complete the CREST extraction from MRM"
+          git push origin HEAD:agent/complete-crest-extraction
