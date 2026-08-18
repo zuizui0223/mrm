@@ -25,8 +25,7 @@ jobs:
         run: python -m pip install -e '.[dev]'
       - name: Run MRM theorem tests
         run: pytest
-      - name: Write deterministic MRM replay report
-        if: matrix.python-version == '3.12'
+      - name: Regenerate deterministic MRM replay report
         run: python scripts/verify_mrm_core.py
       - name: Check repository hygiene
         run: |
