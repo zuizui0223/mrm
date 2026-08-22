@@ -14,13 +14,32 @@ MRM is a theorem-first mathematical-ecology repository for one uncertainty quest
 
 Observation updates, posterior summaries, and one-step value-of-information calculations are conditional adapters around the mechanism-report target. They do not transfer CED's evidence, failure, calibration, or risk-contract layer to MRM.
 
-## CREST companion program
+## CREST role: mechanistic insufficiency of a present-state merge
 
-The cross-contract **Contract-Relative Ecological State Theory (CREST)** synthesis now lives in its dedicated repository:
+The cross-contract synthesis lives in the dedicated [CREST repository](https://github.com/zuizui0223/crest). The current hierarchy is fixed in the [trajectory-first program architecture](https://github.com/zuizui0223/crest/blob/main/docs/trajectory_first_program_architecture_2026-08-22.md).
 
-- https://github.com/zuizui0223/crest
+CREST now starts from temporally extended ecological worlds and asks when a present snapshot is sufficient for a declared scientific state. Within that hierarchy, MRM is the **mechanistic obstruction theory**.
 
-CREST combines future sufficiency (CCOC), semantic coherence (MLTR), mechanism robustness (MRM), and evidential licensing (CED). Its J1–J7/O1 implementations, proofs, philosophy manuscript, and submission controls are not part of the MRM publication API.
+Two ecological worlds may share the same visible present state while retaining different response mechanisms. MRM asks whether those mechanism differences can be forgotten. They become state-relevant exactly when retained mechanisms disagree on a future response required by the contract.
+
+\[
+\boxed{
+\text{same visible present state}
+\not\Rightarrow
+\text{same required state when retained mechanisms disagree on a relevant future}.
+}
+\]
+
+MRM therefore does not identify ecological state with full mechanism identity. Its minimal candidate-safe quotient preserves only **response-relevant mechanism distinctions**.
+
+Within the trajectory-first CREST hierarchy:
+
+- **CCOC** handles future/composition distinctions exposed by a wider future grammar;
+- **MLTR** handles inherited meaning and structural replacement;
+- **MRM** handles retained mechanism disagreement;
+- **CED** is downstream evidence licensing: whether observations actually identify the distinctions that the required state needs.
+
+CREST's finite joint-carrier, joint-state, lift, repair, philosophy, and representational-stability results are not part of the MRM publication API.
 
 The audited extraction provenance is recorded in `docs/crest_extraction_provenance.md`.
 
@@ -46,4 +65,4 @@ CI runs the theorem suite on Python 3.10, 3.11, and 3.12. Python 3.12 also write
 
 ## Scope
 
-MRM concerns declared finite candidate mechanism families on a common observable macrostate space. It does not infer candidate sets, mechanisms, response types, alignments, observation models, priors, likelihoods, action costs, or empirical validity from data. Cross-contract carrier, repair, joint-state, lift, and philosophy results belong to CREST rather than MRM.
+MRM concerns declared finite candidate mechanism families on a common observable macrostate space. It does not infer candidate sets, mechanisms, response types, alignments, observation models, priors, likelihoods, action costs, or empirical validity from data. Cross-contract carrier, repair, joint-state, lift, trajectory-level interpretation, and philosophy results belong to CREST rather than MRM.
