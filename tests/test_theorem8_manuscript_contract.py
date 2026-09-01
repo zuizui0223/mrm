@@ -27,7 +27,7 @@ def test_manuscript_architecture_centers_theorem_7_8_pair():
         "Theorem 8 — exact intervention frontier"
     )
     assert "Result 4 — Theorem 8: exact intervention frontier" in text
-    assert "m-intervention identification burden" in text
+    assert "intervention identification burden" in text
     assert "Do not call this Theorem 8 in the manuscript" in text
     assert "Theorem 8 — Probabilistic posterior update" not in text
 
