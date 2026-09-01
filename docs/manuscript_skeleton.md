@@ -1,285 +1,233 @@
-# Manuscript skeleton — Mechanism-Robust Macro-Laws
+# Manuscript architecture — Mechanism-Robust Macro-Laws
 
 ## Working title
 
-**Mechanism-Robust Macro-Laws: honest ecological prediction under unresolved mechanism ambiguity**
+**How many interventions does unresolved mechanism ambiguity cost? Exact state and experiment frontiers for ecological macro-laws**
 
-## One-sentence claim
+Alternative:
 
-When multiple retained mechanisms imply different future macro-transitions, the
-honest macro-law is not the most convenient deterministic candidate law, but one of
-four explicitly justified reports: universal deterministic, typed deterministic,
-minimal candidate-safe quotient, or set-valued / posterior-ambiguous forecast.
+**Mechanism ambiguity has an exact experimental price: state memory and intervention depth in ecological macro-laws**
 
-## Target paper type
+## One-sentence thesis
 
-A theory-first methods paper with executable finite witnesses. The repository is
-not positioned as an empirical inference pipeline. It is a reporting and experiment
-design calculus for declared finite candidate mechanism families.
+When several retained mechanisms agree on the visible present state but encode `m` unresolved binary response dimensions, an honest deterministic macro-law must retain exactly `m` additional bits in the canonical frontier family, and exact mechanism identification requires exactly `m` binary interventions in the worst case.
 
-## Abstract skeleton
+## Paper identity
 
-Ecological macro-laws are often reported as if the mechanism responsible for a
-pattern has already been resolved. Yet several retained mechanisms can agree on the
-current macrostate while disagreeing about the effect of future interventions. We
-formalize this problem using finite candidate macro-transition tables over a common
-observable macrostate space. We prove a report trichotomy: if all retained
-mechanisms induce the same transition maps, a universal deterministic law is
-justified; if not, response type must be retained for deterministic prediction, or
-the candidate-forgetting forecast must be set-valued. We then construct the minimal
-candidate-safe quotient, showing exactly which response-type distinctions must be
-kept at each macrostate. We extend the framework to active discrimination, action
-costs, bounded observation error, probabilistic observation, and one-step
-value-of-information scoring. Canonical witnesses show that unresolved binary
-mechanism ambiguity can impose exponential state-cardinality growth while adding a
-linear memory surcharge in bits, and that maximum information and maximum net
-experimental value need not select the same intervention. The framework gives a
-transparent standard for when deterministic ecological macro-laws may be reported,
-when uncertainty must remain explicit, and which observations are worth collecting
-next.
+MRM is a finite mathematical-ecology paper about the **price of unresolved response mechanism**. It is not an empirical mechanism-selection pipeline, a Bayesian model-selection paper, or a general active-learning paper.
 
-## Main narrative arc
+The manuscript should be organized around the paired canonical frontier proved in `docs/mrm_core_proofs.md`:
 
-### 1. Problem: deterministic macro-laws can smuggle in mechanism certainty
+- **Theorem 7 — exact memory frontier:** `2^(m+1)` candidate-safe states, `m+1` bits, hence an exact `m`-bit surcharge relative to a fixed two-state law;
+- **Theorem 8 — exact intervention frontier:** exactly `m` binary probes are necessary and sufficient in the worst case to identify one of `2^m` response signatures.
 
-Start from the ecological situation, not the code. A visible community state can be
-shared by multiple plausible mechanisms. A deterministic macro-law that forgets this
-ambiguity is valid only if all retained mechanisms agree about every declared future
-action. Otherwise, the forecast must either retain mechanism-response information or
-be set-valued.
+Theorem 8 is the manuscript center. The surrounding results explain why the experimental lower bound is scientifically relevant and when it applies.
 
-Core message: the problem is not stochasticity first; it is unjustified candidate
-forgetting.
+## Core question
 
-### 2. Finite setup and response types
+> If current ecological state is known but the response mechanism is not, how much additional state information must an honest predictive law retain, and how many interventions are fundamentally required to resolve the ambiguity?
 
-Define:
+This is sharper than the generic statement that mechanism uncertainty matters. The paper returns exact finite burdens under a declared mechanism family and action grammar.
 
-- observable macrostate space \(Q\);
-- declared actions \(A\);
-- retained candidate mechanisms \(C\);
-- induced maps \(G_a^\theta:Q\to Q\);
-- response types as equivalence classes of candidates with identical full transition
-  tables.
+## Abstract spine
 
-Explain that response type, not raw mechanism label, is the predictive unit.
-Duplicate mechanisms with equal transition tables collapse.
+1. Ecological mechanisms can be observationally indistinguishable in the present yet predict different responses to intervention.
+2. A deterministic candidate-forgetting macro-law is justified only when retained response types agree; otherwise prediction must retain response-relevant type information or remain set-valued.
+3. The unique coarsest candidate-safe quotient retains only mechanism distinctions that can change declared future observations.
+4. In the canonical `m`-bit response family, unresolved mechanism ambiguity imposes an exact `m`-bit state-memory surcharge and an exact `m`-intervention identification burden. These two quantities are attained by the same transparent family.
+5. General finite dynamic programming extends the intervention result beyond the canonical family to shortest and minimum-cost exact discrimination when such a policy exists.
+6. Observation-error, posterior, and one-step value-of-information modules are downstream adapters and are not part of the headline theorem claim.
 
-### 3. Report trichotomy
+## Main theorem architecture
 
-Main-text theorem package:
+### Result 1 — Honest reporting under mechanism disagreement
 
-- **Theorem 1 — Universal law criterion.** A candidate-independent deterministic
-  law exists iff all retained response types induce identical maps.
-- **Corollary 1 — Typed deterministic report.** If response type is retained,
-  prediction is deterministic on \(Q\times R\).
-- **Corollary 2 — Candidate-forgetting report.** If response type is omitted under
-  disagreement, the honest forecast is the exact set-valued successor relation.
+Use Theorem 1 and Proposition 2 from `docs/mrm_core_proofs.md`.
 
-This is the conceptual core of the paper and should appear early.
+A candidate-independent deterministic macro-law exists exactly when retained response types agree on all declared transition maps. When they disagree:
 
-### 4. Memory burden and minimal candidate-safe quotient
+- retaining response type gives a deterministic typed law;
+- forgetting type gives the exact set-valued successor relation.
 
-Main-text theorem package:
+This result establishes why mechanism ambiguity cannot simply be omitted from the state description.
 
-- **Theorem 2 — Product lower bound under uniform response separation.** If every
-  pair of response types can be separated from every macrostate by a declared
-  action, any exact typed deterministic interface needs \(|Q|R\) states.
-- **Theorem 3 — Minimal candidate-safe quotient.** Partition refinement over
-  \(Q\times R\), constrained to preserve observed \(q\), gives the coarsest exact
-  observation-preserving deterministic interface.
+### Result 2 — What mechanism distinctions must the state remember?
 
-Emphasize why the quotient is important: the full typed product can be too
-pessimistic because some response-type distinctions are locally irrelevant.
+Use Theorem 5 and Corollary 5.1.
 
-### 5. Mechanism-ambiguity frontier
+The minimal candidate-safe quotient is the unique coarsest observation-preserving deterministic quotient of observable-state × response-type worlds. Two typed states can be merged exactly when all finite declared action words yield the same observed trajectories.
 
-Main-text theorem package:
+This prevents the paper from equating honest prediction with full mechanism identity: only response-relevant distinctions survive.
 
-- **Theorem 4 — Canonical ambiguity frontier.** With \(m\) unresolved binary
-  response dimensions, fixed-candidate laws have two observable states, but the
-  candidate-safe interface has \(2^{m+1}\) states and \(m+1\) bits.
-- **Corollary — Active identification lower bound.** \(m\) binary probes are
-  necessary and sufficient to identify \(2^m\) response types.
+### Result 3 — Exact ambiguity burden in state space
 
-This is the paper's sharp “why this matters” result. Say carefully:
-state cardinality grows exponentially in unresolved binary response dimensions;
-memory surcharge in bits grows linearly.
+Use Theorem 7.
 
-### 6. Active and cost-aware discrimination
+For the canonical family `R_m = {0,1}^m`, each fixed mechanism has a two-state observable macro-law, but the minimal candidate-safe law has
 
-Main-text methods/results package:
+`2^(m+1)` states and `m+1` bits.
 
-- **Theorem 5 — Shortest exact active discrimination.** Dynamic programming over
-  \(Q\times\{S:\varnothing\ne S\subseteq R\}\) returns the minimum worst-case
-  intervention depth, or no plan.
-- **Theorem 6 — Minimum-cost exact active discrimination.** With positive action
-  costs, the same finite configuration space gives the minimum worst-case total
-  intervention cost.
+Relative to a fixed-candidate law, the exact information surcharge is `m` bits.
 
-Use the cost witness as the main figure or table: a one-step direct probe can be
-shortest but not cheapest.
+Report the two scales separately:
 
-### 7. Observation error and posterior ambiguity
+- state cardinality grows exponentially in `m`;
+- required memory in bits grows linearly in `m`.
 
-Keep as a main-text extension, not the opening theorem.
+### Result 4 — Theorem 8: exact intervention frontier
 
-- **Theorem 7 — Robust support update.** With bounded observation support \(N(x)\),
-  retain exactly response types whose predicted successor lies in \(N(x)\).
-- **Theorem 8 — Probabilistic posterior update.** With likelihoods and priors,
-  update response-type weights by Bayes' rule; MAP is not certainty.
+This is the headline result.
 
-Use this to show that MRM remains conservative under noisy observation: noisy data
-can favor a mechanism without licensing a deterministic mechanism-resolved law.
+For the same canonical family, exactly `m` binary probes are necessary and sufficient in the worst case to identify one of the `2^m` response signatures.
 
-### 8. One-step value-of-information design
+**Upper bound:** probe each response coordinate once.
 
-Main-text design diagnostic, not full sequential policy.
+**Lower bound:** a depth-`d` binary intervention tree has at most `2^d` leaves. Exact discrimination among `2^m` response types therefore requires `d >= m`.
 
-- **Theorem 9 — Expected ambiguity reduction.** Score each action by expected
-  posterior entropy reduction.
-- **Corollary — Cost-adjusted design.** Raw information and net information value
-  can select different actions.
+After `k` distinct probes, exactly `2^(m-k)` signatures remain compatible. This gives an exact ambiguity-removal trajectory, not only an endpoint bound.
 
-This gives an applied bridge: what should we measure next, given declared
-mechanism uncertainty?
+The ecological interpretation is deliberately narrow: if the declared mechanism uncertainty contains `m` independently response-relevant binary distinctions and each declared probe reveals at most one binary outcome, no adaptive cleverness can beat the `m`-intervention worst-case bound.
 
-### 9. Scope and non-claims
+### Result 5 — Beyond the canonical family: shortest exact discrimination
 
-Make these explicit in the main text, not hidden in supplement:
+Use Theorem 6.
 
-- MRM does not infer mechanisms, candidate sets, priors, likelihoods, costs, or
-  ecological validity from data.
-- MRM assumes a declared common observable macrostate space.
-- Most implemented results are finite, exact, and one-step where stated.
-- VOI is one-step, not full sequential dynamic programming.
-- Probabilistic observation is not stochastic mechanism dynamics.
+Dynamic programming over configurations `(q,S)` returns the minimum worst-case intervention depth for any finite declared response family, or `None` exactly when no finite exact discrimination policy exists.
 
-## Result placement map
+Theorem 8 should be presented first as the sharp closed-form frontier; Theorem 6 then shows that the same question is executable for arbitrary finite families.
 
-| Current result | Manuscript placement | Reason |
-|---|---|---|
-| Universal deterministic criterion | Main theorem 1 | central conceptual result |
-| Typed / set-valued report | Main theorem 1 corollaries | defines honest reporting alternatives |
-| Candidate-safe product lower bound | Main theorem 2 | memory-burden baseline |
-| Joint exterior-mechanism uncertainty | Supplement or appendix | useful but secondary to core mechanism ambiguity |
-| Minimal candidate-safe quotient | Main theorem 3 | strongest compression result |
-| Active discrimination depth | Main theorem 5 | connects reporting to intervention |
-| Mechanism-ambiguity frontier | Main theorem 4 | sharp headline complexity result |
-| Cost-aware discrimination | Main theorem 6 | practical experimental burden |
-| Robust support update | Main theorem 7 | observation-error guardrail |
-| Probabilistic posterior update | Main theorem 8 | posterior ambiguity guardrail |
-| One-step VOI design | Main theorem 9 | next-observation design bridge |
+### Result 6 — Unequal intervention costs
+
+Use Theorem 9.
+
+With strictly positive declared action costs, finite Bellman recursion returns the minimum worst-case total cost. Unit costs recover the shortest-depth problem.
+
+This belongs after Theorem 8 because it relaxes equal intervention cost, not because it is a stronger headline theorem.
+
+## Supporting results and placement
+
+### Product lower bound — Theorem 3
+
+Keep as a short lemma/corollary supporting Result 3. Under uniform response separation, the full typed product is minimal.
+
+### Joint exterior × mechanism bound — Proposition 4
+
+Supplement only. It requires an explicit joint operational-separation premise and should not distract from the mechanism-only paper.
+
+### Robust observation update
+
+Methods/Supplement adapter. Bounded observation support filters compatible response types but does not alter the mechanism-report target.
+
+### Probabilistic posterior update
+
+Methods/Supplement adapter. Bayesian weights may favor one response type but do not convert posterior preference into exact mechanism resolution.
+
+**Do not call this Theorem 8 in the manuscript.** The canonical analytic numbering in `docs/mrm_core_proofs.md` is authoritative: Theorem 8 is the exact intervention frontier.
+
+### One-step value of information
+
+Discussion/Methods adapter. It may help choose among observations under a declared prior/likelihood/cost model, but it is neither the proof nor the generalization of the exact intervention frontier.
+
+## Main narrative order
+
+1. **Same present, different intervention response.** Motivate response-mechanism ambiguity.
+2. **What can be reported honestly?** Universal versus typed versus set-valued law.
+3. **What must the state remember?** Minimal candidate-safe quotient.
+4. **How large can the burden become?** Theorem 7 memory frontier.
+5. **How many interventions are unavoidable?** Theorem 8 intervention frontier — manuscript peak.
+6. **Can arbitrary finite families be solved?** Shortest and cost-aware discrimination.
+7. **What changes under noisy evidence?** Observation/posterior/VOI adapters, explicitly downstream.
+8. **Discussion.** Mechanism uncertainty has both a representational and an experimental price.
 
 ## Suggested figures
 
-### Figure 1 — Report trichotomy
+### Figure 1 — Same observed state, different responses
 
-A flow diagram:
+Two or more retained response types share current `q` but map one intervention to different successors. End with the reporting fork: deterministic if agreement, typed/set-valued if disagreement.
 
-1. retained mechanisms;
-2. collapse to response types;
-3. do all response types agree?;
-4. if yes, universal deterministic law;
-5. if no, typed deterministic or set-valued forecast.
+### Figure 2 — Minimal candidate-safe quotient
 
-### Figure 2 — Minimal quotient versus full product
+Show the full `Q × R` product and a smaller quotient in which response-type distinctions irrelevant to every declared future word are merged.
 
-Show \(Q\times R\) full typed product and a quotient that merges locally irrelevant
-response-type distinctions while preserving observed macrostates.
+### Figure 3 — Paired ambiguity frontiers
 
-### Figure 3 — Ambiguity frontier
+This should be the visual center of the paper.
 
-Plot \(m\) versus candidate-safe state cardinality \(2^{m+1}\), and optionally a
-second panel for bits \(m+1\). The caption must avoid overclaiming: exponential in
-state cardinality, linear in bits.
+Panel A: `m` versus candidate-safe state count `2^(m+1)` and memory `m+1` bits.
 
-### Figure 4 — Cost versus information
+Panel B: `m` versus minimum worst-case intervention depth `m`.
 
-A small table or bar chart:
+Panel C or inset: after `k` distinct probes, residual compatible response types `2^(m-k)`.
 
-| Action | Raw EIG | Cost | Net value | Selected by |
-|---|---:|---:|---:|---|
-| perfect | 2 | 3 | -1 | raw EIG |
-| half_split | 1 | 0.25 | 0.75 | net value |
-| uninformative | 0 | 0 | 0 | neither |
+The visual message is not “everything is exponential.” State cardinality is exponential, whereas memory surcharge and intervention depth are linear.
 
-### Figure 5 — Observation uncertainty ladder
+### Figure 4 — Adaptive discrimination outside the canonical family
 
-Exact observation → bounded-support robust update → probabilistic posterior update
-→ VOI design.
+A small decision tree showing a family where different first actions yield different worst-case depths. Use the verified generic planner output.
 
-## Paper section outline
+### Figure 5 — Cost changes the preferred exact plan
 
-1. Introduction
-   - mechanism ambiguity in ecological macro-laws;
-   - why deterministic laws require agreement across retained mechanisms;
-   - overview of MRM report discipline.
-2. Finite candidate macro-law framework
-   - states, actions, candidates, response types;
-   - report types.
-3. Universal, typed, and set-valued macro-laws
-   - theorem 1 and corollaries;
-   - examples.
-4. Candidate-safe memory and quotient structure
-   - lower bound;
-   - minimal quotient;
-   - ambiguity frontier.
-5. Active discrimination and experimental burden
-   - shortest plans;
-   - cost-aware plans.
-6. Observation error and posterior ambiguity
-   - robust support update;
-   - posterior update;
-   - thresholded resolution.
-7. One-step value-of-information design
-   - expected entropy reduction;
-   - net value;
-   - design witness.
-8. Discussion
-   - ecological interpretation;
-   - how to use MRM with empirical candidate mechanisms;
-   - non-claims and future extensions.
+Show shortest-depth versus minimum-cost exact discrimination under unequal positive action costs.
 
-## Minimal empirical/ecological examples to mention
+Posterior/VOI figures are optional Supplement material unless they materially improve the final journal fit.
 
-Use examples as motivating scenarios, not as claimed validated case studies:
+## Ecological interpretation
 
-- alternative pollinator-response mechanisms causing different effects of floral
-  trait manipulation;
-- disturbance mechanisms that agree under passive observation but disagree under
-  management intervention;
-- pathogen or mutualist pathways that share a current community state but predict
-  different responses to removal/addition experiments;
-- island systems where reduced interaction complexity may make several mechanisms
-  plausible but not yet resolved.
+Use one recurring hypothetical ecological system rather than a catalogue. A good form is:
 
-## Supplement structure
+- current macrostate: one observed community or habitat state;
+- retained mechanisms: alternative limiting pathways that make identical present-state predictions;
+- interventions: manipulations that separately expose response coordinates;
+- target: future macrostate response, not historical mechanism identity for its own sake.
 
-1. Full finite definitions and notation.
-2. Proofs of all theorem statements.
-3. Exhaustive quotient checks and finite witnesses.
-4. Replay artifact schema and reproducibility protocol.
-5. Boundary cases and non-claims.
-6. Relation to CCOC and MLTR provenance.
+Pollinator limitation, restoration response, or disturbance-response mechanisms are suitable examples only if described as finite declared candidate models, not empirical validation.
 
-## Submission-readiness checklist
+## Novelty boundary
 
-- [ ] Decide target journal type: theoretical ecology, ecological methods, or
-      mathematical biology.
-- [ ] Convert theorem program into formal notation with consistent symbols.
-- [ ] Write proof sketches for all main theorems and move full proofs to supplement.
-- [ ] Generate figures 1–5 from replay outputs or hand-checkable finite examples.
-- [ ] Add one ecological worked example using declared candidate mechanisms.
-- [ ] Keep all data-inference language out of theorems unless a separate inference
-      layer is added.
-- [ ] Cite automata minimization, set-valued prediction, active learning / decision
-      trees, and value-of-information literature in the manuscript text.
+Do not claim novelty for:
 
-## Current maturity assessment
+- finite-state minimization or partition refinement;
+- deterministic decision trees or the binary leaf-counting lower bound;
+- active learning in general;
+- Bayesian updating;
+- value of information;
+- generic dynamic programming.
 
-The mathematical core is now strong enough for a manuscript outline. The repository
-already contains executable witnesses for the main claims. What remains before a
-paper draft is not another theorem by default, but prose discipline: tightening the
-story, choosing notation, drawing figures, and writing proofs in a way that does not
-oversell empirical inference.
+The contribution is the ecology-specific coupling:
+
+`retained mechanism family -> honest macro-law -> minimal response-relevant state -> exact state-memory burden -> exact intervention burden`.
+
+## Journal decision after reorganization
+
+Evaluate journal fit only after this architecture is implemented and a full manuscript exists.
+
+Likely fits:
+
+- **Theoretical Ecology** if the ecological interpretation and general finite theorem package carry the paper;
+- **Journal of Theoretical Biology** if the emphasis is finite mathematical structure and mechanism-response discrimination;
+- **Ecological Modelling** if implementation and model-comparison workflow dominate.
+
+A methods journal is less natural unless the observation/experimental-design implementation becomes the primary contribution.
+
+## Development freeze
+
+Do not add a new theorem family by default. Remaining work is:
+
+1. synchronize README and publication controls with the Theorem 7/8 center;
+2. add manuscript-story regression tests so Theorem 8 cannot again be renamed as posterior updating;
+3. strengthen the canonical frontier executable oracle beyond widths one through five if useful;
+4. create one integrated manuscript draft and figures;
+5. run a nearest-neighbour literature audit for ecological mechanism uncertainty, model discrimination, active experiment design, automata/minimal-state results, and decision-tree lower bounds;
+6. choose the journal only after that audit.
+
+## Submission gate
+
+The paper is not submission-ready merely because the theorem suite is green. Submission requires:
+
+- a manuscript centered on Theorems 7–8;
+- consistent theorem numbering with the analytic proof spine;
+- an ecological worked interpretation;
+- primary-source literature boundaries;
+- figures generated from deterministic theorem witnesses where quantitative;
+- an explicit non-empirical scope statement;
+- full CI/replay consistency at the submission commit.
